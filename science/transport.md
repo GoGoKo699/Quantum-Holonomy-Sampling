@@ -11,7 +11,7 @@ Let $`|\psi\rangle,|\phi\rangle\in\mathbb C^d`$ be unit vectors, and write
 ```math
 P=|\psi\rangle\langle\psi|,\qquad
 Q=|\phi\rangle\langle\phi|,\qquad
-z=\langle\phi|\psi\rangle,\qquad r=|z|>0.
+z=\langle\phi|\psi\rangle,\qquad r=|z|\gt 0.
 ```
 
 Define
@@ -28,10 +28,10 @@ Here the sign is defined by spectral calculus: it is $`+1`$ on the positive spec
 T_{Q\leftarrow P}|\psi\rangle
 =\frac{\langle\phi|\psi\rangle}{|\langle\phi|\psi\rangle|}
  |\phi\rangle.
-\tag{1}
+\qquad\text{(1)}
 ```
 
-To prove this when $`r<1`$, restrict to the two-dimensional subspace $`\mathcal S=\mathrm{span}\{|\psi\rangle,|\phi\rangle\}`$. Direct calculation gives
+To prove this when $`r\lt 1`$, restrict to the two-dimensional subspace $`\mathcal S=\mathrm{span}\{|\psi\rangle,|\phi\rangle\}`$. Direct calculation gives
 
 ```math
 Z|\psi\rangle=z|\phi\rangle,\qquad
@@ -53,7 +53,7 @@ The construction depends only on $`P,Q`$. Replacing either representative vector
 ```math
 T_{VQV^\dagger\leftarrow VPV^\dagger}
 =V T_{Q\leftarrow P}V^\dagger.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 The transport therefore requires neither a choice of phase for an unknown source nor a classical description of its coordinates.
@@ -70,7 +70,7 @@ The principal direct rotation is
 
 ```math
 U_{P\to Q}=\sqrt{R_QR_P},
-\tag{3}
+\qquad\text{(3)}
 ```
 
 where the square root has its branch cut on the negative real axis and $`\sqrt 1=1`$. Nonorthogonality ensures that $`R_QR_P`$ has no eigenvalue on that cut. This construction and its positive-overlap phase convention are given explicitly in Bravyi, DiVincenzo and Loss, Section 2.1, Definition 2.1 and Lemma 2.1 [1].
@@ -79,7 +79,7 @@ The sign transport is related to it by
 
 ```math
 U_{P\to Q}=-T_{Q\leftarrow P}R_P.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 For example, choose representatives with positive overlap and an orthonormal basis of their span in which $`|\psi\rangle=(1,0)^{\mathsf T}`$ and $`|\phi\rangle=(r,s)^{\mathsf T}`$, with $`s=\sqrt{1-r^2}`$. On this span,
@@ -100,10 +100,10 @@ For $`L`$ projectors $`P_j=|\psi_j\rangle\langle\psi_j|`$, set $`P_{L+1}=P_1`$ a
 ```math
 B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle,
 \qquad \Phi=\arg B\pmod{2\pi}.
-\tag{5}
+\qquad\text{(5)}
 ```
 
-Assume $`r_j=|\langle\psi_{j+1}|\psi_j\rangle|>0`$, and define
+Assume $`r_j=|\langle\psi_{j+1}|\psi_j\rangle|\gt 0`$, and define
 
 ```math
 T_j=\mathrm{sign}(P_j+P_{j+1}-I),\qquad
@@ -119,7 +119,7 @@ W|\psi_1\rangle
 |\psi_1\rangle
 =\frac{\overline B}{|B|}|\psi_1\rangle
 =e^{-i\Phi}|\psi_1\rangle.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 The minus sign in this eigenphase is part of the convention. The final classical output negates the phase measured by phase estimation. Equation (6) needs no eigenvalue gap for $`W`$: the initial specimen is already an exact eigenvector, whether or not that eigenvalue is degenerate. The phase is that of the discrete loop in (5); no continuum interpolation or Berry-phase discretization estimate is assumed.
@@ -135,7 +135,7 @@ D_j=|0\rangle\langle0|_a\otimes R_j
     +|1\rangle\langle1|_a\otimes R_{j+1},
 \qquad
 U_j^{\mathrm{be}}=-(H_a\otimes I)D_j(H_a\otimes I).
-\tag{7}
+\qquad\text{(7)}
 ```
 
 This is a Hermitian unitary. Its top block is exactly
@@ -144,7 +144,7 @@ This is a Hermitian unitary. Its top block is exactly
 (\langle0|_a\otimes I)U_j^{\mathrm{be}}(|0\rangle_a\otimes I)
 =-\frac{R_j+R_{j+1}}{2}
 =P_j+P_{j+1}-I=Z_j.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 The selector is implemented by one reflection controlled on $`a=0`$ and another controlled on $`a=1`$. Both source labels are known from the circuit position. The coherent selector chooses between applying two fixed-label gates; it does not query a source on a superposition of labels.
@@ -153,13 +153,13 @@ The leading minus sign in (7) must be retained. When $`U_j^{\mathrm{be}}`$ is ex
 
 ## 5. The inherited polar compiler and its clean-ancilla guarantee
 
-Suppose $`r_j\ge c>0`$. Then $`Z_j`$ is invertible, $`\|Z_j\|\le1`$, and $`\sigma_{\min}(Z_j)\ge c`$. Its unitary polar factor is $`T_j=\mathrm{sign}(Z_j)`$.
+Suppose $`r_j\ge c\gt 0`$. Then $`Z_j`$ is invertible, $`\|Z_j\|\le1`$, and $`\sigma_{\min}(Z_j)\ge c`$. Its unitary polar factor is $`T_j=\mathrm{sign}(Z_j)`$.
 
 Quantum singular value transformation supplies a bounded odd sign approximation on $`[-1,-c]\cup[c,1]`$ with degree
 
 ```math
 K=O\!\left(c^{-1}\log(1/\delta)\right).
-\tag{9}
+\qquad\text{(9)}
 ```
 
 Applied to (8), the singular-vector transformation gives a unitary lift whose selected block approximates $`T_j`$ to operator error $`\delta`$. This is the standard QSVT primitive [2]. Quek and Rebentrost's Corollary 1, equations (7)–(8), states its corresponding clean-ancilla vector guarantee explicitly [3]. Their row-space hypothesis holds for every input here because $`Z_j`$ is invertible. No amplitude amplification is needed.
@@ -178,7 +178,7 @@ For any unit vector $`|v\rangle`$,
 &=2-2\mathrm{Re}\langle v|T_j^\dagger A_j|v\rangle\\
 &\le2\delta.
 \end{aligned}
-\tag{10}
+\qquad\text{(10)}
 ```
 
 Thus, to obtain an isometry error at most $`\eta`$, it is sufficient to choose $`\delta\le\eta^2/2`$. The query count is still $`K=O(c^{-1}\log(1/\eta))`$. We use $`K`$ for the **total** number of calls to $`U_j^{\mathrm{be}}`$ or its adjoint in one lift. The same coefficient sequence works for every edge because $`c`$ and $`\eta`$ are common. The work size $`b`$ is constant for this one-ancilla block encoding.
@@ -206,7 +206,7 @@ The clean work register can be reused without measurement or resetting. Let $`A_
 A_M\cdots A_1-B_M\cdots B_1
 =\sum_{s=1}^{M}
 A_M\cdots A_{s+1}(A_s-B_s)B_{s-1}\cdots B_1.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 Every ideal prefix keeps the work register in $`|0^b\rangle`$. Therefore each summand, when applied to the initial state, has norm at most $`\eta`$. The total error is at most $`M\eta`$. The proof makes no claim that $`A_s`$ is close to $`B_s`$ on arbitrary dirty work states. Actual leakage is simply carried through later unitaries, whose norms are one.

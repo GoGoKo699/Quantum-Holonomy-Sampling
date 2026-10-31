@@ -2,13 +2,13 @@
 
 This project studies the number of independently supplied pure-state copies required to estimate one specified discrete geometric phase. The promise concerns adjacent overlap amplitudes, and the receiver may coherently process the supplied registers. The [model](../science/model.md) makes those assumptions precise. The distinction between estimating a complex invariant to additive error and estimating its argument is central to the comparisons below.
 
-The result established here combines a coherent loop construction with a matching finite discrimination lower bound. For $`L\ge4`$ and $`0<\epsilon\le\pi/16`$, the upper copy cost is
+The result established here combines a coherent loop construction with a matching finite discrimination lower bound. For $`L\ge4`$ and $`0\lt \epsilon\le\pi/16`$, the upper copy cost is
 
 ```math
 O\!\left(\frac{L^2}{c^2\epsilon^2}\log^2\frac{L}{\epsilon}\right).
 ```
 
-The lower bound has order $`L^2/(c^2\epsilon^2)`$ for $`d\ge L`$ and $`0<c\le1/4`$. It allows arbitrary collective processing and adaptive classical choices of source label. The local transport, polynomial transformation, phase estimation and conversion from reflection queries to copies are established ingredients; the claim is a resource law for this particular statistical task.
+The lower bound has order $`L^2/(c^2\epsilon^2)`$ for $`d\ge L`$ and $`0\lt c\le1/4`$. It allows arbitrary collective processing and adaptive classical choices of source label. The local transport, polynomial transformation, phase estimation and conversion from reflection queries to copies are established ingredients; the claim is a resource law for this particular statistical task.
 
 Bibliographic records are in [references.bib](references.bib). The account below identifies the versions used for the closest comparisons. It does not assert that every possible algorithm in the broader geometric-phase literature has been excluded.
 

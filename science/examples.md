@@ -19,16 +19,16 @@ G_\phi
 =I+c\left(e^{-i\phi/L}S+e^{i\phi/L}S^\dagger\right),
 \qquad
 |\psi_j(\phi)\rangle=G_\phi^{1/2}|j\rangle,
-\tag{1}
+\qquad\text{(1)}
 ```
 
-with $`L\geq4`$ and $`0<c\leq1/4`$. The construction and its normalization are proved in [the lower-bound note](lower-bound.md). It has
+with $`L\geq4`$ and $`0\lt c\leq1/4`$. The construction and its normalization are proved in [the lower-bound note](lower-bound.md). It has
 
 ```math
 \langle\psi_j|\psi_{j+1}\rangle=c e^{i\phi/L},
 \qquad
 B=c^L e^{i\phi}.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 Every pairwise overlap magnitude is independent of $`\phi`$. Non-neighboring vectors are orthogonal. Thus pairwise SWAP tests reveal no phase information, and every triangle of distinct labels has zero Bargmann invariant. More generally, any simple cycle of length between three and $`L-1`$ contains a zero-overlap edge. A decomposition into nonzero triangle invariants is unavailable for this family.
@@ -42,7 +42,7 @@ Define the left cyclic permutation on the $`L`$ data registers by
 ```math
 C\bigl(|v_1\rangle\otimes\cdots\otimes|v_L\rangle\bigr)
 =|v_2\rangle\otimes\cdots\otimes|v_L\rangle\otimes|v_1\rangle.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 On one independent copy of each labeled source,
@@ -51,7 +51,7 @@ On one independent copy of each labeled source,
 \langle\psi_1\otimes\cdots\otimes\psi_L|
 C
 |\psi_1\otimes\cdots\otimes\psi_L\rangle=B.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 A controlled-$`C`$ Hadamard test followed by an ancilla $`X`$ measurement produces a random variable in $`\{-1,+1\}`$ with mean $`\mathrm{Re}B`$. An ancilla $`Y`$ measurement has mean $`\mathrm{Im}B`$. Equivalently, an ancilla quadrature at a chosen angle $`t`$ has mean
@@ -60,7 +60,7 @@ A controlled-$`C`$ Hadamard test followed by an ancilla $`X`$ measurement produc
 \mu_t=\mathrm{Re}(e^{-it}B)
 =r\cos(\Phi-t),
 \qquad r=|B|.
-\tag{5}
+\qquad\text{(5)}
 ```
 
 One such shot consumes **$`L`$ source copies**. The cycle-test construction and its real/imaginary readout are established in Oszmaniec, Brod, and Galvao, [arXiv:2109.10006v1, Fig. 1](https://arxiv.org/pdf/2109.10006). The finite-shot phase estimates below follow directly from (5).
@@ -72,9 +72,9 @@ Suppose a known lower bound $`r_*\leq r`$ is available. From the adjacent-overla
 Take $`m`$ independent $`X`$ shots and $`m`$ independent $`Y`$ shots and denote their sample means by $`\widehat x`$ and $`\widehat y`$. For a mean of $`m`$ independent variables in $`\{-1,+1\}`$, Hoeffding's inequality gives
 
 ```math
-\Pr[|\widehat x-\mathrm{Re}B|>a]
+\Pr[|\widehat x-\mathrm{Re}B|\gt a]
 \leq2e^{-ma^2/2},
-\tag{6}
+\qquad\text{(6)}
 ```
 
 and the same bound holds for $`\widehat y`$. Set
@@ -88,17 +88,17 @@ If both component errors are at most $`a`$, then
 ```math
 |\widehat x+i\widehat y-B|
 \leq r_*\sin\epsilon\leq r\sin\epsilon.
-\tag{7}
+\qquad\text{(7)}
 ```
 
-For $`0<\epsilon<\pi/2`$, the disk of radius $`r\sin\epsilon`$ about $`B`$ lies within angular distance $`\epsilon`$ of $`B`$ and does not contain the origin. This follows by drawing the two tangent lines from the origin to that disk, or by minimizing the distance to a ray of prescribed angle. Hence (7) implies that $`\arg(\widehat x+i\widehat y)`$ is an $`\epsilon`$-accurate circular phase estimate.
+For $`0\lt \epsilon\lt \pi/2`$, the disk of radius $`r\sin\epsilon`$ about $`B`$ lies within angular distance $`\epsilon`$ of $`B`$ and does not contain the origin. This follows by drawing the two tangent lines from the origin to that disk, or by minimizing the distance to a ray of prescribed angle. Hence (7) implies that $`\arg(\widehat x+i\widehat y)`$ is an $`\epsilon`$-accurate circular phase estimate.
 
 A union bound in (6) shows that failure probability at most $`\delta`$ is ensured by
 
 ```math
 m\geq
 \frac{4\log(4/\delta)}{r_*^2\sin^2\epsilon}.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 The number of **raw cycle-test shots** and the number of **total source copies** are therefore
@@ -108,7 +108,7 @@ M_{\mathrm{cycle}}=2m
 =O\!\left(\frac{\log(1/\delta)}{r_*^2\epsilon^2}\right),
 \qquad
 N_{\mathrm{cycle}}=L M_{\mathrm{cycle}}.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 On the ring, $`r=r_*=c^L`$. At fixed confidence this gives
@@ -117,7 +117,7 @@ On the ring, $`r=r_*=c^L`$. At fixed confidence this gives
 M_{\mathrm{cycle}}=O\!\left(c^{-2L}\epsilon^{-2}\right),
 \qquad
 N_{\mathrm{cycle}}=O\!\left(Lc^{-2L}\epsilon^{-2}\right).
-\tag{10}
+\qquad\text{(10)}
 ```
 
 The extra factor $`L`$ in the second expression is essential when comparing with an algorithm whose resource count is total supplied copies.
@@ -126,7 +126,7 @@ The extra factor $`L`$ in the second expression is essential when comparing with
 
 Here the comparator is specifically a sequence of fresh full-cycle Hadamard tests, retaining only each ancilla quadrature outcome. The quadrature angle may be chosen adaptively. This is a restricted measurement protocol, not the most general operation on the supplied copies.
 
-For fixed $`0<r<1`$ and $`0<\epsilon\leq\pi/16`$, compare phases zero and $`h=4\epsilon`$. A quadrature outcome is Bernoulli with probability
+For fixed $`0\lt r\lt 1`$ and $`0\lt \epsilon\leq\pi/16`$, compare phases zero and $`h=4\epsilon`$. A quadrature outcome is Bernoulli with probability
 
 ```math
 p_\phi(t)=\frac{1+r\cos(\phi-t)}2
@@ -138,7 +138,7 @@ for the outcome $`+1`$. For every chosen quadrature,
 |p_0(t)-p_h(t)|\leq\frac{r|h|}{2},
 \qquad
 p_h(t)(1-p_h(t))\geq\frac{1-r^2}{4}.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 The elementary Bernoulli relative-entropy bound
@@ -154,7 +154,7 @@ Success at least $`2/3`$ in estimating each phase to error $`\epsilon`$ implies 
 
 ```math
 M\geq\frac{1-r^2}{72r^2\epsilon^2}.
-\tag{12}
+\qquad\text{(12)}
 ```
 
 For the ring in (1), $`r=c^L\leq1/256`$, so $`1-r^2`$ is bounded below by a constant. Equations (8) and (12) establish the precise fixed-confidence scaling
@@ -165,7 +165,7 @@ M_{\mathrm{cycle}}=\Theta(c^{-2L}\epsilon^{-2}),
 \qquad
 N_{\mathrm{cycle}}=\Theta(Lc^{-2L}\epsilon^{-2})
 }
-\tag{13}
+\qquad\text{(13)}
 ```
 
 for this direct-readout family. Access to other measurements, retained data registers, or collective processing of many runs is outside this restricted lower bound.
@@ -185,14 +185,14 @@ T_j|\psi_j\rangle
 =\frac{\langle\psi_{j+1}|\psi_j\rangle}
 {|\langle\psi_{j+1}|\psi_j\rangle|}
 |\psi_{j+1}\rangle.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 The loop $`W=T_L\cdots T_1`$ therefore satisfies
 
 ```math
 W|\psi_1\rangle=e^{-i\Phi}|\psi_1\rangle.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 The loop eigenvalue has unit magnitude. The small local overlaps enter the cost of implementing each transport, rather than multiplying into the readout visibility. The [transport construction](transport.md), [algorithm](algorithm.md), and [resource accounting](resources.md) show how copies implement these controlled operations with total cost
@@ -200,7 +200,7 @@ The loop eigenvalue has unit magnitude. The small local overlaps enter the cost 
 ```math
 N_{\mathrm{transport}}
 =\widetilde O\!\left(\frac{L^2}{c^2\epsilon^2}\right).
-\tag{16}
+\qquad\text{(16)}
 ```
 
 The matching lower bound applies to this same sparse-ring family and to arbitrary protocols in the copy model. Exponentially small $`|B|`$ consequently does not imply an exponentially large number of copies for estimating its phase.

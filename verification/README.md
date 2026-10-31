@@ -60,7 +60,7 @@ cannot prove it.
 Finite examples do not prove asymptotic sample complexity, rule out better
 algorithms, certify novelty, validate hardware noise robustness, or extend the
 theorem beyond its promises. In particular, the sparse-Gram lower construction
-uses $d\ge L\ge4$, $0<c\le1/4$, and a bounded total copy budget. The examples
+uses $d\ge L\ge4$, $0\lt c\le1/4$, and a bounded total copy budget. The examples
 do not establish a lower bound near $c=1$ or at fixed $d$.
 
 ## Controlled DME: phase and channel audit

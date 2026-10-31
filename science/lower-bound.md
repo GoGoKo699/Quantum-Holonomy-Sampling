@@ -24,9 +24,9 @@ d_{\mathrm{circ}}(x,y)
 Fix an integer $`L\geq4`$, a register dimension $`d\geq L`$, and parameters
 
 ```math
-0<c\leq\frac14,
+0\lt c\leq\frac14,
 \qquad
-0<\epsilon\leq\frac{\pi}{16}.
+0\lt \epsilon\leq\frac{\pi}{16}.
 ```
 
 Suppose an algorithm receives independent copies from $`L`$ labeled, unknown, pure-state sources. Each requested label is a classical choice, which may depend on all previous measurement outcomes. The algorithm may otherwise use arbitrary known operations, ancillas, quantum memory, randomness, and collective measurements. Its total number of source copies is capped by $`N`$ on every run.
@@ -64,7 +64,7 @@ The hard instances have adjacent overlap magnitude exactly $`c`$, all other off-
 Work first in $`\mathbb C^L`$ with the fixed computational basis $`|1\rangle,\ldots,|L\rangle`$. Define the known cyclic shift by
 
 ```math
-S|j\rangle=|j+1\rangle\quad(1\leq j<L),
+S|j\rangle=|j+1\rangle\quad(1\leq j\lt L),
 \qquad
 S|L\rangle=|1\rangle.
 ```
@@ -76,14 +76,14 @@ G_\phi
 =I+c\left(e^{-i\phi/L}S+e^{i\phi/L}S^\dagger\right),
 \qquad
 |\psi_j(\phi)\rangle=G_\phi^{1/2}|j\rangle.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 The square root is the positive square root in this fixed basis. Since the eigenvalues of $`S`$ lie on the unit circle,
 
 ```math
 (1-2c)I\preceq G_\phi\preceq(1+2c)I.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 Thus $`G_\phi`$ is positive definite for every $`\phi`$ in the theorem's range. Its diagonal entries equal one, so each source vector is normalized:
@@ -91,7 +91,7 @@ Thus $`G_\phi`$ is positive definite for every $`\phi`$ in the theorem's range. 
 ```math
 \langle\psi_j(\phi)|\psi_j(\phi)\rangle
 =\langle j|G_\phi|j\rangle=1.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 The Gram matrix of these vectors is exactly $`G_\phi`$:
@@ -99,7 +99,7 @@ The Gram matrix of these vectors is exactly $`G_\phi`$:
 ```math
 \langle\psi_j(\phi)|\psi_k(\phi)\rangle
 =\langle j|G_\phi|k\rangle.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 With the specified orientation of $`S`$, the forward adjacent entries, including the closing entry, are
@@ -108,7 +108,7 @@ With the specified orientation of $`S`$, the forward adjacent entries, including
 \langle\psi_j(\phi)|\psi_{j+1}(\phi)\rangle
 =c e^{i\phi/L}
 \qquad(1\leq j\leq L),
-\tag{5}
+\qquad\text{(5)}
 ```
 
 where the index is cyclic. Therefore
@@ -117,12 +117,12 @@ where the index is cyclic. Therefore
 B(\phi)=c^L e^{i\phi},
 \qquad
 \Phi(\phi)=\phi\pmod{2\pi}.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 This sign follows from the fact that the matrix element $`\langle j|S^\dagger|j+1\rangle`$ is one. Reversing the definition of the shift or the cyclic product reverses the phase; neither reversal is made here.
 
-For $`d>L`$, embed these vectors into any fixed $`L`$-dimensional subspace of the register. Their norms, overlaps, and distinguishability remain unchanged.
+For $`d\gt L`$, embed these vectors into any fixed $`L`$-dimensional subspace of the register. Their norms, overlaps, and distinguishability remain unchanged.
 
 ## 2. Cyclic covariance removes the advantage of adaptive label choices
 
@@ -131,7 +131,7 @@ Every $`G_\phi`$ commutes with $`S`$, and so does its positive square root. Cons
 ```math
 |\psi_j(\phi)\rangle
 =S^{j-1}|\psi_1(\phi)\rangle.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 Consider an arbitrary algorithm in the theorem. Supply its simulator with $`N`$ independent copies of $`|\psi_1(\phi)\rangle`$ in advance. When the algorithm requests a copy with label $`j`$, the simulator takes one unused copy and applies the known unitary $`S^{j-1}`$. Equation (7) produces exactly the requested state. The simulator then continues the algorithm's operations and measurements.
@@ -142,7 +142,7 @@ This construction works when labels depend on previous outcomes: it follows the 
 \mathcal A\!\left(P_\phi^{\otimes N}\right),
 \qquad
 P_\phi=|\psi_1(\phi)\rangle\langle\psi_1(\phi)|.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 The simulator does not need to know $`\phi`$. The known shifts are independent of the parameter. Equation (8) is why neither adaptive source selection nor arbitrary collective processing evades the bound below.
@@ -154,7 +154,7 @@ The family $`G_\phi`$ has a common Fourier eigenbasis. Its derivative therefore 
 ```math
 \frac{d}{d\phi}G_\phi^{1/2}
 =\frac12G_\phi^{-1/2}G_\phi'.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 Direct differentiation of (1) yields
@@ -165,7 +165,7 @@ G_\phi'
 \left(-i e^{-i\phi/L}S+i e^{i\phi/L}S^\dagger\right),
 \qquad
 \|G_\phi'\|\leq\frac{2c}{L}.
-\tag{10}
+\qquad\text{(10)}
 ```
 
 Here and below, the norm of an operator without a subscript is its operator norm. Combining (2), (9), and (10),
@@ -176,7 +176,7 @@ Here and below, the norm of an operator without a subscript is its operator norm
 \qquad
 \left\|\frac{d}{d\phi}|\psi_1(\phi)\rangle\right\|
 \leq\frac{c}{L\sqrt{1-2c}}.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 Integrating along an interval of length $`h`$ gives
@@ -184,7 +184,7 @@ Integrating along an interval of length $`h`$ gives
 ```math
 \bigl\||\psi_1(\phi+h)\rangle-|\psi_1(\phi)\rangle\bigr\|
 \leq\frac{|h|c}{L\sqrt{1-2c}}.
-\tag{12}
+\qquad\text{(12)}
 ```
 
 For normalized vectors $`|u\rangle,|v\rangle`$,
@@ -192,7 +192,7 @@ For normalized vectors $`|u\rangle,|v\rangle`$,
 ```math
 1-|\langle u|v\rangle|^2
 \leq\bigl\||u\rangle-|v\rangle\bigr\|^2.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 Indeed, subtracting the left side from the right side gives $`|1-\langle u|v\rangle|^2\geq0`$. It follows that the single-copy squared fidelity obeys
@@ -201,7 +201,7 @@ Indeed, subtracting the left side from the right side gives $`|1-\langle u|v\ran
 f(\phi,h)
 :=|\langle\psi_1(\phi)|\psi_1(\phi+h)\rangle|^2
 \geq1-\frac{h^2c^2}{L^2(1-2c)}.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 This is a finite-distance bound. No asymptotic unbiasedness assumption, differentiability of the estimator, or quantum Fisher information approximation is used.
@@ -214,7 +214,7 @@ Choose the two parameters
 \phi_0=0,
 \qquad
 \phi_1=4\epsilon.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 Their circular distance is $`4\epsilon`$, because $`4\epsilon\leq\pi/4`$. The circular balls of radius $`\epsilon`$ around the two target phases are disjoint.
@@ -228,7 +228,7 @@ p_{\mathrm{succ}}^*
 =\frac{1+D(\rho,\sigma)}{2},
 \qquad
 D(\rho,\sigma)=\frac12\|\rho-\sigma\|_1.
-\tag{16}
+\qquad\text{(16)}
 ```
 
 For completeness, if the first outcome of a binary measurement is represented by $`0\preceq M\preceq I`$, its success probability is $`1/2+\mathrm{Tr}(M(\rho-\sigma))/2`$. The largest value of the trace term is the sum of positive eigenvalues of the trace-zero Hermitian matrix $`\rho-\sigma`$, namely $`\|\rho-\sigma\|_1/2`$. This proves (16).
@@ -238,7 +238,7 @@ Equation (8) means that the estimator and the subsequent binary decision togethe
 ```math
 D\!\left(P_{\phi_0}^{\otimes N},P_{\phi_1}^{\otimes N}\right)
 \geq\frac13.
-\tag{17}
+\qquad\text{(17)}
 ```
 
 ## 5. Tensor powers give the announced constant
@@ -250,7 +250,7 @@ D\!\left(P_{\phi_0}^{\otimes N},P_{\phi_1}^{\otimes N}\right)
 =\sqrt{1-f^N},
 \qquad
 f=f(0,4\epsilon).
-\tag{18}
+\qquad\text{(18)}
 ```
 
 For $`0\leq f\leq1`$, the identity $`1-f^N=(1-f)\sum_{k=0}^{N-1}f^k`$ implies $`1-f^N\leq N(1-f)`$. Equation (14) therefore yields
@@ -261,14 +261,14 @@ D\!\left(P_{\phi_0}^{\otimes N},P_{\phi_1}^{\otimes N}\right)
 \sqrt{
 \frac{16Nc^2\epsilon^2}{L^2(1-2c)}
 }.
-\tag{19}
+\qquad\text{(19)}
 ```
 
 Combining (17) and (19) proves
 
 ```math
 N\geq\frac{(1-2c)L^2}{144c^2\epsilon^2}.
-\tag{20}
+\qquad\text{(20)}
 ```
 
 Finally, $`c\leq1/4`$ implies $`1-2c\geq1/2`$, giving the second inequality in the theorem.
@@ -282,7 +282,7 @@ The equally distributed phase in (5) is a convenient Gram-matrix gauge. Replacin
 ```math
 |\widetilde\psi_j(\phi)\rangle
 =e^{-i(j-1)\phi/L}|\psi_j(\phi)\rangle
-\tag{21}
+\qquad\text{(21)}
 ```
 
 leaves every density operator unchanged. In this representation the first $`L-1`$ forward overlaps equal the positive number $`c`$, while the closing overlap equals $`c e^{i\phi}`$. Their product remains $`c^L e^{i\phi}`$.

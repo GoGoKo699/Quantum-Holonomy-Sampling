@@ -18,7 +18,7 @@ The promise is a known lower bound on **overlap amplitude**:
 
 ```math
 r_j=|\langle\psi_j|\psi_{j+1}\rangle|\ge c,
-\qquad 0<c\le1.
+\qquad 0\lt c\le1.
 ```
 
 Thus the corresponding pure-state squared fidelity is at least $`c^2`$. There is no promise of a nonzero overlap between nonadjacent states, a common reference state, or a lower bound on the full cyclic product independent of $`L`$.
@@ -44,7 +44,7 @@ For real angles, use circular distance
 =\min_{k\in\mathbb Z}|x-y+2\pi k|.
 ```
 
-Given $`0<\epsilon\le\pi/16`$, the algorithm must output an angle $`\widehat\Phi`$ satisfying
+Given $`0\lt \epsilon\le\pi/16`$, the algorithm must output an angle $`\widehat\Phi`$ satisfying
 
 ```math
 \Pr\!\left[
@@ -75,7 +75,7 @@ C\frac{L^2}{c^2\epsilon^2}
 \log^2\!\left(\frac{L}{\epsilon}\right)
 ```
 
-for an absolute constant $`C`$, every $`L\ge4`$, every represented dimension, and $`0<c\le1`$. For $`d\ge L`$ and $`0<c\le1/4`$, every algorithm in the model satisfies
+for an absolute constant $`C`$, every $`L\ge4`$, every represented dimension, and $`0\lt c\le1`$. For $`d\ge L`$ and $`0\lt c\le1/4`$, every algorithm in the model satisfies
 
 ```math
 N^*_{L,d}(c,\epsilon)

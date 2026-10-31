@@ -2,7 +2,7 @@
 
 **How many copies of unknown quantum states are needed to learn the geometric phase around a loop?** This project gives a coherent algorithm and a nearly matching statistical lower bound. The copy cost depends polynomially on the loop length and local overlap, even when direct cyclic interference has exponentially small visibility.
 
-There are $`L`$ classically labeled sources of independent pure states $`|\psi_j\rangle`$. Neighboring overlap amplitudes obey $`|\langle\psi_j|\psi_{j+1}\rangle|\ge c>0`$, with $`|\psi_{L+1}\rangle=|\psi_1\rangle`$. The target is
+There are $`L`$ classically labeled sources of independent pure states $`|\psi_j\rangle`$. Neighboring overlap amplitudes obey $`|\langle\psi_j|\psi_{j+1}\rangle|\ge c\gt 0`$, with $`|\psi_{L+1}\rangle=|\psi_1\rangle`$. The target is
 
 ```math
 \Phi=\arg B\pmod{2\pi},
@@ -14,12 +14,12 @@ The receiver gets quantum copies and can process their registers coherently. Sta
 
 ## Principal result
 
-For circular accuracy $`0<\epsilon\le\pi/16`$ and success probability at least $`2/3`$:
+For circular accuracy $`0\lt \epsilon\le\pi/16`$ and success probability at least $`2/3`$:
 
 | Result | Total source copies | Scope |
 |---|---|---|
-| Coherent upper bound | $`O\!\left(L^2c^{-2}\epsilon^{-2}\log^2(L/\epsilon)\right)`$ | $`L\ge4`$, all $`0<c\le1`$; independent of Hilbert-space dimension $`d`$ |
-| Minimax lower bound | $`\Omega\!\left(L^2c^{-2}\epsilon^{-2}\right)`$ | $`L\ge4`$, $`d\ge L`$, $`0<c\le1/4`$; arbitrary collective and adaptive protocols |
+| Coherent upper bound | $`O\!\left(L^2c^{-2}\epsilon^{-2}\log^2(L/\epsilon)\right)`$ | $`L\ge4`$, all $`0\lt c\le1`$; independent of Hilbert-space dimension $`d`$ |
+| Minimax lower bound | $`\Omega\!\left(L^2c^{-2}\epsilon^{-2}\right)`$ | $`L\ge4`$, $`d\ge L`$, $`0\lt c\le1/4`$; arbitrary collective and adaptive protocols |
 
 The powers of loop length, reciprocal overlap and accuracy therefore match up to logarithms in the lower-bound regime. The theorem counts every consumed copy. The [precise model](science/model.md) defines the worst-case copy cap and distinguishes overlap amplitude from squared fidelity.
 
