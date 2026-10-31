@@ -122,7 +122,7 @@ component converges to $I-P$. This is checked in addition to the full channel.
 
 Use the full diamond norm, without a factor of one half. Write
 $\mathcal L_H=-i[H,\cdot]$, so
-$\|\mathcal L_H\|_\diamond\le2\|H\|$.
+$`\|\mathcal L_H\|_\diamond\le2\|H\|`$.
 
 The program-appending and program-tracing maps are channels with diamond norm
 one. For $H=C\otimes S$ and $H_{\rm eff}=C\otimes\rho$, both Hamiltonian
