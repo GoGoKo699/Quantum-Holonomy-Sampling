@@ -72,10 +72,11 @@ S|L\rangle=|1\rangle.
 For a real parameter $`\phi`$, set
 
 ```math
+\begin{aligned}
 G_\phi
-=I+c\left(e^{-i\phi/L}S+e^{i\phi/L}S^\dagger\right),
-\qquad
-|\psi_j(\phi)\rangle=G_\phi^{1/2}|j\rangle.
+&=I+c\left(e^{-i\phi/L}S+e^{i\phi/L}S^\dagger\right),\\
+|\psi_j(\phi)\rangle&=G_\phi^{1/2}|j\rangle.
+\end{aligned}
 \qquad\text{(1)}
 ```
 
@@ -160,22 +161,24 @@ The family $`G_\phi`$ has a common Fourier eigenbasis. Its derivative therefore 
 Direct differentiation of (1) yields
 
 ```math
+\begin{aligned}
 G_\phi'
-=\frac{c}{L}
-\left(-i e^{-i\phi/L}S+i e^{i\phi/L}S^\dagger\right),
-\qquad
-\|G_\phi'\|\leq\frac{2c}{L}.
+&=\frac{c}{L}
+\left(-i e^{-i\phi/L}S+i e^{i\phi/L}S^\dagger\right),\\
+\|G_\phi'\|&\leq\frac{2c}{L}.
+\end{aligned}
 \qquad\text{(10)}
 ```
 
 Here and below, the norm of an operator without a subscript is its operator norm. Combining (2), (9), and (10),
 
 ```math
+\begin{aligned}
 \left\|\frac{d}{d\phi}G_\phi^{1/2}\right\|
-\leq\frac{c}{L\sqrt{1-2c}},
-\qquad
+&\leq\frac{c}{L\sqrt{1-2c}},\\
 \left\|\frac{d}{d\phi}|\psi_1(\phi)\rangle\right\|
-\leq\frac{c}{L\sqrt{1-2c}}.
+&\leq\frac{c}{L\sqrt{1-2c}}.
+\end{aligned}
 \qquad\text{(11)}
 ```
 
@@ -224,10 +227,11 @@ Turn the hypothesized estimator into a binary test: output hypothesis zero when 
 For equal prior probabilities, binary discrimination of density operators $`\rho`$ and $`\sigma`$ has optimal success probability
 
 ```math
+\begin{aligned}
 p_{\mathrm{succ}}^*
-=\frac{1+D(\rho,\sigma)}{2},
-\qquad
-D(\rho,\sigma)=\frac12\|\rho-\sigma\|_1.
+&=\frac{1+D(\rho,\sigma)}{2},\\
+D(\rho,\sigma)&=\frac12\|\rho-\sigma\|_1.
+\end{aligned}
 \qquad\text{(16)}
 ```
 
@@ -246,10 +250,11 @@ D\!\left(P_{\phi_0}^{\otimes N},P_{\phi_1}^{\otimes N}\right)
 The difference of two pure-state density operators has nonzero eigenvalues $`\pm\sqrt{1-|\langle u|v\rangle|^2}`$. Applying this identity to the two tensor powers gives
 
 ```math
+\begin{aligned}
 D\!\left(P_{\phi_0}^{\otimes N},P_{\phi_1}^{\otimes N}\right)
-=\sqrt{1-f^N},
-\qquad
-f=f(0,4\epsilon).
+&=\sqrt{1-f^N},\\
+f&=f(0,4\epsilon).
+\end{aligned}
 \qquad\text{(18)}
 ```
 

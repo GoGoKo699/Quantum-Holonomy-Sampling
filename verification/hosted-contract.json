@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "expressions": [
+    {
+      "path": "README.md",
+      "index": 5,
+      "source_sha256": "195e2ed35d9344673adb63e3b330cd8ecac3f9131713b1ed66be824f4ca7f75c",
+      "required_text": [
+        "Φ",
+        "arg",
+        "B",
+        "π",
+        "ψ"
+      ]
+    },
+    {
+      "path": "science/model.md",
+      "index": 10,
+      "source_sha256": "554ea67e37c8d054117693ece80813da6383820240d89231f48a0043736cdbe4",
+      "required_text": [
+        "Tr",
+        "P",
+        "B",
+        "Φ",
+        "ψ",
+        "π"
+      ]
+    },
+    {
+      "path": "science/model.md",
+      "index": 25,
+      "source_sha256": "3aacc7a1cc6de3057735dd3571097b00e43ffb00700ec16fd9bbdc22ef698a5f",
+      "required_text": [
+        "N",
+        "L",
+        "c",
+        "ε",
+        "≤",
+        "log"
+      ]
+    },
+    {
+      "path": "science/model.md",
+      "index": 31,
+      "source_sha256": "c59ecacf5596e966ddd42c490be3b3af0fdf56666d9b36c17f84af5a5b05a4c2",
+      "required_text": [
+        "N",
+        "L",
+        "c",
+        "ε",
+        "≥",
+        "144"
+      ]
+    },
+    {
+      "path": "science/algorithm.md",
+      "index": 11,
+      "source_sha256": "6bfedc1f8487b5cc2497cc5f404fa97056f9576b25b5e5334e62ea9de8128f76",
+      "required_text": [
+        "Pr",
+        "dist",
+        "Φ",
+        "ε",
+        "≤",
+        "≥",
+        "(1)"
+      ]
+    },
+    {
+      "path": "science/algorithm.md",
+      "index": 25,
+      "source_sha256": "81dfa2c2b0e34280523b7ddc83fc1ed15b1da5bc5a710fe46dd133b007279e1e",
+      "required_text": [
+        "16",
+        "π",
+        "ε",
+        "log",
+        "F=2",
+        "q=F",
+        "(4)"
+      ]
+    },
+    {
+      "path": "science/algorithm.md",
+      "index": 69,
+      "source_sha256": "ecd0c1c0564ec86016a3c86fc39546668a928182f65f57f951d46ad11f7c2399",
+      "required_text": [
+        "N=1+Qm",
+        "400",
+        "π",
+        "Q",
+        "(13)"
+      ]
+    },
+    {
+      "path": "science/transport.md",
+      "index": 7,
+      "source_sha256": "540c23c435e61ee5ad56df2625d706526ff26e58ece89158146ae6c14eabe275",
+      "required_text": [
+        "T",
+        "Q",
+        "P",
+        "ψ",
+        "φ",
+        "(1)"
+      ]
+    },
+    {
+      "path": "science/transport.md",
+      "index": 45,
+      "source_sha256": "d7d7e9025dcb464cdc0b6b63e8e70ac347063e9e8378c48b8cd1f476b69e70fb",
+      "required_text": [
+        "W",
+        "ψ",
+        "B",
+        "Φ",
+        "r",
+        "(6)"
+      ]
+    },
+    {
+      "path": "science/lower-bound.md",
+      "index": 5,
+      "source_sha256": "476f65fc4c4c1e46e8c4c335a95c351755b63caa256d7ef256ea0347fba85bca",
+      "required_text": [
+        "0<c",
+        "0<ε",
+        "π",
+        "16"
+      ]
+    },
+    {
+      "path": "science/lower-bound.md",
+      "index": 11,
+      "source_sha256": "6e9937b82b3c6b50f8968cda59415d2dfcdc84e31b9412a1c8c1c26ece1a5cd5",
+      "required_text": [
+        "N",
+        "L",
+        "c",
+        "ε",
+        "144",
+        "288"
+      ]
+    },
+    {
+      "path": "science/lower-bound.md",
+      "index": 16,
+      "source_sha256": "a97430e8f59f3b8f99512628dbb0f8e3ae8d9fd77bb949c7cbafcb05e7b57201",
+      "required_text": [
+        "S",
+        "j+1",
+        "1≤j<L"
+      ]
+    },
+    {
+      "path": "science/lower-bound.md",
+      "index": 18,
+      "source_sha256": "3ecc6cb36583f9365b61d791365e0e642a8070c878bcb88ec8660c424bd38121",
+      "required_text": [
+        "G",
+        "φ",
+        "I+c",
+        "S",
+        "ψ",
+        "(1)"
+      ]
+    },
+    {
+      "path": "science/lower-bound.md",
+      "index": 46,
+      "source_sha256": "2e4dae0ed174d403d1057c90c93a745c8bbb70bae1e06443899dee2f322cc534",
+      "required_text": [
+        "G",
+        "φ",
+        "ψ",
+        "c",
+        "L",
+        "(11)"
+      ]
+    }
+  ]
+}

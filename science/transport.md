@@ -9,9 +9,11 @@ The matrix identity and the polar-decomposition compiler are established tools. 
 Let $`|\psi\rangle,|\phi\rangle\in\mathbb C^d`$ be unit vectors, and write
 
 ```math
+\begin{gathered}
 P=|\psi\rangle\langle\psi|,\qquad
-Q=|\phi\rangle\langle\phi|,\qquad
+Q=|\phi\rangle\langle\phi|,\\
 z=\langle\phi|\psi\rangle,\qquad r=|z|\gt 0.
+\end{gathered}
 ```
 
 Define
@@ -113,12 +115,14 @@ W=T_L T_{L-1}\cdots T_1.
 Applying (1) successively gives
 
 ```math
+\begin{aligned}
 W|\psi_1\rangle
-=\left(\prod_{j=1}^{L}
+&=\left(\prod_{j=1}^{L}
 \frac{\langle\psi_{j+1}|\psi_j\rangle}{r_j}\right)
-|\psi_1\rangle
-=\frac{\overline B}{|B|}|\psi_1\rangle
+|\psi_1\rangle\\
+&=\frac{\overline B}{|B|}|\psi_1\rangle
 =e^{-i\Phi}|\psi_1\rangle.
+\end{aligned}
 \qquad\text{(6)}
 ```
 
@@ -131,19 +135,23 @@ Temporarily regard the reflections $`R_j=I-2P_j`$ as query gates. The [resource 
 With one selector qubit $`a`$, define
 
 ```math
-D_j=|0\rangle\langle0|_a\otimes R_j
+\begin{aligned}
+D_j&=|0\rangle\langle0|_a\otimes R_j
     +|1\rangle\langle1|_a\otimes R_{j+1},
-\qquad
-U_j^{\mathrm{be}}=-(H_a\otimes I)D_j(H_a\otimes I).
+\\
+U_j^{\mathrm{be}}&=-(H_a\otimes I)D_j(H_a\otimes I).
+\end{aligned}
 \qquad\text{(7)}
 ```
 
 This is a Hermitian unitary. Its top block is exactly
 
 ```math
-(\langle0|_a\otimes I)U_j^{\mathrm{be}}(|0\rangle_a\otimes I)
+\begin{gathered}
+(\langle0|_a\otimes I)U_j^{\mathrm{be}}(|0\rangle_a\otimes I)\\
 =-\frac{R_j+R_{j+1}}{2}
 =P_j+P_{j+1}-I=Z_j.
+\end{gathered}
 \qquad\text{(8)}
 ```
 
@@ -203,9 +211,11 @@ This control is implemented by controlling known gates of the polar circuit. The
 The clean work register can be reused without measurement or resetting. Let $`A_s`$ denote the implemented controlled lift at occurrence $`s`$, and let $`B_s`$ be its ideal controlled $`T_j`$, extended by the identity on the work register. In a circuit with $`M`$ occurrences,
 
 ```math
-A_M\cdots A_1-B_M\cdots B_1
+\begin{gathered}
+A_M\cdots A_1-B_M\cdots B_1\\
 =\sum_{s=1}^{M}
 A_M\cdots A_{s+1}(A_s-B_s)B_{s-1}\cdots B_1.
+\end{gathered}
 \qquad\text{(11)}
 ```
 

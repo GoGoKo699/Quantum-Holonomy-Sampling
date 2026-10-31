@@ -15,3 +15,5 @@ The central question is how many independent copies of unknown quantum states ar
 | Reproducible finite checks and their limits | [Verification](../verification/README.md) |
 
 For a proof-first route, read model → transport → algorithm → resources → lower bound. For the operational consequence, read model → examples → interpretation, returning to the proofs for the exact assumptions. The verification checks signs, coherent phases and finite instances; the general asymptotic guarantees are analytical.
+
+For a guided route through the prerequisites and the complete argument, use the [30-milestone map](../learning/MILESTONES.md) alongside the [Childs bridge](../learning/CHILDS_BRIDGE.md). The [learning overview](../learning/README.md) distinguishes those study routes from the direct proof route.
