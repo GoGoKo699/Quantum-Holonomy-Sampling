@@ -8,7 +8,7 @@ There are $`L\ge4`$ sources of pure states $`P_j=|\psi_j\rangle\langle\psi_j|`$ 
 
 The input does not supply a state-preparation unitary, its inverse, a coherent source-label oracle, or a classical description of any $`|\psi_j\rangle`$. Preparation of each requested copy is the charged input operation; no complexity guarantee is made for manufacturing the physical sources themselves.
 
-A known number $`0<c\le1`$ is a lower bound on every adjacent overlap:
+A known number $`0\lt c\le1`$ is a lower bound on every adjacent overlap:
 
 ```math
 |\langle\psi_j|\psi_{j+1}\rangle|\ge c,
@@ -21,17 +21,17 @@ Define
 B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle,
 \qquad \Phi=\arg B\pmod{2\pi},
 \qquad
-\operatorname{dist}_{2\pi}(x,y)
+\mathrm{dist}_{2\pi}(x,y)
 =\min_{k\in\mathbb Z}|x-y+2\pi k|.
 ```
 
-For $`0<\epsilon\le\pi/16`$, the output must satisfy
+For $`0\lt \epsilon\le\pi/16`$, the output must satisfy
 
 ```math
 \Pr\!\left[
-\operatorname{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
+\mathrm{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
 \right]\ge\frac23.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Every acquired specimen is counted, including the initial target. The bounds below are deterministic upper bounds on the total number acquired. They are independent of $`d`$ in copies, but the gate and memory costs include the register size. When $`c=1`$, all projectors coincide and $`\Phi=0`$; outputting zero without a source call is valid. The general construction also remains well-defined in this case.
@@ -45,7 +45,7 @@ N=O\!\left(
 \frac{L^2}{c^2\epsilon^2}
 \log^2\frac{L}{\epsilon}
 \right)
-\tag{2}
+\qquad\text{(2)}
 ```
 
 total source copies. Let $`n=\lceil\log_2 d\rceil`$. In the model of known-angle elementary gates, its quantum gate count is
@@ -55,12 +55,12 @@ O\!\left(
 n\frac{L^2}{c^2\epsilon^2}
 \log^2\frac{L}{\epsilon}
 \right)
-\tag{3}
+\qquad\text{(3)}
 ```
 
 for $`d\ge2`$, and its live quantum memory is $`2n+O(\log(1/\epsilon))`$ qubits. Classical phase-sequence synthesis is a separate, charged polynomial preprocessing cost, described in [Resources](resources.md#classical-preprocessing-and-gate-synthesis). A finite universal gate set adds gate-synthesis logarithms to (3).
 
-The upper bound holds throughout the stated range of $`c`$. The matching worst-case lower bound is established in [Lower bound](lower-bound.md) for $`0<c\le1/4`$ and $`d\ge L`$. No matching claim near $`c=1`$ is implied.
+The upper bound holds throughout the stated range of $`c`$. The matching worst-case lower bound is established in [Lower bound](lower-bound.md) for $`0\lt c\le1/4`$ and $`d\ge L`$. No matching claim near $`c=1`$ is implied.
 
 ## 1. An ideal phase-estimation circuit
 
@@ -76,16 +76,16 @@ Choose the Fourier grid size
 t=\left\lceil\log_2\frac{16\pi}{\epsilon}\right\rceil,
 \qquad F=2^t,
 \qquad q=F-1.
-\tag{4}
+\qquad\text{(4)}
 ```
 
-Then $`16\pi/\epsilon\le F<32\pi/\epsilon`$. Acquire one copy of $`P_1`$ as the target. Prepare a uniform superposition on the $`t`$ phase qubits, apply controlled powers $`W^{2^0},\ldots,W^{2^{t-1}}`$, perform the inverse Fourier transform, and measure $`y\in\{0,\ldots,F-1\}`$. Each power is implemented by repeated loop calls, so the total number of loop calls is exactly $`q=F-1`$. There is no free powered-unitary oracle.
+Then $`16\pi/\epsilon\le F\lt 32\pi/\epsilon`$. Acquire one copy of $`P_1`$ as the target. Prepare a uniform superposition on the $`t`$ phase qubits, apply controlled powers $`W^{2^0},\ldots,W^{2^{t-1}}`$, perform the inverse Fourier transform, and measure $`y\in\{0,\ldots,F-1\}`$. Each power is implemented by repeated loop calls, so the total number of loop calls is exactly $`q=F-1`$. There is no free powered-unitary oracle.
 
 The classical output is
 
 ```math
 \widehat\Phi=-\frac{2\pi y}{F}\pmod{2\pi}.
-\tag{5}
+\qquad\text{(5)}
 ```
 
 This output can be represented exactly by the pair $`(y,F)`$ together with the convention (5), so no numerical rounding of an angle is needed for the statistical guarantee.
@@ -98,7 +98,7 @@ Write $`e^{-i\Phi}=e^{2\pi i\theta}`$ with $`\theta\in[0,1)`$. Standard Fourier 
 p(y)=\left|
 \frac1F\sum_{s=0}^{F-1}e^{2\pi i s(\theta-y/F)}
 \right|^2.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 Let $`\Delta_y`$ be the representative of $`F\theta-y`$ in $`[-F/2,F/2]`$. When $`\Delta_y\ne0`$, the geometric-sum formula and $`|\sin(\pi\Delta_y/F)|\ge2|\Delta_y|/F`$ give
@@ -107,14 +107,14 @@ Let $`\Delta_y`$ be the representative of $`F\theta-y`$ in $`[-F/2,F/2]`$. When 
 p(y)\le\frac1{4\Delta_y^2}.
 ```
 
-Failure in (1) requires $`|\Delta_y|>a`$, where $`a=F\epsilon/(2\pi)\ge8`$. There are at most two outcomes in each unit interval of $`|\Delta_y|`$. Therefore
+Failure in (1) requires $`|\Delta_y|\gt a`$, where $`a=F\epsilon/(2\pi)\ge8`$. There are at most two outcomes in each unit interval of $`|\Delta_y|`$. Therefore
 
 ```math
 \Pr[\text{ideal failure}]
 \le\frac12\sum_{k=\lfloor a\rfloor}^{\infty}\frac1{k^2}
 \le\frac1{2(\lfloor a\rfloor-1)}
-\le\frac1{14}<\frac1{10}.
-\tag{7}
+\le\frac1{14}\lt \frac1{10}.
+\qquad\text{(7)}
 ```
 
 If $`\theta`$ lies exactly on the Fourier grid, the circuit returns it with certainty. The estimate is circular, so the argument also applies across the branch cut at $`\pm\pi`$.
@@ -131,7 +131,7 @@ local transport occurrences in the expanded phase-estimation circuit. Set
 
 ```math
 \eta=\frac1{100M}.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 For each occurrence use the common polar compiler from [Transport](transport.md#5-the-inherited-polar-compiler-and-its-clean-ancilla-guarantee), with total block error at most $`\eta^2/2`$. Its clean-ancilla isometry error is at most $`\eta`$. The compiler's classical numerical precision is included in this block tolerance.
@@ -140,7 +140,7 @@ All work qubits are initialized once and reused. The hybrid proof in Transport, 
 
 ```math
 M\eta=\frac1{100}.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 There is no intermediate ancilla postselection or reset. In particular, successful endpoint-state preparation with an unspecified environmental phase would not suffice here; the compiler supplies the fixed-phase vector guarantee needed for a controlled loop.
@@ -157,7 +157,7 @@ Each block-encoding call consists of two fixed-label controlled reflection calls
 ```math
 Q=2KM
 =O\!\left(\frac{L}{c\epsilon}\log\frac{L}{\epsilon}\right)
-\tag{10}
+\qquad\text{(10)}
 ```
 
 such calls. If a chosen compiler has redundant identity calls, counting them in $`K`$ only enlarges this upper bound. Every label appears in its two adjacent edge compilers, so the uniform circuit uses $`Q_j=2Kq`$ reflection calls to source $`j`$.
@@ -178,14 +178,14 @@ Use the same integer budget for every reflection call:
 
 ```math
 m=\left\lceil400\pi^2 Q\right\rceil.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 The full circuit's accumulated diamond error is at most
 
 ```math
 Q\frac{4\pi^2}{m}\le\frac1{100}.
-\tag{12}
+\qquad\text{(12)}
 ```
 
 This is the pure-state multi-samplizer conversion of Wang and Zhang [1], with an explicit nonoptimized constant. The sum is over all reflection occurrences in the entire phase-estimation circuit. The required simulation tolerance is constant: the target precision $`\epsilon`$ has already been set by the ideal Fourier grid. Demanding an additional global diamond tolerance of order $`\epsilon`$ would unnecessarily multiply the copy bound by another inverse power of $`\epsilon`$.
@@ -196,7 +196,7 @@ The total number of copies is now the explicit finite budget
 N=1+Qm
 =1+Q\left\lceil400\pi^2 Q\right\rceil
 \le1+400\pi^2 Q^2+Q.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 The first copy is the target. The other copies are independent programs consumed by the reflection simulations. Substituting (10) proves (2). Individual source counts are $`mQ_j+\mathbf1_{\{j=1\}}`$ for this uniform circuit.
@@ -211,11 +211,11 @@ Combining these bounds with the weaker ideal guarantee $`9/10`$ from (7) gives
 
 ```math
 \Pr\!\left[
-\operatorname{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
+\mathrm{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
 \right]
 \ge\frac9{10}-\frac1{100}-\frac1{100}-\frac1{100}
-=\frac{87}{100}>\frac23.
-\tag{14}
+=\frac{87}{100}\gt \frac23.
+\qquad\text{(14)}
 ```
 
 All compilation and simulation costs are deterministic functions of $`L,c,\epsilon`$. The algorithm never needs to estimate the overlap magnitudes $`r_j`$ individually. It also does not need to reconstruct the source states, or to prepare an eigenvector of the compiled loop from a classical description: the initial source specimen is already an eigenvector of the ideal loop used in the error comparison.

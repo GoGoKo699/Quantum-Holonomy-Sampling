@@ -12,7 +12,7 @@ The main parameters of the explicit construction are:
 |---|---|---|
 | $`F`$ | Fourier grid size | $`2^{\lceil\log_2(16\pi/\epsilon)\rceil}`$ |
 | $`t`$ | Phase-register qubits | $`\log_2 F`$ |
-| $`q`$ | Expanded loop calls | $`F-1<32\pi/\epsilon`$ |
+| $`q`$ | Expanded loop calls | $`F-1\lt 32\pi/\epsilon`$ |
 | $`M`$ | Transport occurrences | $`Lq`$ |
 | $`\eta`$ | Local coherent transport error | $`1/(100M)`$ |
 | $`K`$ | Block-encoding calls in one polar lift | $`O(c^{-1}\log(1/\eta))`$ |
@@ -29,7 +29,7 @@ Density-matrix exponentiation is the established conversion from copies of a sta
 Let $`S`$ denote the target register, $`B`$ a fresh program register containing the density operator $`P`$, and $`C=|1\rangle\langle1|`$ an external control projector. Additional reference registers are allowed and are left implicit. Put
 
 ```math
-H=C\otimes\operatorname{SWAP}_{SB},\qquad
+H=C\otimes\mathrm{SWAP}_{SB},\qquad
 h=C\otimes P_S.
 ```
 
@@ -37,10 +37,10 @@ For a short time $`\tau`$, use the known joint unitary and then discard the prog
 
 ```math
 \mathcal E_\tau(X)
-=\operatorname{Tr}_B\!\left[
+=\mathrm{Tr}_B\!\left[
 e^{-i\tau H}(X\otimes P_B)e^{i\tau H}
 \right].
-\tag{1}
+\qquad\text{(1)}
 ```
 
 The intended target-control channel is
@@ -52,9 +52,9 @@ The intended target-control channel is
 The swap identities
 
 ```math
-\operatorname{Tr}_B[\operatorname{SWAP}(A\otimes P)]=PA,
+\mathrm{Tr}_B[\mathrm{SWAP}(A\otimes P)]=PA,
 \qquad
-\operatorname{Tr}_B[(A\otimes P)\operatorname{SWAP}]=AP
+\mathrm{Tr}_B[(A\otimes P)\mathrm{SWAP}]=AP
 ```
 
 show that $`\mathcal E_0=\mathcal U_0`$ and
@@ -63,7 +63,7 @@ show that $`\mathcal E_0=\mathcal U_0`$ and
 \left.\frac{d\mathcal E_\tau}{d\tau}\right|_{\tau=0}
 =-i[h,\,\cdot\,]
 =\left.\frac{d\mathcal U_\tau}{d\tau}\right|_{\tau=0}.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 This equality includes the coherence between the inactive and active control branches. For example, if $`X_{01}`$ denotes a control off-diagonal block, (1) maps it to
@@ -90,7 +90,7 @@ Consequently,
 
 ```math
 \|\mathcal E_\tau-\mathcal U_\tau\|_\diamond\le4\tau^2.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 These bounds are completely bounded and therefore hold with an arbitrary entangled reference. They do not depend on $`d`$.
@@ -101,7 +101,7 @@ Use $`m`$ fresh independent program states and set $`\tau=u/m`$. Composition of 
 \|\mathcal E_{u/m}^{\,m}-\mathcal U_u\|_\diamond
 \le m\,4(u/m)^2
 =\frac{4u^2}{m}.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 For a pure projector $`P`$ and $`u=\pi`$,
@@ -109,7 +109,7 @@ For a pure projector $`P`$ and $`u=\pi`$,
 ```math
 e^{-i\pi C\otimes P}
 =(I-C)\otimes I+C\otimes(I-2P).
-\tag{5}
+\qquad\text{(5)}
 ```
 
 Thus $`m`$ copies implement the required **fixed-phase controlled reflection**, with error at most $`4\pi^2/m`$. Extra control conditions in a compiled SELECT gate can be computed into a single flag and uncomputed using a constant number of ancillas and known gates. Equation (4) applies to that flag even when it is entangled with the other registers.
@@ -121,7 +121,7 @@ Write the compiled reflection-query circuit as a sequence of known gates intersp
 ```math
 \|\mathcal A_{\mathrm{copies}}-\mathcal A_{\mathrm{queries}}\|_\diamond
 \le\sum_{s=1}^{Q}\frac{4\pi^2}{m_s}.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 For a desired total error $`\delta_D`$, the uniform choice
@@ -160,10 +160,10 @@ On an eigenvector of $`V`$ with eigenvalue $`+1`$ or $`-1`$, $`A`$ records that 
 A\,e^{-i\tau Z_b}\,A
 \bigl(|0\rangle_b\otimes|v\rangle\bigr)
 =|0\rangle_b\otimes e^{-i\tau V}|v\rangle.
-\tag{7}
+\qquad\text{(7)}
 ```
 
-For an external control $`C`$, replace the middle gate by $`e^{-i\tau C\otimes Z_b}`$. On the inactive branch the two copies of $`A`$ cancel; on the active branch they give (7). With $`V=\operatorname{SWAP}_{SB}`$, this realizes (1)'s joint unitary and returns $`b`$ to zero. A controlled swap of two $`n`$-qubit registers is a product of $`n`$ controlled swaps of qubit pairs, each having constant elementary gate cost. The number of further controls in this construction is constant.
+For an external control $`C`$, replace the middle gate by $`e^{-i\tau C\otimes Z_b}`$. On the inactive branch the two copies of $`A`$ cancel; on the active branch they give (7). With $`V=\mathrm{SWAP}_{SB}`$, this realizes (1)'s joint unitary and returns $`b`$ to zero. A controlled swap of two $`n`$-qubit registers is a product of $`n`$ controlled swaps of qubit pairs, each having constant elementary gate cost. The number of further controls in this construction is constant.
 
 After each short-time interaction, discard the current program register and request the next one. The target remains coherent throughout. The polar compiler needs constant work space because its block encoding has one selector qubit. Its work space can also be reused, by the hybrid argument in [Transport](transport.md#reusing-work-qubits).
 
@@ -178,7 +178,7 @@ In total,
 
 ```math
 S_{\mathrm{quantum}}=2n+O(\log(1/\epsilon)).
-\tag{8}
+\qquad\text{(8)}
 ```
 
 This counts coherent live memory, not a requirement to hold all source copies simultaneously. It assumes a streaming source interface that can deliver fresh labelled programs when requested. It is an upper bound on memory, with no memory-optimality claim.
@@ -191,7 +191,7 @@ G_0=O(nQm+Q+t^2)
 =O\!\left(
 n\frac{L^2}{c^2\epsilon^2}\log^2\frac{L}{\epsilon}
 \right).
-\tag{9}
+\qquad\text{(9)}
 ```
 
 Here $`G_0`$ counts known-angle one- and two-qubit gates. The case $`d=1`$ is trivial and can output zero directly. Sequential execution has depth at most $`G_0`$; no small-depth claim is made.
@@ -208,7 +208,7 @@ A sufficient numerical convention is to require the **final** selected block of 
 
 ```math
 \|J^\dagger V_jJ-T_j\|\le\eta^2/2.
-\tag{10}
+\qquad\text{(10)}
 ```
 
 For example, divide this tolerance among the bounded sign approximation, coefficient rounding, phase-factorization error, and rounding of the returned rotation parameters. Coefficient errors can be bounded in coefficient $`\ell_1`$ norm, which bounds the polynomial error on $`[-1,1]`$. Rounding each of the $`O(K)`$ rotation parameters to $`O(\eta^2/K)`$ changes the entire corresponding unitary by $`O(\eta^2)`$, by a product hybrid bound. These choices need $`O(\log(K/\eta))`$ output bits per rotation parameter; sufficiently small fixed constants in the tolerances ensure (10).
@@ -216,8 +216,8 @@ For example, divide this tolerance among the bounded sign approximation, coeffic
 The sign-polynomial and singular-vector constructions are constructive QSVT results [4,5]. Rigorous phase factorization with finite-precision arithmetic is available: Haah gives a sufficient classical running time of
 
 ```math
-O\!\left(K^3\operatorname{polylog}(K/\xi)\right)
-\tag{11}
+O\!\left(K^3\mathrm{polylog}(K/\xi)\right)
+\qquad\text{(11)}
 ```
 
 for a degree-$`K`$ QSP function at functional tolerance $`\xi`$, with $`O(K\log(K/\xi))`$ bits of working arithmetic precision [6]. The corresponding QSP/QSVT convention conversions add known single-qubit gates and at most constant factors in degree. Taking $`\xi`$ to be a sufficiently small constant multiple of $`\eta^2`$ is a sufficient polynomial-time preprocessing route. The cost of constructing the sign polynomial and reading the rational parameter descriptions must be added; both are polynomial in the degree and required bit precision. No optimal classical preprocessing bound is claimed.
@@ -232,7 +232,7 @@ Let $`G_0`$ be the actual known-angle gate count of the complete sample circuit,
 
 ```math
 \zeta=\frac1{100G_0}.
-\tag{12}
+\qquad\text{(12)}
 ```
 
 The product hybrid inequality then bounds the error of a unitary dilation of the full computation by $`1/100`$. Subsequent discarding of programs and measurement cannot increase the induced trace distance. This gives the separate gate-synthesis budget used in the algorithm's final success calculation.
@@ -241,8 +241,8 @@ Any standard finite universal gate synthesis with polylogarithmic dependence on 
 
 ```math
 G_{\mathrm{finite}}
-=O\!\left(G_0\operatorname{polylog}G_0\right).
-\tag{13}
+=O\!\left(G_0\mathrm{polylog}G_0\right).
+\qquad\text{(13)}
 ```
 
 The same approximation parameters can be reused for repeated gate types, but their errors are still charged at every occurrence. Equation (12) is a sufficient uniform allocation and makes no assumption of exact arbitrary-angle physical rotations. It leaves the copy count unchanged and needs no additional quantum data registers. Classical control can stream the gate list using counters and the stored common phase sequence; no quantum random-access memory is used.
