@@ -21,7 +21,7 @@ Define
 B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle,
 \qquad \Phi=\arg B\pmod{2\pi},
 \qquad
-\operatorname{dist}_{2\pi}(x,y)
+\mathrm{dist}_{2\pi}(x,y)
 =\min_{k\in\mathbb Z}|x-y+2\pi k|.
 ```
 
@@ -29,7 +29,7 @@ For $`0<\epsilon\le\pi/16`$, the output must satisfy
 
 ```math
 \Pr\!\left[
-\operatorname{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
+\mathrm{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
 \right]\ge\frac23.
 \tag{1}
 ```
@@ -211,7 +211,7 @@ Combining these bounds with the weaker ideal guarantee $`9/10`$ from (7) gives
 
 ```math
 \Pr\!\left[
-\operatorname{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
+\mathrm{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
 \right]
 \ge\frac9{10}-\frac1{100}-\frac1{100}-\frac1{100}
 =\frac{87}{100}>\frac23.

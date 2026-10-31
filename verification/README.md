@@ -84,7 +84,7 @@ gives a channel $\mathcal E_\delta$ with blocks
 (\mathcal E_\delta X)_{10}&=\cos\delta\,X_{10}
   -i\sin\delta\,\rho X_{10},\\
 (\mathcal E_\delta X)_{11}&=\cos^2\delta\,X_{11}
-  +\sin^2\delta\,\rho\operatorname{Tr}X_{11}
+  +\sin^2\delta\,\rho\mathrm{Tr}X_{11}
   -i\cos\delta\sin\delta\,[\rho,X_{11}].
 \end{aligned}
 ~~~
@@ -133,7 +133,7 @@ integral Taylor remainder therefore gives
 
 ~~~math
 \|\mathcal E_\delta
--\operatorname{Ad}_{e^{-i\delta C\otimes\rho}}\|_\diamond
+-\mathrm{Ad}_{e^{-i\delta C\otimes\rho}}\|_\diamond
 \le 4\delta^2.
 ~~~
 
@@ -141,7 +141,7 @@ Telescoping $n$ fresh steps, with $\delta=t/n$, yields
 
 ~~~math
 \|\mathcal E_{t/n}^{\,n}
--\operatorname{Ad}_{e^{-itC\otimes\rho}}\|_\diamond
+-\mathrm{Ad}_{e^{-itC\otimes\rho}}\|_\diamond
 \le \frac{4t^2}{n}.
 ~~~
 
@@ -155,13 +155,13 @@ this derivation; the checks consume a fresh copy at every step.
 Let $a$ be one clean ancilla. The known circuit
 
 ~~~math
-D=(H_a\otimes I)\,\operatorname{controlled}_a(S)\,(H_a\otimes I)
+D=(H_a\otimes I)\,\mathrm{controlled}_a(S)\,(H_a\otimes I)
 ~~~
 
 records the SWAP eigenvalue in $a$. Applying the known controlled phase
 $\exp(-i\delta C\otimes Z_a)$, then $D^\dagger=D$, implements
 $U_\delta$ and returns $a$ to zero. The phase gate is the exact matrix
-$\operatorname{diag}(1,1,e^{-i\delta},e^{i\delta})$ on $C,a$.
+$\mathrm{diag}(1,1,e^{-i\delta},e^{i\delta})$ on $C,a$.
 The checks compare its clean block and leakage with the matrix exponential.
 There are two controlled SWAPs per step, plus a constant number of known
 single- and two-qubit gates. On a $\lceil\log_2d\rceil$-qubit encoding, the

@@ -17,7 +17,7 @@ z=\langle\phi|\psi\rangle,\qquad r=|z|>0.
 Define
 
 ```math
-Z=P+Q-I,\qquad T_{Q\leftarrow P}=\operatorname{sign}(Z).
+Z=P+Q-I,\qquad T_{Q\leftarrow P}=\mathrm{sign}(Z).
 ```
 
 Here the sign is defined by spectral calculus: it is $`+1`$ on the positive spectrum and $`-1`$ on the negative spectrum. There is no zero eigenvalue under the nonorthogonality assumption.
@@ -31,7 +31,7 @@ T_{Q\leftarrow P}|\psi\rangle
 \tag{1}
 ```
 
-To prove this when $`r<1`$, restrict to the two-dimensional subspace $`\mathcal S=\operatorname{span}\{|\psi\rangle,|\phi\rangle\}`$. Direct calculation gives
+To prove this when $`r<1`$, restrict to the two-dimensional subspace $`\mathcal S=\mathrm{span}\{|\psi\rangle,|\phi\rangle\}`$. Direct calculation gives
 
 ```math
 Z|\psi\rangle=z|\phi\rangle,\qquad
@@ -106,7 +106,7 @@ B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle,
 Assume $`r_j=|\langle\psi_{j+1}|\psi_j\rangle|>0`$, and define
 
 ```math
-T_j=\operatorname{sign}(P_j+P_{j+1}-I),\qquad
+T_j=\mathrm{sign}(P_j+P_{j+1}-I),\qquad
 W=T_L T_{L-1}\cdots T_1.
 ```
 
@@ -153,7 +153,7 @@ The leading minus sign in (7) must be retained. When $`U_j^{\mathrm{be}}`$ is ex
 
 ## 5. The inherited polar compiler and its clean-ancilla guarantee
 
-Suppose $`r_j\ge c>0`$. Then $`Z_j`$ is invertible, $`\|Z_j\|\le1`$, and $`\sigma_{\min}(Z_j)\ge c`$. Its unitary polar factor is $`T_j=\operatorname{sign}(Z_j)`$.
+Suppose $`r_j\ge c>0`$. Then $`Z_j`$ is invertible, $`\|Z_j\|\le1`$, and $`\sigma_{\min}(Z_j)\ge c`$. Its unitary polar factor is $`T_j=\mathrm{sign}(Z_j)`$.
 
 Quantum singular value transformation supplies a bounded odd sign approximation on $`[-1,-c]\cup[c,1]`$ with degree
 
@@ -175,7 +175,7 @@ For any unit vector $`|v\rangle`$,
 ```math
 \begin{aligned}
 \|V_jJ|v\rangle-JT_j|v\rangle\|^2
-&=2-2\operatorname{Re}\langle v|T_j^\dagger A_j|v\rangle\\
+&=2-2\mathrm{Re}\langle v|T_j^\dagger A_j|v\rangle\\
 &\le2\delta.
 \end{aligned}
 \tag{10}

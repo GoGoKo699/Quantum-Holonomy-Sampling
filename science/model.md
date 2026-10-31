@@ -30,7 +30,7 @@ The receiver is given copies as quantum data. A state-preparation unitary, its i
 Define
 
 ```math
-B=\operatorname{Tr}(P_1P_2\cdots P_L)
+B=\mathrm{Tr}(P_1P_2\cdots P_L)
 =\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle,
 \qquad \Phi=\arg B\pmod{2\pi}.
 ```
@@ -40,7 +40,7 @@ Under $`|\psi_j\rangle\mapsto e^{i\alpha_j}|\psi_j\rangle`$, the adjacent factor
 For real angles, use circular distance
 
 ```math
-\operatorname{dist}_{2\pi}(x,y)
+\mathrm{dist}_{2\pi}(x,y)
 =\min_{k\in\mathbb Z}|x-y+2\pi k|.
 ```
 
@@ -48,7 +48,7 @@ Given $`0<\epsilon\le\pi/16`$, the algorithm must output an angle $`\widehat\Phi
 
 ```math
 \Pr\!\left[
-\operatorname{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
+\mathrm{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
 \right]\ge\frac23
 ```
 

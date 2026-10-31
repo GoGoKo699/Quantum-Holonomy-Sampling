@@ -32,7 +32,7 @@ The [resource account](resources.md) reports quantum gates, streaming registers,
 
 ## Scope of the geometric quantity
 
-All input sources are pure and stationary across requests. For mixed states, the phase of $`\operatorname{Tr}(\rho_1\cdots\rho_L)`$ and the phase of the dominant eigenvector loop are different targets. The rank-one transport identity does not prove either mixed-state extension.
+All input sources are pure and stationary across requests. For mixed states, the phase of $`\mathrm{Tr}(\rho_1\cdots\rho_L)`$ and the phase of the dominant eigenvector loop are different targets. The rank-one transport identity does not prove either mixed-state extension.
 
 The result concerns the specified discrete loop. A continuous adiabatic path or a topological invariant introduces additional structure. No automatic continuum limit, quantization, or noise tolerance follows from the discrete copy theorem alone.
 

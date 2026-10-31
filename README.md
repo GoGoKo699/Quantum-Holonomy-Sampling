@@ -25,7 +25,7 @@ The powers of loop length, reciprocal overlap and accuracy therefore match up to
 
 ## Why weak visibility is avoidable
 
-For adjacent pure-state projectors $`P,Q`$, the unitary $`\operatorname{sign}(P+Q-I)`$ transports one ray to the other with the phase of their overlap. Composing these transports around the loop returns the starting state with eigenvalue $`e^{-i\Phi}`$. Phase estimation reads that eigenvalue.
+For adjacent pure-state projectors $`P,Q`$, the unitary $`\mathrm{sign}(P+Q-I)`$ transports one ray to the other with the phase of their overlap. Composing these transports around the loop returns the starting state with eigenvalue $`e^{-i\Phi}`$. Phase estimation reads that eigenvalue.
 
 The transport is implemented using established polar-decomposition machinery. Controlled partial swaps then simulate every required reflection from fresh copies, with a fixed control phase and an explicit error budget. The [related-work account](references/related-work.md) credits the direct-rotation, QSVT, phase-estimation and sample-simulation ingredients.
 

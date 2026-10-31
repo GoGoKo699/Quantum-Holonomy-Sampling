@@ -29,7 +29,7 @@ Density-matrix exponentiation is the established conversion from copies of a sta
 Let $`S`$ denote the target register, $`B`$ a fresh program register containing the density operator $`P`$, and $`C=|1\rangle\langle1|`$ an external control projector. Additional reference registers are allowed and are left implicit. Put
 
 ```math
-H=C\otimes\operatorname{SWAP}_{SB},\qquad
+H=C\otimes\mathrm{SWAP}_{SB},\qquad
 h=C\otimes P_S.
 ```
 
@@ -37,7 +37,7 @@ For a short time $`\tau`$, use the known joint unitary and then discard the prog
 
 ```math
 \mathcal E_\tau(X)
-=\operatorname{Tr}_B\!\left[
+=\mathrm{Tr}_B\!\left[
 e^{-i\tau H}(X\otimes P_B)e^{i\tau H}
 \right].
 \tag{1}
@@ -52,9 +52,9 @@ The intended target-control channel is
 The swap identities
 
 ```math
-\operatorname{Tr}_B[\operatorname{SWAP}(A\otimes P)]=PA,
+\mathrm{Tr}_B[\mathrm{SWAP}(A\otimes P)]=PA,
 \qquad
-\operatorname{Tr}_B[(A\otimes P)\operatorname{SWAP}]=AP
+\mathrm{Tr}_B[(A\otimes P)\mathrm{SWAP}]=AP
 ```
 
 show that $`\mathcal E_0=\mathcal U_0`$ and
@@ -163,7 +163,7 @@ A\,e^{-i\tau Z_b}\,A
 \tag{7}
 ```
 
-For an external control $`C`$, replace the middle gate by $`e^{-i\tau C\otimes Z_b}`$. On the inactive branch the two copies of $`A`$ cancel; on the active branch they give (7). With $`V=\operatorname{SWAP}_{SB}`$, this realizes (1)'s joint unitary and returns $`b`$ to zero. A controlled swap of two $`n`$-qubit registers is a product of $`n`$ controlled swaps of qubit pairs, each having constant elementary gate cost. The number of further controls in this construction is constant.
+For an external control $`C`$, replace the middle gate by $`e^{-i\tau C\otimes Z_b}`$. On the inactive branch the two copies of $`A`$ cancel; on the active branch they give (7). With $`V=\mathrm{SWAP}_{SB}`$, this realizes (1)'s joint unitary and returns $`b`$ to zero. A controlled swap of two $`n`$-qubit registers is a product of $`n`$ controlled swaps of qubit pairs, each having constant elementary gate cost. The number of further controls in this construction is constant.
 
 After each short-time interaction, discard the current program register and request the next one. The target remains coherent throughout. The polar compiler needs constant work space because its block encoding has one selector qubit. Its work space can also be reused, by the hybrid argument in [Transport](transport.md#reusing-work-qubits).
 
@@ -216,7 +216,7 @@ For example, divide this tolerance among the bounded sign approximation, coeffic
 The sign-polynomial and singular-vector constructions are constructive QSVT results [4,5]. Rigorous phase factorization with finite-precision arithmetic is available: Haah gives a sufficient classical running time of
 
 ```math
-O\!\left(K^3\operatorname{polylog}(K/\xi)\right)
+O\!\left(K^3\mathrm{polylog}(K/\xi)\right)
 \tag{11}
 ```
 
@@ -241,7 +241,7 @@ Any standard finite universal gate synthesis with polylogarithmic dependence on 
 
 ```math
 G_{\mathrm{finite}}
-=O\!\left(G_0\operatorname{polylog}G_0\right).
+=O\!\left(G_0\mathrm{polylog}G_0\right).
 \tag{13}
 ```
 
