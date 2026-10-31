@@ -73,8 +73,8 @@ copy. Use the known unitary
 U_\delta=\exp(-i\delta C\otimes S).
 ~~~
 
-For a control-target operator $X=[X_{ab}]_{a,b=0,1}$, tracing out the program
-gives a channel $\mathcal E_\delta$ with blocks
+For a control-target operator $`X=[X_{ab}]_{a,b=0,1}`$, tracing out the program
+gives a channel $`\mathcal E_\delta`$ with blocks
 
 ~~~math
 \begin{aligned}
