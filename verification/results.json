@@ -1,0 +1,427 @@
+{
+  "status": "passed",
+  "seed": 20261031,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "script_sha256": "ea4bfdadf204683dc802b5e8d5a3d10cd593c2ce828c2d2e3a99f4d5777a28cb",
+  "scope": "Deterministic finite-matrix, state-vector, and consumed-program channel checks. No full QSVT compilation, asymptotic proof, empirical diamond-norm optimization, experimental implementation, or novelty certification.",
+  "transport": {
+    "explicit_pairs": [
+      {
+        "overlap": 0.03,
+        "mapping_residual": 1.4468229362211143e-15,
+        "unitarity_residual": 2.307152115482449e-17
+      },
+      {
+        "overlap": 0.4,
+        "mapping_residual": 1.5900205143172596e-16,
+        "unitarity_residual": 2.419477657099978e-16
+      },
+      {
+        "overlap": 1.0,
+        "mapping_residual": 1.1170892989783937e-16,
+        "unitarity_residual": 0.0
+      }
+    ],
+    "loops": [
+      {
+        "dimension": 3,
+        "length": 4,
+        "local_mapping_residual": 5.981954393566943e-16,
+        "loop_eigenphase_residual": 1.2136520182768033e-15,
+        "gauge_operator_residual": 8.316241230803067e-16,
+        "gauge_phase_residual": 1.1102230246251565e-16,
+        "common_unitary_covariance_residual": 2.3029040142239167e-15,
+        "reversed_loop_adjoint_residual": 3.557321036814769e-16,
+        "reversed_phase_residual": 1.1102230246251565e-16
+      },
+      {
+        "dimension": 5,
+        "length": 7,
+        "local_mapping_residual": 8.368562081325328e-16,
+        "loop_eigenphase_residual": 9.739696063573715e-16,
+        "gauge_operator_residual": 3.60170486425e-15,
+        "gauge_phase_residual": 1.1102230246251565e-16,
+        "common_unitary_covariance_residual": 4.621882718436959e-15,
+        "reversed_loop_adjoint_residual": 4.95612554005627e-16,
+        "reversed_phase_residual": 1.1102230246251565e-16
+      },
+      {
+        "dimension": 7,
+        "length": 9,
+        "local_mapping_residual": 2.622050457997919e-15,
+        "loop_eigenphase_residual": 3.613804990331384e-15,
+        "gauge_operator_residual": 5.25307903747713e-15,
+        "gauge_phase_residual": 0.0,
+        "common_unitary_covariance_residual": 9.441816422520267e-15,
+        "reversed_loop_adjoint_residual": 7.636471677397191e-16,
+        "reversed_phase_residual": 4.440892098500626e-16
+      }
+    ],
+    "one_ancilla_lcu": {
+      "top_block_residual": 1.4957557887594003e-16,
+      "unitarity_residual": 1.4301083938461866e-15
+    }
+  },
+  "coherent_phase_readout": [
+    {
+      "length": 4,
+      "phase": 0.73,
+      "control_qubits": 8,
+      "controlled_loop_uses": 255,
+      "probability_normalization_residual": 1.716404796070492e-13,
+      "distribution_residual": 8.95672425116345e-14,
+      "circular_error_tolerance": 0.19634954084936207,
+      "success_probability": 0.9868156740680658,
+      "ramsey_x_residual": 1.1102230246251565e-15,
+      "ramsey_y_residual": 2.1094237467877974e-15,
+      "negated_loop_distribution_total_variation": 0.997401944062823
+    },
+    {
+      "length": 5,
+      "phase": -3.08,
+      "control_qubits": 8,
+      "controlled_loop_uses": 255,
+      "probability_normalization_residual": 6.328271240363392e-14,
+      "distribution_residual": 3.401168235939167e-13,
+      "circular_error_tolerance": 0.19634954084936207,
+      "success_probability": 0.9748064084952217,
+      "ramsey_x_residual": 1.1102230246251565e-16,
+      "ramsey_y_residual": 4.669875597329565e-15,
+      "negated_loop_distribution_total_variation": 0.9950309711930827
+    }
+  ],
+  "cyclic_gram_lower_bound": {
+    "families": [
+      {
+        "length": 4,
+        "c": 0.08,
+        "phase": -2.3,
+        "gram_reconstruction_residual": 2.1688740877927594e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 1.3322676295501878e-14,
+        "magnitude_relative_residual": 2.375877272697835e-14,
+        "covariance_residual": 6.307591047998964e-16,
+        "commuting_derivative_residual": 6.027699879543965e-20,
+        "finite_derivative_relative_residual": 3.134602496614668e-09,
+        "derivative_bound_ratio": 0.651565154936632,
+        "finite_fidelity_bound_ratio": 0.42437938127757685
+      },
+      {
+        "length": 4,
+        "c": 0.08,
+        "phase": 0.4,
+        "gram_reconstruction_residual": 1.8868192682701056e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 1.9539925233402755e-14,
+        "magnitude_relative_residual": 4.9960036108132044e-15,
+        "covariance_residual": 3.9570257496904e-16,
+        "commuting_derivative_residual": 1.8655185802845687e-19,
+        "finite_derivative_relative_residual": 3.7910767508252925e-09,
+        "derivative_bound_ratio": 0.648239904653324,
+        "finite_fidelity_bound_ratio": 0.42025178149015147
+      },
+      {
+        "length": 4,
+        "c": 0.25,
+        "phase": -2.3,
+        "gram_reconstruction_residual": 8.163837657036997e-16,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 4.440892098500626e-16,
+        "magnitude_relative_residual": 2.6645352591003757e-15,
+        "covariance_residual": 4.372588030189307e-16,
+        "commuting_derivative_residual": 9.870295941653298e-19,
+        "finite_derivative_relative_residual": 4.5476307966368507e-10,
+        "derivative_bound_ratio": 0.5290147455694045,
+        "finite_fidelity_bound_ratio": 0.2790204234661945
+      },
+      {
+        "length": 4,
+        "c": 0.25,
+        "phase": 0.4,
+        "gram_reconstruction_residual": 1.7103921051957292e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 2.1649348980190553e-15,
+        "magnitude_relative_residual": 5.551115123125783e-15,
+        "covariance_residual": 6.101349428031148e-16,
+        "commuting_derivative_residual": 1.282113348404557e-20,
+        "finite_derivative_relative_residual": 1.0782509173746812e-09,
+        "derivative_bound_ratio": 0.5014357486383658,
+        "finite_fidelity_bound_ratio": 0.25187513914855714
+      },
+      {
+        "length": 5,
+        "c": 0.08,
+        "phase": -2.3,
+        "gram_reconstruction_residual": 2.9071791361250527e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 8.881784197001252e-16,
+        "magnitude_relative_residual": 4.285460875053104e-14,
+        "covariance_residual": 1.8327985237117053e-15,
+        "commuting_derivative_residual": 1.7894175757232684e-19,
+        "finite_derivative_relative_residual": 2.753806260595967e-09,
+        "derivative_bound_ratio": 0.6500591453078167,
+        "finite_fidelity_bound_ratio": 0.4225664239889426
+      },
+      {
+        "length": 5,
+        "c": 0.08,
+        "phase": 0.4,
+        "gram_reconstruction_residual": 2.1447850963317916e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 1.8207657603852567e-14,
+        "magnitude_relative_residual": 1.4210854715202004e-14,
+        "covariance_residual": 1.095061528560493e-15,
+        "commuting_derivative_residual": 7.741422495277947e-20,
+        "finite_derivative_relative_residual": 5.66852902910963e-09,
+        "derivative_bound_ratio": 0.6503267642177418,
+        "finite_fidelity_bound_ratio": 0.42289875906709173
+      },
+      {
+        "length": 5,
+        "c": 0.25,
+        "phase": -2.3,
+        "gram_reconstruction_residual": 2.7063973839704324e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 6.217248937900877e-15,
+        "magnitude_relative_residual": 8.215650382226158e-15,
+        "covariance_residual": 7.466720184129565e-16,
+        "commuting_derivative_residual": 2.3966708025900834e-18,
+        "finite_derivative_relative_residual": 1.1021658547251487e-09,
+        "derivative_bound_ratio": 0.5145503120252554,
+        "finite_fidelity_bound_ratio": 0.26496866231992855
+      },
+      {
+        "length": 5,
+        "c": 0.25,
+        "phase": 0.4,
+        "gram_reconstruction_residual": 1.654814020006809e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 5.329070518200751e-15,
+        "magnitude_relative_residual": 3.9968028886505635e-15,
+        "covariance_residual": 7.379379371330366e-16,
+        "commuting_derivative_residual": 2.8018879113289838e-18,
+        "finite_derivative_relative_residual": 2.5115800563729507e-09,
+        "derivative_bound_ratio": 0.5218731391989212,
+        "finite_fidelity_bound_ratio": 0.2722160707047734
+      },
+      {
+        "length": 8,
+        "c": 0.08,
+        "phase": -2.3,
+        "gram_reconstruction_residual": 3.828168603503167e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 1.9095836023552692e-14,
+        "magnitude_relative_residual": 1.8096635301390052e-14,
+        "covariance_residual": 1.2558340997631692e-15,
+        "commuting_derivative_residual": 5.494514229641213e-20,
+        "finite_derivative_relative_residual": 1.0448743511800296e-08,
+        "derivative_bound_ratio": 0.6501715490661094,
+        "finite_fidelity_bound_ratio": 0.42271499622881237
+      },
+      {
+        "length": 8,
+        "c": 0.08,
+        "phase": 0.4,
+        "gram_reconstruction_residual": 3.291017248497029e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 8.43769498715119e-15,
+        "magnitude_relative_residual": 4.6629367034256575e-15,
+        "covariance_residual": 1.235892928286115e-15,
+        "commuting_derivative_residual": 2.6763022482556145e-20,
+        "finite_derivative_relative_residual": 7.974915819761327e-09,
+        "derivative_bound_ratio": 0.6501714093580329,
+        "finite_fidelity_bound_ratio": 0.42271482382968034
+      },
+      {
+        "length": 8,
+        "c": 0.25,
+        "phase": -2.3,
+        "gram_reconstruction_residual": 4.254176551757042e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 5.329070518200751e-15,
+        "magnitude_relative_residual": 4.440892098500626e-15,
+        "covariance_residual": 1.6311903443652513e-15,
+        "commuting_derivative_residual": 5.374226099867226e-20,
+        "finite_derivative_relative_residual": 3.816770021747663e-09,
+        "derivative_bound_ratio": 0.5176973261468862,
+        "finite_fidelity_bound_ratio": 0.26800045296069036
+      },
+      {
+        "length": 8,
+        "c": 0.25,
+        "phase": 0.4,
+        "gram_reconstruction_residual": 2.313116082510656e-15,
+        "normalization_residual": 0.0,
+        "phase_identity_residual": 3.9968028886505635e-15,
+        "magnitude_relative_residual": 1.7763568394002505e-15,
+        "covariance_residual": 9.452954515970428e-16,
+        "commuting_derivative_residual": 1.6268464858577502e-19,
+        "finite_derivative_relative_residual": 2.286445247981633e-09,
+        "derivative_bound_ratio": 0.5175561899038491,
+        "finite_fidelity_bound_ratio": 0.2678609238928845
+      }
+    ],
+    "two_copy_testing": {
+      "product_fidelity_residual": 3.3306690738754696e-15,
+      "trace_distance": 0.007528021213090912,
+      "pure_state_trace_distance_residual": 1.72851316593281e-13,
+      "bernoulli_trace_distance_bound": 0.015
+    }
+  },
+  "controlled_dme": {
+    "one_step_channels": [
+      {
+        "dimension": 2,
+        "program": "pure",
+        "step": 0.17,
+        "all_matrix_units_formula_residual": 1.2016420594571946e-16,
+        "trace_preservation_residual": 7.757919228897728e-18,
+        "clean_ancilla_circuit_residual": 4.47545209131181e-16,
+        "ancilla_leakage_residual": 4.474228634151475e-17,
+        "normalized_choi_trace_norm_error": 0.021544995364159554,
+        "diamond_upper_bound": 0.11560000000000002
+      },
+      {
+        "dimension": 2,
+        "program": "pure",
+        "step": -0.13,
+        "all_matrix_units_formula_residual": 1.147673963296451e-16,
+        "trace_preservation_residual": 2.220446049250313e-16,
+        "clean_ancilla_circuit_residual": 4.518280359883027e-16,
+        "ancilla_leakage_residual": 4.474228634151475e-17,
+        "normalized_choi_trace_norm_error": 0.012630472909957932,
+        "diamond_upper_bound": 0.06760000000000001
+      },
+      {
+        "dimension": 2,
+        "program": "mixed",
+        "step": 0.17,
+        "all_matrix_units_formula_residual": 4.454725012988954e-16,
+        "trace_preservation_residual": 4.440892098500626e-16,
+        "clean_ancilla_circuit_residual": 4.47545209131181e-16,
+        "ancilla_leakage_residual": 4.474228634151475e-17,
+        "normalized_choi_trace_norm_error": 0.02334951315929485,
+        "diamond_upper_bound": 0.11560000000000002
+      },
+      {
+        "dimension": 2,
+        "program": "mixed",
+        "step": -0.13,
+        "all_matrix_units_formula_residual": 4.449591077262561e-16,
+        "trace_preservation_residual": 4.440892098500626e-16,
+        "clean_ancilla_circuit_residual": 4.518280359883027e-16,
+        "ancilla_leakage_residual": 4.474228634151475e-17,
+        "normalized_choi_trace_norm_error": 0.013693681212060124,
+        "diamond_upper_bound": 0.06760000000000001
+      },
+      {
+        "dimension": 3,
+        "program": "pure",
+        "step": 0.17,
+        "all_matrix_units_formula_residual": 1.1225974714917654e-16,
+        "trace_preservation_residual": 2.3783606883259443e-16,
+        "clean_ancilla_circuit_residual": 4.47545209131181e-16,
+        "ancilla_leakage_residual": 4.474228634151475e-17,
+        "normalized_choi_trace_norm_error": 0.026146271874244988,
+        "diamond_upper_bound": 0.11560000000000002
+      },
+      {
+        "dimension": 3,
+        "program": "pure",
+        "step": -0.13,
+        "all_matrix_units_formula_residual": 7.047534853667045e-17,
+        "trace_preservation_residual": 2.223289271641637e-16,
+        "clean_ancilla_circuit_residual": 4.518280359883027e-16,
+        "ancilla_leakage_residual": 4.474228634151475e-17,
+        "normalized_choi_trace_norm_error": 0.015331472717803345,
+        "diamond_upper_bound": 0.06760000000000001
+      },
+      {
+        "dimension": 3,
+        "program": "mixed",
+        "step": 0.17,
+        "all_matrix_units_formula_residual": 2.2626008338689175e-16,
+        "trace_preservation_residual": 2.3504495100751014e-16,
+        "clean_ancilla_circuit_residual": 4.47545209131181e-16,
+        "ancilla_leakage_residual": 4.474228634151475e-17,
+        "normalized_choi_trace_norm_error": 0.028043522209924055,
+        "diamond_upper_bound": 0.11560000000000002
+      },
+      {
+        "dimension": 3,
+        "program": "mixed",
+        "step": -0.13,
+        "all_matrix_units_formula_residual": 2.220446049250313e-16,
+        "trace_preservation_residual": 2.2272383653770975e-16,
+        "clean_ancilla_circuit_residual": 4.518280359883027e-16,
+        "ancilla_leakage_residual": 4.474228634151475e-17,
+        "normalized_choi_trace_norm_error": 0.016447956775047574,
+        "diamond_upper_bound": 0.06760000000000001
+      }
+    ],
+    "fresh_copy_reflection_channels": [
+      {
+        "dimension": 2,
+        "fresh_program_copies": 16,
+        "normalized_choi_trace_norm_error": 0.3740535848426056,
+        "diamond_upper_bound": 2.0,
+        "occupied_branch_minus_phase_residual": 1.6789865087789566e-15,
+        "control_coherence_formula_residual": 2.9429226147095706e-16,
+        "trace_residual": 8.882166412394642e-16
+      },
+      {
+        "dimension": 2,
+        "fresh_program_copies": 64,
+        "normalized_choi_trace_norm_error": 0.10929884223319977,
+        "diamond_upper_bound": 0.6168502750680849,
+        "occupied_branch_minus_phase_residual": 3.137425813488137e-15,
+        "control_coherence_formula_residual": 5.377471537255504e-16,
+        "trace_residual": 1.110299254973338e-15
+      },
+      {
+        "dimension": 2,
+        "fresh_program_copies": 256,
+        "normalized_choi_trace_norm_error": 0.028502129076510944,
+        "diamond_upper_bound": 0.15421256876702122,
+        "occupied_branch_minus_phase_residual": 2.447727442658245e-15,
+        "control_coherence_formula_residual": 1.3856490539880803e-15,
+        "trace_residual": 1.2545522441195975e-14
+      },
+      {
+        "dimension": 3,
+        "fresh_program_copies": 16,
+        "normalized_choi_trace_norm_error": 0.4492541740744595,
+        "diamond_upper_bound": 2.0,
+        "occupied_branch_minus_phase_residual": 1.1368674596524925e-15,
+        "control_coherence_formula_residual": 3.529342856005715e-16,
+        "trace_residual": 1.1102686881090847e-15
+      },
+      {
+        "dimension": 3,
+        "fresh_program_copies": 64,
+        "normalized_choi_trace_norm_error": 0.13232887022019807,
+        "diamond_upper_bound": 0.6168502750680849,
+        "occupied_branch_minus_phase_residual": 3.5847000512593376e-15,
+        "control_coherence_formula_residual": 6.419457478106742e-16,
+        "trace_residual": 1.3323683194331635e-15
+      },
+      {
+        "dimension": 3,
+        "fresh_program_copies": 256,
+        "normalized_choi_trace_norm_error": 0.03458291005042342,
+        "diamond_upper_bound": 0.15421256876702122,
+        "occupied_branch_minus_phase_residual": 1.4568503313619446e-14,
+        "control_coherence_formula_residual": 3.982879724739739e-15,
+        "trace_residual": 2.6646009010189194e-15
+      }
+    ],
+    "global_phase_negative_control": {
+      "uncontrolled_channel_residual": 0.0,
+      "controlled_output_trace_distance": 0.9999999999999991
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# Quantum Holonomy Sampling
+
+This repository studies the total independent-copy complexity of estimating the circular argument of a cyclic Bargmann invariant for labeled unknown pure states. The receiver has general coherent processing of accessible registers, including controlled swaps, but no supplied state-preparation unitary, inverse, or coherent source-index oracle.
+
+## Main statement and scope
+
+Read science/model.md for the authoritative theorem and conventions. The upper bound is O(L²/(c² epsilon²) log²(L/epsilon)) total copies. The matching lower exponents hold for L>=4, d>=L, 0<c<=1/4, and small bounded epsilon. Here c bounds amplitude overlap, not squared fidelity. All copies are counted, including the target and inactive-branch program consumption. The resource is a worst-case cap on requests, not an expected stopping time.
+
+## Reading routes
+
+- General reader: README.md, science/model.md, science/examples.md, science/interpretation.md.
+- Complete constructive proof: science/transport.md, science/algorithm.md, science/resources.md.
+- Information-theoretic converse: science/lower-bound.md.
+- Previous results and model comparisons: references/related-work.md and references/references.bib.
+- Reproduction and actual test extent: verification/README.md, verification/checks.py, verification/results.json.
+
+## Important distinctions
+
+The target convention is Phi=arg product_j <psi_j|psi_(j+1)>. The ordered transport loop has eigenphase minus Phi, so the algorithm negates the Fourier readout. A channel emulating an unknown unitary only up to global phase is insufficient for this controlled construction.
+
+The QSVT lift has a clean-ancilla vector guarantee; polynomial block error is squared to control leakage. Work qubits are reused by a hybrid comparison to ideal clean prefixes. The entire reflection circuit is simulated to constant total diamond error, with the precision dependence already charged through phase-estimation calls.
+
+Dimension independence concerns copies. Quantum gates cost O(log(d) N) in the known-angle convention, streaming memory is explicit, and classical phase factorization is separately charged. The local transport, QSVT, phase estimation, density-matrix exponentiation and multi-samplizer are inherited tools.
+
+The sparse-ring raw-cycle benchmark is restricted to its specified ancilla-only full-cycle measurement protocol. Do not infer a blanket quantum/classical separation, a passive-photonic implementation, a mixed-state result, or a continuum Berry-phase guarantee. Finite numerical checks do not prove asymptotic bounds or novelty.
