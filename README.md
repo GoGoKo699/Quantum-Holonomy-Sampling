@@ -52,6 +52,14 @@ with nonzero overlaps only between neighbors on a ring. Direct full-cycle measur
 
 The [scientific overview](science/README.md) gives proof and interpretation routes. The [LLM reading guide](llms.txt) maps specific questions to authoritative files.
 
+## Learn the project
+
+The single educational anchor is **Andrew M. Childs, *Lecture Notes on Quantum Algorithms***, using the author-hosted version dated 17 April 2025. The [Childs bridge](learning/CHILDS_BRIDGE.md) identifies the relevant sections, translates the phase and resource conventions, and supplies the connections from familiar circuits to this quantum-data task.
+
+The [30-milestone map](learning/MILESTONES.md) contains **11 background/preliminaries milestones** and **19 narrative/innovation milestones**. The first phase joins states, coherent control, approximation and distinguishability into the complete estimation model. The second builds the transport algorithm and copy budget, develops the finite lower family, and combines them into the operational result. Each milestone states an understanding target, earlier dependencies, a conceptual connection and source pointers.
+
+Start with the [learning overview](learning/README.md) for the study routes. The canonical scientific pages above own the precise claims and complete proofs; the bridge explains how the selected source connects to them.
+
 ## Processing resources
 
 Writing $`n=\lceil\log_2 d\rceil`$, the known-angle quantum gate count is $`O(nN)`$, where $`N`$ is the explicit copy budget. Program copies can be streamed using $`2n+O(\log(1/\epsilon))`$ live qubits. A finite universal gate set adds synthesis logarithms. Classical phase-sequence compilation is charged separately and can dominate quantum processing in some parameter regimes; copy optimality is not a claim of universally optimal end-to-end runtime.

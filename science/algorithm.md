@@ -18,11 +18,12 @@ A known number $`0\lt c\le1`$ is a lower bound on every adjacent overlap:
 Define
 
 ```math
-B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle,
-\qquad \Phi=\arg B\pmod{2\pi},
-\qquad
+\begin{gathered}
+B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle,\\
+\Phi=\arg B\pmod{2\pi},\\
 \mathrm{dist}_{2\pi}(x,y)
 =\min_{k\in\mathbb Z}|x-y+2\pi k|.
+\end{gathered}
 ```
 
 For $`0\lt \epsilon\le\pi/16`$, the output must satisfy
@@ -110,10 +111,12 @@ p(y)\le\frac1{4\Delta_y^2}.
 Failure in (1) requires $`|\Delta_y|\gt a`$, where $`a=F\epsilon/(2\pi)\ge8`$. There are at most two outcomes in each unit interval of $`|\Delta_y|`$. Therefore
 
 ```math
+\begin{aligned}
 \Pr[\text{ideal failure}]
-\le\frac12\sum_{k=\lfloor a\rfloor}^{\infty}\frac1{k^2}
-\le\frac1{2(\lfloor a\rfloor-1)}
+&\le\frac12\sum_{k=\lfloor a\rfloor}^{\infty}\frac1{k^2}\\
+&\le\frac1{2(\lfloor a\rfloor-1)}
 \le\frac1{14}\lt \frac1{10}.
+\end{aligned}
 \qquad\text{(7)}
 ```
 
@@ -148,8 +151,10 @@ There is no intermediate ancilla postselection or reset. In particular, successf
 Let $`K`$ be the actual total number of block-encoding or inverse-block-encoding calls in this common compiler. The inherited singular-vector transformation guarantees
 
 ```math
-K=O\!\left(c^{-1}\log(1/\eta)\right)
-=O\!\left(c^{-1}\log(L/\epsilon)\right).
+\begin{aligned}
+K&=O\!\left(c^{-1}\log(1/\eta)\right)\\
+&=O\!\left(c^{-1}\log(L/\epsilon)\right).
+\end{aligned}
 ```
 
 Each block-encoding call consists of two fixed-label controlled reflection calls. The expanded circuit consequently contains exactly
@@ -210,11 +215,13 @@ For normalized pure states, their trace distance is at most the norm of their ve
 Combining these bounds with the weaker ideal guarantee $`9/10`$ from (7) gives
 
 ```math
+\begin{gathered}
 \Pr\!\left[
 \mathrm{dist}_{2\pi}(\widehat\Phi,\Phi)\le\epsilon
-\right]
-\ge\frac9{10}-\frac1{100}-\frac1{100}-\frac1{100}
+\right]\\
+\ge\frac9{10}-\frac1{100}-\frac1{100}-\frac1{100}\\
 =\frac{87}{100}\gt \frac23.
+\end{gathered}
 \qquad\text{(14)}
 ```
 

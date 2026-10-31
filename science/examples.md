@@ -15,10 +15,12 @@ B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle,
 Let $`S|j\rangle=|j+1\rangle`$ cyclically on $`\mathbb C^L`$, and choose
 
 ```math
+\begin{aligned}
 G_\phi
 =I+c\left(e^{-i\phi/L}S+e^{i\phi/L}S^\dagger\right),
-\qquad
+\\
 |\psi_j(\phi)\rangle=G_\phi^{1/2}|j\rangle,
+\end{aligned}
 \qquad\text{(1)}
 ```
 
@@ -40,8 +42,10 @@ The Gram eigenvalues lie in $`[1-2c,1+2c]`$, so every value of $`\phi`$ is allow
 Define the left cyclic permutation on the $`L`$ data registers by
 
 ```math
-C\bigl(|v_1\rangle\otimes\cdots\otimes|v_L\rangle\bigr)
+\begin{gathered}
+C\bigl(|v_1\rangle\otimes\cdots\otimes|v_L\rangle\bigr)\\
 =|v_2\rangle\otimes\cdots\otimes|v_L\rangle\otimes|v_1\rangle.
+\end{gathered}
 \qquad\text{(3)}
 ```
 
@@ -104,19 +108,22 @@ m\geq
 The number of **raw cycle-test shots** and the number of **total source copies** are therefore
 
 ```math
+\begin{gathered}
 M_{\mathrm{cycle}}=2m
 =O\!\left(\frac{\log(1/\delta)}{r_*^2\epsilon^2}\right),
-\qquad
+\\
 N_{\mathrm{cycle}}=L M_{\mathrm{cycle}}.
+\end{gathered}
 \qquad\text{(9)}
 ```
 
 On the ring, $`r=r_*=c^L`$. At fixed confidence this gives
 
 ```math
-M_{\mathrm{cycle}}=O\!\left(c^{-2L}\epsilon^{-2}\right),
-\qquad
+\begin{gathered}
+M_{\mathrm{cycle}}=O\!\left(c^{-2L}\epsilon^{-2}\right),\\
 N_{\mathrm{cycle}}=O\!\left(Lc^{-2L}\epsilon^{-2}\right).
+\end{gathered}
 \qquad\text{(10)}
 ```
 
@@ -135,9 +142,10 @@ p_\phi(t)=\frac{1+r\cos(\phi-t)}2
 for the outcome $`+1`$. For every chosen quadrature,
 
 ```math
-|p_0(t)-p_h(t)|\leq\frac{r|h|}{2},
-\qquad
+\begin{gathered}
+|p_0(t)-p_h(t)|\leq\frac{r|h|}{2},\\
 p_h(t)(1-p_h(t))\geq\frac{1-r^2}{4}.
+\end{gathered}
 \qquad\text{(11)}
 ```
 
@@ -161,9 +169,10 @@ For the ring in (1), $`r=c^L\leq1/256`$, so $`1-r^2`$ is bounded below by a cons
 
 ```math
 \boxed{
-M_{\mathrm{cycle}}=\Theta(c^{-2L}\epsilon^{-2}),
-\qquad
+\begin{gathered}
+M_{\mathrm{cycle}}=\Theta(c^{-2L}\epsilon^{-2}),\\
 N_{\mathrm{cycle}}=\Theta(Lc^{-2L}\epsilon^{-2})
+\end{gathered}
 }
 \qquad\text{(13)}
 ```

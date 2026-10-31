@@ -81,9 +81,10 @@ We use the unhalved diamond norm. For a Hermitian operator $`A`$ of norm at most
 Taylor's formula with an integral remainder gives
 
 ```math
-\|\mathcal E_\tau-I-\tau\mathcal L_h\|_\diamond\le2\tau^2,
-\qquad
+\begin{gathered}
+\|\mathcal E_\tau-I-\tau\mathcal L_h\|_\diamond\le2\tau^2,\\
 \|\mathcal U_\tau-I-\tau\mathcal L_h\|_\diamond\le2\tau^2.
+\end{gathered}
 ```
 
 Consequently,
@@ -186,11 +187,13 @@ This counts coherent live memory, not a requirement to hold all source copies si
 There are $`Qm`$ short-time program interactions. Apart from them, the polar circuit uses $`O(Q)`$ known elementary gates and an exact inverse Fourier transform uses $`O(t^2)`$ gates. Thus, for $`d\ge2`$,
 
 ```math
-G_0=O(nQm+Q+t^2)
-=O(nQ^2+t^2)
-=O\!\left(
+\begin{aligned}
+G_0&=O(nQm+Q+t^2)\\
+&=O(nQ^2+t^2)\\
+&=O\!\left(
 n\frac{L^2}{c^2\epsilon^2}\log^2\frac{L}{\epsilon}
 \right).
+\end{aligned}
 \qquad\text{(9)}
 ```
 

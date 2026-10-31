@@ -9,10 +9,17 @@ Read science/model.md for the authoritative theorem and conventions. The upper b
 ## Reading routes
 
 - General reader: README.md, science/model.md, science/examples.md, science/interpretation.md.
+- Guided study: learning/README.md, learning/MILESTONES.md, learning/CHILDS_BRIDGE.md.
 - Complete constructive proof: science/transport.md, science/algorithm.md, science/resources.md.
 - Information-theoretic converse: science/lower-bound.md.
 - Previous results and model comparisons: references/related-work.md and references/references.bib.
 - Reproduction and actual test extent: verification/README.md, verification/checks.py, verification/results.json.
+
+## Single educational anchor and understanding map
+
+Use Andrew M. Childs, Lecture Notes on Quantum Algorithms, in the author-hosted version dated 17 April 2025. learning/CHILDS_BRIDGE.md owns the relevant section mapping, notation translation, a complete worked loop, and the locally supplied connections to the research. Childs writes an eigenphase in radians and phase estimation resolves its fraction of a full turn; keep that convention aligned with the project's negative loop phase and exact pair (y,F) output.
+
+learning/MILESTONES.md is the common project-defined map M01–M30: 11 background/preliminaries milestones followed by 19 narrative/innovation milestones. It records understanding targets, earlier dependencies, conceptual connections and canonical sources. Follow those stable targets when explaining the project. The complete analytical statements remain in science/, and cited research dependencies remain separate from the single educational anchor.
 
 ## Important distinctions
 
