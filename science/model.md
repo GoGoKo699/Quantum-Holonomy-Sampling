@@ -99,3 +99,17 @@ At $`c=1`$, all adjacent rays coincide, hence $`\Phi=0`$. This endpoint illustra
 The [sparse-ring example](examples.md) has $`|B|=c^L`$, although each local overlap remains nonzero and bounded below. Direct raw-cycle measurements require exponentially many shots for fixed phase accuracy on this family. The upper theorem gives polynomial total-copy cost with general coherent processing, and the converse identifies its intrinsic polynomial scale.
 
 The exact local rotation, polar compilation, phase estimation and sample-based simulation are established tools. The [related-work account](../references/related-work.md) identifies their source statements and distinguishes the present task-specific copy law from raw-trace estimation, Hamiltonian-oracle Berry-phase algorithms, and photonic protocols with more restricted operations.
+
+## 6. Copies consumed before a complete reset
+
+The unrestricted theorem allows quantum information to persist while fresh program copies are streamed. To ask whether that persistence is necessary, impose a cap $`b`$ on all copies consumed between complete quantum resets. Conditioned on the full classical history, the **joint state of all retained quantum systems and reserved aids** must be known from that history, independently of the unknown inputs. Known individual marginals do not suffice if unknown conditional correlations remain. Known joint ancillary states may be recreated at the next run; the history is the only input-dependent resource carried forward. Intermediate measurements and arbitrary classical feedback remain permitted.
+
+For $`L=4`$, $`0\lt c\le1/4`$ and fixed $`0\lt\epsilon\le\pi/16`$, the [coherent-run theorem](coherent-runs.md) proves that a uniformly successful protocol with
+
+```math
+N\le C_0c^{-2},\quad C_0\ge1,\quad d\ge9216C_0^2c^{-4}
+```
+
+must have $`b\ge c^{-2}/(128C_0^{1/3})`$. The unrestricted construction uses $`N=O_\epsilon(c^{-2})`$ copies at this fixed loop length and can remain in one coherent run, establishing a matching run-size order at the optimal-copy endpoint.
+
+The lower family is the same well-conditioned sparse cycle used in the unrestricted converse. Its [optimal block information](block-information.md) and a fixed-source adaptive transcript comparison supply the additional obstruction. The root-fidelity law in [Quantum Fidelity Coherence](https://github.com/GoGoKo699/Quantum-Fidelity-Coherence) is a different theorem; its general transcript method is the shared proof ingredient. At fixed finite dimension, one-copy tomography gives $`O_d(c^{-2}\epsilon^{-2})`$ copies, so the dimension condition cannot simply be omitted.

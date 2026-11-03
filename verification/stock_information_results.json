@@ -1,0 +1,585 @@
+{
+  "status": "all assertions passed",
+  "cases": 27,
+  "metadata": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "hessian_quadrature_nodes": 8,
+    "sha256": {
+      "verification/stock_information_checks.py": "911c0e79477c92df6992c8e413b16ff6a63ab2bf80fc0ce80cbdf422255d22d1",
+      "verification/requirements-phase.txt": "ad291935bab4da194a85b299d0d08572424270287fc4eeb6c5638c717b952ffa",
+      "science/block-information.md": "49b9f35fe1ca83b59df80f6d16f37bc20f57d6827f6bb66df0878345330846fb",
+      "science/coherent-runs.md": "17e36059d05ca9f2a4e8ccca2c13f31300a64918f4a8d221f9c74a448e14d9a4"
+    }
+  },
+  "records": [
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.01,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.9995999999999998,
+      "lambda_lower_bound": 0.9992003199146837,
+      "hs_squared_per_row": 3.044818699548531e-17,
+      "hs_upper_bound": 6.832130185115993e-14,
+      "relative_entropy_quadrature": 1.5224094106706415e-17,
+      "petz_chi_square": 3.0448188213412825e-17,
+      "relative_entropy_upper_bound": 6.83759807612887e-14,
+      "relative_entropy_over_c8": 0.15224094106706412
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.01,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.9996000013534531,
+      "lambda_lower_bound": 0.9992003199146837,
+      "hs_squared_per_row": 3.0448186995485284e-17,
+      "hs_upper_bound": 6.832130185115993e-14,
+      "relative_entropy_quadrature": 1.522409410670642e-17,
+      "petz_chi_square": 3.044818821341283e-17,
+      "relative_entropy_upper_bound": 6.83759807612887e-14,
+      "relative_entropy_over_c8": 0.15224094106706415
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.01,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.9996000199999999,
+      "lambda_lower_bound": 0.9992003199146837,
+      "hs_squared_per_row": 3.04481869954853e-17,
+      "hs_upper_bound": 6.832130185115993e-14,
+      "relative_entropy_quadrature": 1.5224094106706437e-17,
+      "petz_chi_square": 3.044818821341288e-17,
+      "relative_entropy_upper_bound": 6.83759807612887e-14,
+      "relative_entropy_over_c8": 0.15224094106706434
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.1,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.9600000000000001,
+      "lambda_lower_bound": 0.9231163463866358,
+      "hs_squared_per_row": 3.044818699548532e-09,
+      "hs_upper_bound": 7.395239715327721e-06,
+      "relative_entropy_quadrature": 1.5230185709117733e-09,
+      "petz_chi_square": 3.0460371501816032e-09,
+      "relative_entropy_upper_bound": 8.011167545970762e-06,
+      "relative_entropy_over_c8": 0.15230185709117725
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.1,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.9600135345308785,
+      "lambda_lower_bound": 0.9231163463866358,
+      "hs_squared_per_row": 3.0448186995485284e-09,
+      "hs_upper_bound": 7.395239715327721e-06,
+      "relative_entropy_quadrature": 1.5230186381609888e-09,
+      "petz_chi_square": 3.0460372837398546e-09,
+      "relative_entropy_upper_bound": 8.011167545970762e-06,
+      "relative_entropy_over_c8": 0.1523018638160988
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.1,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.9601999999999995,
+      "lambda_lower_bound": 0.9231163463866358,
+      "hs_squared_per_row": 3.0448186995485284e-09,
+      "hs_upper_bound": 7.395239715327721e-06,
+      "relative_entropy_quadrature": 1.5230187373064095e-09,
+      "petz_chi_square": 3.04603748059381e-09,
+      "relative_entropy_upper_bound": 8.011167545970762e-06,
+      "relative_entropy_over_c8": 0.15230187373064089
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.25,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.7500000000000003,
+      "lambda_lower_bound": 0.6065306597126334,
+      "hs_squared_per_row": 4.6460246269966616e-06,
+      "hs_upper_bound": 0.017174179903126335,
+      "relative_entropy_quadrature": 2.3599250108266207e-06,
+      "petz_chi_square": 4.719871077381327e-06,
+      "relative_entropy_upper_bound": 0.028315435713115053,
+      "relative_entropy_over_c8": 0.1546600455095334
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.25,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.7505286926124526,
+      "lambda_lower_bound": 0.6065306597126334,
+      "hs_squared_per_row": 4.646024626996658e-06,
+      "hs_upper_bound": 0.017174179903126335,
+      "relative_entropy_quadrature": 2.360120286819962e-06,
+      "petz_chi_square": 4.720254268861198e-06,
+      "relative_entropy_upper_bound": 0.028315435713115053,
+      "relative_entropy_over_c8": 0.15467284311703303
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 4,
+      "orbit_dimension": 24,
+      "c": 0.25,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.7578125000000001,
+      "lambda_lower_bound": 0.6065306597126334,
+      "hs_squared_per_row": 4.646024626996652e-06,
+      "hs_upper_bound": 0.017174179903126335,
+      "relative_entropy_quadrature": 2.3603093407790468e-06,
+      "petz_chi_square": 4.720602435767388e-06,
+      "relative_entropy_upper_bound": 0.028315435713115053,
+      "relative_entropy_over_c8": 0.1546852329572956
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.01,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.9995999999999996,
+      "lambda_lower_bound": 0.999000499833375,
+      "hs_squared_per_row": 6.08963739909705e-17,
+      "hs_upper_bound": 1.6683341669445142e-13,
+      "relative_entropy_quadrature": 3.044514420628444e-17,
+      "petz_chi_square": 6.089028861552638e-17,
+      "relative_entropy_upper_bound": 1.6700033355566676e-13,
+      "relative_entropy_over_c8": 0.3044514420628443
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.01,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.999600001353453,
+      "lambda_lower_bound": 0.999000499833375,
+      "hs_squared_per_row": 6.089637399097068e-17,
+      "hs_upper_bound": 1.6683341669445142e-13,
+      "relative_entropy_quadrature": 3.0445144206284457e-17,
+      "petz_chi_square": 6.08902886155264e-17,
+      "relative_entropy_upper_bound": 1.6700033355566676e-13,
+      "relative_entropy_over_c8": 0.3044514420628445
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.01,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.9996000199999999,
+      "lambda_lower_bound": 0.999000499833375,
+      "hs_squared_per_row": 6.089637399097059e-17,
+      "hs_upper_bound": 1.6683341669445142e-13,
+      "relative_entropy_quadrature": 3.044514420628453e-17,
+      "petz_chi_square": 6.089028861552655e-17,
+      "relative_entropy_upper_bound": 1.6700033355566676e-13,
+      "relative_entropy_over_c8": 0.30445144206284525
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.1,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.96,
+      "lambda_lower_bound": 0.9048374180359595,
+      "hs_squared_per_row": 6.0896373990970576e-09,
+      "hs_upper_bound": 1.8419515301260803e-05,
+      "relative_entropy_quadrature": 3.0163639241862873e-09,
+      "petz_chi_square": 6.03292804656433e-09,
+      "relative_entropy_upper_bound": 2.035671263600284e-05,
+      "relative_entropy_over_c8": 0.30163639241862855
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.1,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.9600135345308782,
+      "lambda_lower_bound": 0.9048374180359595,
+      "hs_squared_per_row": 6.0896373990970576e-09,
+      "hs_upper_bound": 1.8419515301260803e-05,
+      "relative_entropy_quadrature": 3.016364124722452e-09,
+      "petz_chi_square": 6.032928452276256e-09,
+      "relative_entropy_upper_bound": 2.035671263600284e-05,
+      "relative_entropy_over_c8": 0.30163641247224504
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.1,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.9601999999999993,
+      "lambda_lower_bound": 0.9048374180359595,
+      "hs_squared_per_row": 6.0896373990970485e-09,
+      "hs_upper_bound": 1.8419515301260803e-05,
+      "relative_entropy_quadrature": 3.016364545107648e-09,
+      "petz_chi_square": 6.032929273264561e-09,
+      "relative_entropy_upper_bound": 2.035671263600284e-05,
+      "relative_entropy_over_c8": 0.30163645451076465
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.25,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.7499999999999993,
+      "lambda_lower_bound": 0.5352614285189903,
+      "hs_squared_per_row": 9.292049253993335e-06,
+      "hs_upper_bound": 0.047511951635544385,
+      "relative_entropy_quadrature": 4.465798408385399e-06,
+      "petz_chi_square": 8.943072975756308e-06,
+      "relative_entropy_upper_bound": 0.08876401157282107,
+      "relative_entropy_over_c8": 0.2926705644919455
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.25,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.7505286926124516,
+      "lambda_lower_bound": 0.5352614285189903,
+      "hs_squared_per_row": 9.29204925399333e-06,
+      "hs_upper_bound": 0.047511951635544385,
+      "relative_entropy_quadrature": 4.466277517858621e-06,
+      "petz_chi_square": 8.94402017392106e-06,
+      "relative_entropy_upper_bound": 0.08876401157282107,
+      "relative_entropy_over_c8": 0.29270196341038257
+    },
+    {
+      "counts": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stock_size": 5,
+      "orbit_dimension": 60,
+      "c": 0.25,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.7578124999999994,
+      "lambda_lower_bound": 0.5352614285189903,
+      "hs_squared_per_row": 9.292049253993328e-06,
+      "hs_upper_bound": 0.047511951635544385,
+      "relative_entropy_quadrature": 4.466983609562494e-06,
+      "petz_chi_square": 8.945300474691772e-06,
+      "relative_entropy_upper_bound": 0.08876401157282107,
+      "relative_entropy_over_c8": 0.2927482378362876
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.01,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.9995000399999989,
+      "lambda_lower_bound": 0.9988007197120864,
+      "hs_squared_per_row": 1.217927485909048e-16,
+      "hs_upper_bound": 3.460149689315627e-13,
+      "relative_entropy_quadrature": 6.088420131092602e-17,
+      "petz_chi_square": 1.217684034335197e-16,
+      "relative_entropy_upper_bound": 3.464304361247404e-13,
+      "relative_entropy_over_c8": 0.60884201310926
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.01,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.9995000413533172,
+      "lambda_lower_bound": 0.9988007197120864,
+      "hs_squared_per_row": 1.2179274859090497e-16,
+      "hs_upper_bound": 3.460149689315627e-13,
+      "relative_entropy_quadrature": 6.088420131092607e-17,
+      "petz_chi_square": 1.2176840343351977e-16,
+      "relative_entropy_upper_bound": 3.464304361247404e-13,
+      "relative_entropy_over_c8": 0.6088420131092606
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.01,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.9995000599979993,
+      "lambda_lower_bound": 0.9988007197120864,
+      "hs_squared_per_row": 1.2179274859090507e-16,
+      "hs_upper_bound": 3.460149689315627e-13,
+      "relative_entropy_quadrature": 6.088420131092631e-17,
+      "petz_chi_square": 1.2176840343352032e-16,
+      "relative_entropy_upper_bound": 3.464304361247404e-13,
+      "relative_entropy_over_c8": 0.608842013109263
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.1,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.9503999999999991,
+      "lambda_lower_bound": 0.8869204367171575,
+      "hs_squared_per_row": 1.2179883761934035e-08,
+      "hs_upper_bound": 3.896629119058324e-05,
+      "relative_entropy_quadrature": 5.974216710361553e-09,
+      "petz_chi_square": 1.194921879331375e-08,
+      "relative_entropy_upper_bound": 4.3934370635107766e-05,
+      "relative_entropy_over_c8": 0.597421671036155
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.1,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.9504133991855692,
+      "lambda_lower_bound": 0.8869204367171575,
+      "hs_squared_per_row": 1.217988376193403e-08,
+      "hs_upper_bound": 3.896629119058324e-05,
+      "relative_entropy_quadrature": 5.974217344297993e-09,
+      "petz_chi_square": 1.19492202055882e-08,
+      "relative_entropy_upper_bound": 4.3934370635107766e-05,
+      "relative_entropy_over_c8": 0.597421734429799
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.1,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.950597999999998,
+      "lambda_lower_bound": 0.8869204367171575,
+      "hs_squared_per_row": 1.2179883761934018e-08,
+      "hs_upper_bound": 3.896629119058324e-05,
+      "relative_entropy_quadrature": 5.974219074415741e-09,
+      "petz_chi_square": 1.1949223680498402e-08,
+      "relative_entropy_upper_bound": 4.3934370635107766e-05,
+      "relative_entropy_over_c8": 0.5974219074415738
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.25,
+      "phi": 0.0,
+      "theta": 0.39269908169872414,
+      "lambda_min": 0.703124999999999,
+      "lambda_lower_bound": 0.4723665527410147,
+      "hs_squared_per_row": 1.862039557538506e-05,
+      "hs_upper_bound": 0.11163867275105901,
+      "relative_entropy_quadrature": 8.456157365868627e-06,
+      "petz_chi_square": 1.6953464103466055e-05,
+      "relative_entropy_upper_bound": 0.23633907206860888,
+      "relative_entropy_over_c8": 0.5541827291295663
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.25,
+      "phi": 0.37,
+      "theta": 0.7626990816987241,
+      "lambda_min": 0.7036206493241733,
+      "lambda_lower_bound": 0.4723665527410147,
+      "hs_squared_per_row": 1.862039557538505e-05,
+      "hs_upper_bound": 0.11163867275105901,
+      "relative_entropy_quadrature": 8.457379795875566e-06,
+      "petz_chi_square": 1.6956075604419774e-05,
+      "relative_entropy_upper_bound": 0.23633907206860888,
+      "relative_entropy_over_c8": 0.5542628423025011
+    },
+    {
+      "counts": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "stock_size": 6,
+      "orbit_dimension": 180,
+      "c": 0.25,
+      "phi": 1.5707963267948966,
+      "theta": 1.9634954084936207,
+      "lambda_min": 0.7104492187499984,
+      "lambda_lower_bound": 0.4723665527410147,
+      "hs_squared_per_row": 1.8620395575385044e-05,
+      "hs_upper_bound": 0.11163867275105901,
+      "relative_entropy_quadrature": 8.45989902020844e-06,
+      "petz_chi_square": 1.6960922376665095e-05,
+      "relative_entropy_upper_bound": 0.23633907206860888,
+      "relative_entropy_over_c8": 0.5544279421883803
+    }
+  ]
+}

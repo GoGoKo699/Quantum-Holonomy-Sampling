@@ -1,0 +1,177 @@
+{
+  "status": "all assertions passed",
+  "cases": 16,
+  "exact_integer_group_identities": 3,
+  "metadata": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sha256": {
+      "verification/block_phase_checks.py": "f0171efa72d841bc39ee0c2031146b1bef91eee39c4f72b853c40e584db43e4b",
+      "verification/requirements-phase.txt": "ad291935bab4da194a85b299d0d08572424270287fc4eeb6c5638c717b952ffa",
+      "science/block-information.md": "49b9f35fe1ca83b59df80f6d16f37bc20f57d6827f6bb66df0878345330846fb"
+    }
+  },
+  "records": [
+    {
+      "c": 0.25,
+      "phi": 0.0,
+      "qfi": 3.100198412698414e-05,
+      "exact_spectrum_qfi": 3.1001984126984125e-05,
+      "qfi_over_c8": 2.0317460317460325,
+      "qfi_lower_bound": 3.0517578125e-05,
+      "qfi_upper_bound": 3.344961937437666e-05,
+      "commutator_norm": 0.0
+    },
+    {
+      "c": 0.1,
+      "phi": 0.0,
+      "qfi": 2.0008003201280532e-08,
+      "exact_spectrum_qfi": 2.0008003201280526e-08,
+      "qfi_over_c8": 2.0008003201280524,
+      "qfi_lower_bound": 2.000000000000001e-08,
+      "qfi_upper_bound": 2.0034017507294717e-08,
+      "commutator_norm": 6.196930351462743e-24
+    },
+    {
+      "c": 0.03,
+      "phi": 0.0,
+      "qfi": 1.3122042515417738e-12,
+      "exact_spectrum_qfi": 1.3122042515417746e-12,
+      "qfi_over_c8": 2.000006480020994,
+      "qfi_lower_bound": 1.3121999999999996e-12,
+      "qfi_upper_bound": 1.3122170983462214e-12,
+      "commutator_norm": 6.034579932451121e-28
+    },
+    {
+      "c": 0.01,
+      "phi": 0.0,
+      "qfi": 2.0000000800000037e-16,
+      "exact_spectrum_qfi": 2.0000000800000035e-16,
+      "qfi_over_c8": 2.0000000800000035,
+      "qfi_lower_bound": 2.0000000000000005e-16,
+      "qfi_upper_bound": 2.0000003201920933e-16,
+      "commutator_norm": 3.30351010918175e-32
+    },
+    {
+      "c": 0.25,
+      "phi": 0.37,
+      "qfi": 3.100349089394823e-05,
+      "exact_spectrum_qfi": 3.100349089394821e-05,
+      "qfi_over_c8": 2.031844779225791,
+      "qfi_lower_bound": 3.0517578125e-05,
+      "qfi_upper_bound": 3.344961937437666e-05,
+      "commutator_norm": 2.719371411073373e-21
+    },
+    {
+      "c": 0.1,
+      "phi": 0.37,
+      "qfi": 2.000800371372808e-08,
+      "exact_spectrum_qfi": 2.000800371372808e-08,
+      "qfi_over_c8": 2.000800371372807,
+      "qfi_lower_bound": 2.000000000000001e-08,
+      "qfi_upper_bound": 2.0034017507294717e-08,
+      "commutator_norm": 1.0115971657778996e-23
+    },
+    {
+      "c": 0.03,
+      "phi": 0.37,
+      "qfi": 1.312204251543914e-12,
+      "exact_spectrum_qfi": 1.3122042515439143e-12,
+      "qfi_over_c8": 2.0000064800242563,
+      "qfi_lower_bound": 1.3121999999999996e-12,
+      "qfi_upper_bound": 1.3122170983462214e-12,
+      "commutator_norm": 4.0374246191907393e-28
+    },
+    {
+      "c": 0.01,
+      "phi": 0.37,
+      "qfi": 2.0000000800000047e-16,
+      "exact_spectrum_qfi": 2.0000000800000037e-16,
+      "qfi_over_c8": 2.0000000800000044,
+      "qfi_lower_bound": 2.0000000000000005e-16,
+      "qfi_upper_bound": 2.0000003201920933e-16,
+      "commutator_norm": 6.586766730915524e-32
+    },
+    {
+      "c": 0.25,
+      "phi": 1.5707963267948966,
+      "qfi": 3.1008063624821515e-05,
+      "exact_spectrum_qfi": 3.1008063624821515e-05,
+      "qfi_over_c8": 2.032144457716303,
+      "qfi_lower_bound": 3.0517578125e-05,
+      "qfi_upper_bound": 3.344961937437666e-05,
+      "commutator_norm": 0.0
+    },
+    {
+      "c": 0.1,
+      "phi": 1.5707963267948966,
+      "qfi": 2.0008005606407485e-08,
+      "exact_spectrum_qfi": 2.0008005606407475e-08,
+      "qfi_over_c8": 2.0008005606407475,
+      "qfi_lower_bound": 2.000000000000001e-08,
+      "qfi_upper_bound": 2.0034017507294717e-08,
+      "commutator_norm": 4.3818914740600394e-24
+    },
+    {
+      "c": 0.03,
+      "phi": 1.5707963267948966,
+      "qfi": 1.3122042515521061e-12,
+      "exact_spectrum_qfi": 1.312204251552106e-12,
+      "qfi_over_c8": 2.0000064800367423,
+      "qfi_lower_bound": 1.3121999999999996e-12,
+      "qfi_upper_bound": 1.3122170983462214e-12,
+      "commutator_norm": 4.267092391848447e-28
+    },
+    {
+      "c": 0.01,
+      "phi": 1.5707963267948966,
+      "qfi": 2.000000080000005e-16,
+      "exact_spectrum_qfi": 2.000000080000006e-16,
+      "qfi_over_c8": 2.0000000800000044,
+      "qfi_lower_bound": 2.0000000000000005e-16,
+      "qfi_upper_bound": 2.0000003201920933e-16,
+      "commutator_norm": 1.476089332688828e-32
+    },
+    {
+      "c": 0.25,
+      "phi": 3.141592653589793,
+      "qfi": 3.1001984126984125e-05,
+      "exact_spectrum_qfi": 3.1001984126984125e-05,
+      "qfi_over_c8": 2.0317460317460316,
+      "qfi_lower_bound": 3.0517578125e-05,
+      "qfi_upper_bound": 3.344961937437666e-05,
+      "commutator_norm": 0.0
+    },
+    {
+      "c": 0.1,
+      "phi": 3.141592653589793,
+      "qfi": 2.0008003201280513e-08,
+      "exact_spectrum_qfi": 2.0008003201280526e-08,
+      "qfi_over_c8": 2.00080032012805,
+      "qfi_lower_bound": 2.000000000000001e-08,
+      "qfi_upper_bound": 2.0034017507294717e-08,
+      "commutator_norm": 8.437433049321614e-24
+    },
+    {
+      "c": 0.03,
+      "phi": 3.141592653589793,
+      "qfi": 1.3122042515417746e-12,
+      "exact_spectrum_qfi": 1.3122042515417746e-12,
+      "qfi_over_c8": 2.0000064800209953,
+      "qfi_lower_bound": 1.3121999999999996e-12,
+      "qfi_upper_bound": 1.3122170983462214e-12,
+      "commutator_norm": 1.8188763582188709e-28
+    },
+    {
+      "c": 0.01,
+      "phi": 3.141592653589793,
+      "qfi": 2.0000000800000025e-16,
+      "exact_spectrum_qfi": 2.0000000800000035e-16,
+      "qfi_over_c8": 2.000000080000002,
+      "qfi_lower_bound": 2.0000000000000005e-16,
+      "qfi_upper_bound": 2.0000003201920933e-16,
+      "commutator_norm": 8.384813827418317e-32
+    }
+  ]
+}

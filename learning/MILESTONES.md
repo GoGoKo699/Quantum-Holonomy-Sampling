@@ -1,383 +1,373 @@
-# Thirty milestones for quantum holonomy sampling
+# Thirty milestones for phase estimation and coherent runs
 
-The project asks how many independently supplied copies of unknown pure states are needed to estimate the geometric phase of a specified discrete loop. Its scientific story has two complementary parts: a coherent algorithm that preserves local overlap phases without multiplying their attenuation, and a finite statistical argument that limits every protocol in the same copy model.
+The project asks how many copies of unknown pure states are needed to estimate the phase around a specified loop, then asks whether the best copy order can survive frequent complete quantum resets. The constructive transport algorithm, unrestricted copy converse, optimal four-copy information, and fixed-source adaptive transcript argument form one connected story.
 
-This map contains exactly thirty understanding targets. The targets follow the project's assumptions, mechanism, proof structure, and operational meaning. Specialist details remain in the linked scientific accounts; the map does not claim to cover every lemma or every neighboring subject.
+The map contains exactly **30 project-defined understanding targets**. **Background/preliminaries has 12 milestones, M01–M12**: individual rays and operations become a complete statistical experiment with symmetry, a total-copy cap, and a precise reset boundary. **Narrative/innovation has 18 milestones, M13–M30**: local transport builds the upper endpoint, while phase-specific block information and the adaptive comparison establish its necessary coherent-run size. Each phase proceeds from local objects to a global account. The allocation gives both the algorithm and the information argument room without turning specialist lemmas into separate milestones.
 
-## One anchor and the role of the sources
+The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**, using the [author-hosted 2018 manuscript](https://cs.uwaterloo.ca/~watrous/TQI/TQI.pdf). All section numbers below refer to this source. The [Watrous bridge](WATROUS_BRIDGE.md) supplies notation translations, missing algorithmic explanations, two complete four-state examples, and the route to the phase/coherence theorem. Primary research papers remain attribution and proof dependencies, not extra educational anchors. Watrous supplies information-theoretic foundations; the particular transport and transcript theorems are supplied by the linked scientific accounts.
 
-The single educational anchor is Andrew M. Childs, [*Lecture Notes on Quantum Algorithms*](https://www.cs.umd.edu/~amchilds/qa/qa.pdf), the author PDF dated **17 April 2025**. All Childs section numbers below refer to that edition. The [Childs bridge](CHILDS_BRIDGE.md) translates its conventions and connects the selected sections to this project.
-
-Childs supplies the circuit, interference, phase-estimation, error-composition, and polynomial-transformation foundations. The local scientific files supply the particular source model, phase-preserving transport, controlled sample simulation, and finite converse. Primary research citations in those files remain proof dependencies and attribution; they are not additional educational anchors. Where Childs provides only context, the source entry says so rather than attributing the project's theorem to the notes.
-
-## Allocation and progression
-
-**Background/preliminaries has eleven milestones, M01–M11.** They move from individual rays and supplied specimens to relations between states, coherent operations, approximation, and statistical inference. M11 combines those objects into the complete estimation problem. Eleven are needed because understanding a copy theorem requires both quantum-algorithm and quantum-information concepts; a circuit-only introduction would leave its access assumptions and converse unexplained.
-
-**Narrative/innovation has nineteen milestones, M12–M30.** M12–M20 connect local transport to an executable algorithm and its complete resource budget. M21–M25 build the independent lower-bound argument from physical source states to a bound against adaptive collective protocols. M26–M30 connect those proofs to the direct-cycle benchmark, the near-optimal theorem, its intellectual context, and its limits. The extra space belongs to the project's two proof arguments and their connection, not to an extended survey of quantum algorithms. “Narrative/innovation” names the contribution-building phase; established primitives within it are explicitly credited.
-
-Dependencies name earlier milestones needed for the stated target. Each phase progresses from local objects to a global explanation, and each ends with synthesis. The canonical conventions are those of [the model](../science/model.md): overlap **amplitude** is bounded below by $`c`$, the target is the argument of the forward cyclic product, total consumed copies are counted, and accuracy is circular.
+Dependencies refer to earlier targets. They are conceptual requirements, not a reader's assessment record. The map does not claim to cover every technical lemma or neighboring topic.
 
 ## Phase I — Background/preliminaries
 
-### M01 — Rays, projectors, and an unknown pure state
+### M01 — Rays and source density operators
 
-**Central question:** What physical information does a pure-state source specify when the phase of its state vector is arbitrary?
+**Central question:** What does a pure-state source specify when the phase of its vector is arbitrary?
 
-**Understanding target:** Distinguish a normalized vector, its ray, and the density operator $`P=|\psi\rangle\langle\psi|`$. Explain why rephasing a representative leaves the supplied state unchanged, while relations between several projectors can contain observable phase information.
+**Understanding target:** Explain a normalized vector, its ray, and $`P=|\psi\rangle\langle\psi|`$. Rephasing a vector leaves the source unchanged, but relationships between several projectors can retain observable phase information.
 
-**Dependencies and story role:** No earlier milestone. This establishes the individual object from which both the algorithm and the hard family are built.
+**Dependencies and story role:** None. This establishes the local physical object used by the algorithm and the statistical hard family.
 
-**Conceptual connection:** The project must define its phase through source density operators; it cannot ask a receiver to measure the global phase of one unknown vector.
+**Conceptual connection:** The target must be a function of supplied density operators, rather than the unobservable global phase of one vector.
 
-**Sources:** Childs §1.1 for state-vector notation. [Model §1](../science/model.md#1-independent-labeled-sources) and [§2](../science/model.md#2-target-and-error-convention) give the source and rephasing conventions.
+**Sources:** Watrous §§2.1.1–2.1.3. [Model §§1–2](../science/model.md#1-independent-labeled-sources); [bridge §1](WATROUS_BRIDGE.md#1-the-task-before-the-circuit).
 
-### M02 — Copies, registers, and the supplied interface
+### M02 — Supplied specimens and classical source labels
 
-**Central question:** Which operations follow from receiving a quantum specimen, and which require an additional access assumption?
+**Central question:** Which computational access is provided by an independent quantum copy?
 
-**Understanding target:** Distinguish independent copies, a classical state description, a preparation unitary, its inverse, and a coherent source-index oracle. Explain how known gates can act jointly on supplied registers even though their unknown states cannot be prepared or queried through an assumed oracle.
+**Understanding target:** Distinguish copies from a classical state description, preparation circuit, inverse preparation, conjugated specimen, and coherent source-index oracle. Explain how known gates act jointly on supplied registers while their acquisition labels remain classical.
 
-**Dependencies and story role:** M01. It turns the abstract state into a computational input and fixes the resource that the theorem counts.
+**Dependencies and story role:** M01. It turns a state into a charged input interface and identifies what later protocols must simulate.
 
-**Conceptual connection:** Classical source labels and coherent processing of register contents coexist. The algorithm's controlled operations do not imply coherent access to the label-selection interface.
+**Conceptual connection:** Controlled processing of register contents does not supply controlled state preparation. Every fresh target or program specimen counts toward the deterministic cap.
 
-**Sources:** Childs §§1.2 and 21.1–21.2 for circuits and query models. [Model §1](../science/model.md#1-independent-labeled-sources), [§3](../science/model.md#3-what-is-counted), and [Algorithm: access model](../science/algorithm.md#access-model-and-target) define the particular copy interface.
+**Sources:** Watrous §§2.1, 2.2. [Model §§1 and 3](../science/model.md#1-independent-labeled-sources); [algorithm access model](../science/algorithm.md#access-model-and-target).
 
-### M03 — Overlaps, squared fidelity, and physical Gram matrices
+### M03 — Complex overlaps and physical Gram matrices
 
-**Central question:** What can pairwise overlaps tell us, and when can a proposed set of overlaps describe actual states?
+**Central question:** When can prescribed local overlaps describe a physical collection of states?
 
-**Understanding target:** Distinguish the complex overlap, its magnitude, and its squared magnitude. Understand a Gram matrix as the collection of overlaps, with unit diagonal and positive semidefiniteness ensuring a realization by normalized vectors. Recognize that pairwise magnitudes omit phase information.
+**Understanding target:** Distinguish overlap amplitude, its magnitude, and squared fidelity. Explain how a positive semidefinite Gram matrix with unit diagonal produces normalized source vectors and why pairwise magnitudes omit phase information.
 
-**Dependencies and story role:** M01–M02. This introduces local relations between inputs and the matrix language later used to construct an entire hard instance.
+**Dependencies and story role:** M01–M02. Local relations become matrix data that can specify an entire sparse family.
 
-**Conceptual connection:** The promise is $`|\langle\psi_j|\psi_{j+1}\rangle|\ge c`$, not squared fidelity at least $`c`$. Gram positivity constrains which sparse phase patterns are physical.
+**Conceptual connection:** The promise is amplitude at least $`c`$, so squared fidelity is at least $`c^2`$. Gram positivity must hold before a formal phase pattern becomes a legal lower-bound input.
 
-**Sources:** Childs §15.3 for the SWAP test and squared-overlap information. [Model §1](../science/model.md#1-independent-labeled-sources) and [Lower bound §1, equations (1)–(6)](../science/lower-bound.md#1-a-normalized-family-of-sources) supply the amplitude convention and Gram realization.
+**Sources:** Watrous §§1.1.3, 3.2.1. [Model §1](../science/model.md#1-independent-labeled-sources); [lower bound §1](../science/lower-bound.md#1-a-normalized-family-of-sources).
 
-### M04 — Measurements, discarded registers, and coherent references
+### M04 — Channels, discarded programs, and coherent references
 
-**Central question:** How should an operation be described when its target is entangled with another register or an auxiliary specimen is discarded?
+**Central question:** What remains of an operation after an auxiliary specimen is discarded?
 
-**Understanding target:** Connect unitary evolution of a larger system to a channel on retained registers. Distinguish a measurement outcome distribution from the complete output state, and understand why an approximation must preserve correlations with controls and reference registers used later in the computation.
+**Understanding target:** Connect unitary evolution on a larger system to a channel on retained registers. Explain why an approximation must preserve correlations with controls and arbitrary references, including off-diagonal control blocks.
 
-**Dependencies and story role:** M01–M03. It extends the description from isolated pure vectors to the operational setting required for sample simulation and collective lower bounds.
+**Dependencies and story role:** M01–M03. It extends the local description from state vectors to the operations required for sample-based simulation.
 
-**Conceptual connection:** A program copy can be consumed while the target remains coherent. Checking only the active and inactive control branches separately would miss their relative coherence.
+**Conceptual connection:** A program can be consumed while an unknown target remains coherent. Correct output rays on isolated inputs do not alone imply the correct controlled channel.
 
-**Sources:** Childs §§1.1–1.2 provide state and circuit vocabulary. The channel and reference-system treatment used here is supplied locally in [Resources: controlled density-matrix exponentiation](../science/resources.md#controlled-density-matrix-exponentiation) and [its diamond-norm bound](../science/resources.md#diamond-norm-bound).
+**Sources:** Watrous §§2.2.1–2.2.3, 3.3.1–3.3.3. [Controlled density-matrix exponentiation](../science/resources.md#controlled-density-matrix-exponentiation); [diamond bound](../science/resources.md#diamond-norm-bound).
 
-### M05 — Controlled interference and a measurable operation phase
+### M05 — Measurable relative phase and cycle interference
 
-**Central question:** Why can an overall phase of an operation matter once that operation is coherently controlled?
+**Central question:** How does a cyclic product become an observable interference signal?
 
-**Understanding target:** Explain how a controlled unitary converts its action into interference on a control qubit, and how the Hadamard test accesses real and imaginary expectation values. Distinguish an unobservable phase of an isolated state vector from a relative phase between two controlled circuit branches.
+**Understanding target:** Explain how controlling a permutation turns its expectation into a control-qubit bias. Connect real and imaginary readout to the gauge-invariant product $`B`$, and distinguish an isolated state-vector phase from a controlled operation's relative phase.
 
-**Dependencies and story role:** M01, M02, and M04. It establishes the phase reference needed by every later transport and simulation claim.
+**Dependencies and story role:** M01, M03–M04. Local phase conventions become a complete measurable quantity.
 
-**Conceptual connection:** A transport correct only up to an unspecified scalar phase is insufficient for reading the loop phase. Known scalar phases in explicit circuits must be retained.
+**Conceptual connection:** A scalar phase that is irrelevant to an uncontrolled channel matters after coherent control. The orientation of the permutation fixes which sign of the imaginary part is measured.
 
-**Sources:** Childs §16.1. [Examples §2, equations (3)–(5)](../science/examples.md#2-what-one-direct-cycle-test-shot-measures) fixes the direct-readout orientation; [Transport §4](../science/transport.md#4-a-block-encoding-with-a-fixed-phase) explains the controlled block's scalar sign.
+**Sources:** Watrous §§2.2–2.3 for channels and measurement; the interference derivation is local. [Examples §2](../science/examples.md#2-what-one-direct-cycle-test-shot-measures); [bridge §§3–4](WATROUS_BRIDGE.md#3-conventions-that-matter).
 
-### M06 — Reflections, spectral functions, and normalization
+### M06 — Reflections, spectral sign, and matrix blocks
 
-**Central question:** How does a projector define a reversible operation, and what does applying a function to a Hermitian matrix mean?
+**Central question:** How can projectors specify a reversible transport despite a small overlap?
 
-**Understanding target:** Relate a projector's eigenvalues to the reflection $`R_P=I-2P=e^{-i\pi P}`$. Understand spectral sign and polar factors as operations on eigenvalues or singular values, and distinguish a spectral gap relative to a specified normalization from an intrinsic condition number.
+**Understanding target:** Relate $`R_P=I-2P`$ to projector eigenvalues; explain spectral sign, polar factor, and a selected matrix block of a larger unitary. Distinguish normalization-relative singular-value gap from an intrinsic condition number.
 
-**Dependencies and story role:** M01, M03, and M05. It supplies the local operator language for turning overlap geometry into a coherent transformation.
+**Dependencies and story role:** M03–M05. It supplies the operator language that will remove local attenuation coherently.
 
-**Conceptual connection:** The compiler uses a sign gap relative to block normalization one. This is not a promised eigenphase gap of the eventual loop operator.
+**Conceptual connection:** The local sign gap is at least $`c`$ under normalization one. It is not an assumed eigenphase gap of the eventual loop.
 
-**Sources:** Childs §§27.1 and 29.3 for evolution and spectral transformations. [Transport §§1–2](../science/transport.md#1-a-projector-defined-transport) and [Resources, equation (5)](../science/resources.md#diamond-norm-bound) supply the exact reflection and transport conventions.
+**Sources:** Watrous §1.1.3 and §2.2. The particular block-encoding compiler is a primary research dependency. [Transport §§1–2 and 4–5](../science/transport.md#1-a-projector-defined-transport); [bridge §5](WATROUS_BRIDGE.md#5-from-the-loop-to-a-copy-budget).
 
-### M07 — Fourier phase estimation and the cost of powers
+### M07 — Errors that compose through a computation
 
-**Central question:** How can an eigenvalue become a classical angle estimate, and what determines its resolution?
+**Central question:** Which notion of closeness controls the final classical experiment?
 
-**Understanding target:** Connect a unitary eigenphase, controlled powers, a finite Fourier grid, and the measured output. Distinguish angle in radians from phase divided by $`2\pi`$, and distinguish the number of phase qubits from the number of unitary calls needed to implement their controlled powers.
+**Understanding target:** Distinguish vector, operator, trace-distance, and unhalved diamond error. Explain telescoping composition, and why a clean-input guarantee can be applied on ideal clean prefixes without assuming that actual workspace stays perfectly clean.
 
-**Dependencies and story role:** M02, M05, and M06. It supplies the global readout primitive before the project constructs the appropriate loop eigenvalue.
+**Dependencies and story role:** M04–M06. Approximate local operations become usable components of a reliable global algorithm.
 
-**Conceptual connection:** Fine phase resolution comes from repeated coherent evolution. The powers are expanded and charged; they are not supplied at unit cost.
+**Conceptual connection:** Polar leakage and discarded-program error have different mathematical forms, but both must ultimately bound changes in final outcome probabilities.
 
-**Sources:** Childs §§4.1–4.3. [Algorithm §1, equations (4)–(7)](../science/algorithm.md#1-an-ideal-phase-estimation-circuit) and [the bridge's conventions](CHILDS_BRIDGE.md#3-conventions-that-matter) translate the notes to the project's phase and output.
+**Sources:** Watrous §§1.1.3, 3.2–3.3. [Transport clean lift and workspace reuse](../science/transport.md#5-the-inherited-polar-compiler-and-its-clean-ancilla-guarantee); [algorithm §4](../science/algorithm.md#4-finite-gate-errors-and-the-final-success-bound).
 
-### M08 — A matrix inside a unitary circuit
+### M08 — An eigenphase and a finite Fourier output
 
-**Central question:** How can a circuit act on a matrix that is not itself unitary?
+**Central question:** How can coherent evolution reveal an angle at a charged finite cost?
 
-**Understanding target:** Explain a block encoding as a selected matrix block of a larger unitary, including its normalization. Connect a bounded polynomial of that block to a sequence of known phase rotations and block-encoding calls. Keep the selected-block guarantee distinct from the action of the entire circuit on its ancillas.
+**Understanding target:** Connect a unitary eigenvalue, controlled powers, finite Fourier interference, and its measured integer. Distinguish radians from a fraction of a turn, phase-qubit count from expanded unitary calls, and circular accuracy from ordinary real-line error.
 
-**Dependencies and story role:** M02, M04, and M06. It introduces the compiler interface that links spectral functions to executable circuits.
+**Dependencies and story role:** M02, M05–M07. It supplies the readout mechanism before the project builds the required loop eigenvalue.
 
-**Conceptual connection:** The project needs a near-unitary sign transform with a coherent clean-ancilla guarantee; the general polynomial viewpoint alone does not yet provide that stronger guarantee.
+**Conceptual connection:** Fine resolution comes from actual repeated coherent applications. The exact pair $`(y,F)`$ describes an output angle without numerical rounding ambiguity.
 
-**Sources:** Childs §§29.1–29.3. [Transport §§4–5](../science/transport.md#4-a-block-encoding-with-a-fixed-phase) specifies the actual block encoding and separately credits the inherited research-level polar theorem.
+**Sources:** Watrous §§2.1–2.3 supply state/measurement foundations; the Fourier circuit is explained locally. [Algorithm §1](../science/algorithm.md#1-an-ideal-phase-estimation-circuit); [bridge §§3–4](WATROUS_BRIDGE.md#3-conventions-that-matter).
 
-### M09 — Approximation errors that compose
+### M09 — Estimation, finite testing, and information
 
-**Central question:** Which notion of closeness remains useful when an approximate operation is inserted into a long coherent computation?
+**Central question:** How can two source tuples constrain every estimator?
 
-**Understanding target:** Distinguish vector error, operator error, trace distance, and unhalved diamond error by what each controls. Understand the telescoping argument that adds local errors, including why a clean-input guarantee must be applied on ideal clean prefixes rather than assumed on arbitrary dirty workspace.
+**Understanding target:** Connect disjoint accuracy regions to binary discrimination, trace distance to optimal success, and relative entropy to classical data processing. Distinguish a finite testing bound from asymptotic Fisher information or a lower bound for one chosen measurement.
 
-**Dependencies and story role:** M04–M08. It turns separate approximate primitives into ingredients of a reliable complete algorithm.
+**Dependencies and story role:** M02–M04, M07. It supplies the statistical language common to both lower-bound branches.
 
-**Conceptual connection:** The polar circuit and the consumed-copy simulator require different guarantees. Their errors ultimately bound changes in the same final measurement probability.
+**Conceptual connection:** A task lower bound must include receivers that avoid the proposed transport or any particular cycle readout. Information bounds must concern the actual experiment whose outputs are retained.
 
-**Sources:** Childs §2.1. [Transport §5, equations (10)–(11)](../science/transport.md#5-the-inherited-polar-compiler-and-its-clean-ancilla-guarantee), [Resources: diamond-norm bound](../science/resources.md#diamond-norm-bound), and [Algorithm §4](../science/algorithm.md#4-finite-gate-errors-and-the-final-success-bound) give the local extensions.
+**Sources:** Watrous §§3.1.1, 3.2, 5.1–5.2. [Lower bound §§4–5](../science/lower-bound.md#4-phase-estimation-implies-binary-discrimination); [block information](../science/block-information.md).
 
-### M10 — Finite estimation, discrimination, and resource lower bounds
+### M10 — Permutations, common orientation, and Haar averaging
 
-**Central question:** How can two difficult-to-distinguish inputs limit every estimator, including one using collective measurements?
+**Central question:** What remains measurable when the joint orientation of the sources is unknown?
 
-**Understanding target:** Relate separated target values to a binary decision problem, trace distance to optimal decision success, and independent copies to tensor powers. Distinguish a lower bound for a restricted measurement strategy, a generic query simulator, and the actual estimation task under a total-copy cap.
+**Understanding target:** Explain invariant measurements and common-unitary averaging. Connect tensor-position permutations, Schur sectors, and orbit Gram matrices; recognize why known maximally mixed factors do not change distinguishability and why transposition is not generally a physical channel on extensions.
 
-**Dependencies and story role:** M02–M04 and M09. It introduces the statistical reasoning needed to assess necessity as well as algorithmic sufficiency.
+**Dependencies and story role:** M03–M04, M09. It builds the symmetry framework used to optimize a block measurement.
 
-**Conceptual connection:** The converse must constrain all allowed processing of the sources, including protocols that never implement the proposed transport circuit.
+**Conceptual connection:** A common Haar rotation preserves the promised Gram matrix. Independent rotations of the four labels would destroy that relation; independent rotations between runs would change the stationary-source experiment.
 
-**Sources:** Childs §§21.1–21.2 provide resource-model context, not the copy converse. The finite discrimination identities and reduction are supplied in [Lower bound §§4–5, equations (15)–(20)](../science/lower-bound.md#4-phase-estimation-implies-binary-discrimination); [Related work §1](../references/related-work.md#1-established-ingredients-used-by-the-algorithm) distinguishes compiler and task lower bounds.
+**Sources:** Watrous §§7.1–7.2, 3.1–3.2. [Block-information representation argument](../science/block-information.md); [bridge §9](WATROUS_BRIDGE.md#9-a-sparse-four-state-experiment-with-an-optimal-block-measurement).
 
-### M11 — The complete discrete-phase estimation problem
+### M11 — Complete resets and a classical adaptive notebook
 
-**Central question:** What precisely must a successful algorithm learn, from which inputs, at which cost?
+**Central question:** What information may survive a boundary between coherent runs?
 
-**Understanding target:** Assemble the pure independent sources, known adjacent amplitude bound, gauge-invariant forward product, circular error, constant success probability, and worst-case total-copy count into one problem statement. Explain why a small raw invariant and a difficult phase-estimation task are related but not identical claims.
+**Understanding target:** State the conditional complete-reset rule for all retained quantum registers jointly. Explain arbitrary classical histories and feedback, consumed-copy run cap $`b`$, total worst-case cap $`N`$, and why a target carried through streamed acquisitions is still inside one run.
 
-**Dependencies and story role:** M01–M10. This completes the background phase by connecting its objects, operations, error notions, and statistical objective.
+**Dependencies and story role:** M02, M04, M09–M10. It assembles the operational restriction needed for a meaningful adaptive converse.
 
-**Conceptual connection:** The target is $`\Phi=\arg\prod_j\langle\psi_j|\psi_{j+1}\rangle`$. The central question is whether the exponentially small product magnitude is an unavoidable copy cost under the stated coherent access.
+**Conceptual connection:** Consumed copies before reset are neither simultaneous storage width, elementary-gate count, circuit depth, nor physical elapsed time. A marginally unknown-free register can still carry prohibited conditional correlations.
 
-**Sources:** [Model §§1–3](../science/model.md#1-independent-labeled-sources) and [Interpretation: why the direct signal can be small](../science/interpretation.md#why-the-direct-signal-can-be-small). Childs §§4.3, 16.1, and 21.1 supply the readout and resource language assembled here; the particular statistical problem is defined locally.
+**Sources:** Watrous §§2.1–2.3 for registers, conditioning, and instruments. [Coherent-run model](../science/coherent-runs.md); [bridge §8](WATROUS_BRIDGE.md#8-what-survives-a-complete-reset).
+
+### M12 — The two resource questions in one model
+
+**Central question:** What does copy-optimal phase estimation mean, and which extra question does the run constraint ask?
+
+**Understanding target:** Assemble pure stationary sources, adjacent amplitude promise, forward loop phase, circular error, constant success, total consumed copies, and complete resets. Explain the general-$`L`$ copy theorem and the additional fixed-$`L=4`$, fixed-accuracy, weak-overlap endpoint question.
+
+**Dependencies and story role:** M01–M11. This completes the background phase by joining objects, operations, symmetry, and statistical quantifiers.
+
+**Conceptual connection:** A weak raw invariant motivates the question but does not optimize block information. Root fidelity is a different target; only a method with verified assumptions may transfer from the sister project.
+
+**Sources:** Watrous Chapters 2–3, §§5.1–5.2, 7.1–7.2 as assembled above. [Model](../science/model.md); [coherent runs](../science/coherent-runs.md); [bridge §§1 and 8](WATROUS_BRIDGE.md#1-the-task-before-the-circuit).
 
 ## Phase II — Narrative/innovation
 
-### M12 — Local transport that retains phase and removes attenuation
+### M13 — Compiling the local phase-preserving transport
 
-**Central question:** How can two nonorthogonal projectors specify a unitary transfer with the correct overlap phase?
+**Central question:** How does a pair of nonorthogonal projectors yield a usable controlled transport?
 
-**Understanding target:** Explain the action of $`Z=P+Q-I`$ on the two-ray span and its orthogonal complement, then connect its spectral sign to the normalized overlap transfer. Relate this sign transport to the established principal direct rotation, including the reflection convention and the coincident-ray endpoint.
+**Understanding target:** Derive the normalized-overlap action of $`\mathrm{sign}(P+Q-I)`$, relate it to the established direct rotation, and connect its two-reflection block encoding to the inherited polar compiler. Explain the block-error-to-clean-vector guarantee and inverse-$`c`$ query cost.
 
-**Dependencies and story role:** M03, M06, and M11. This is the local mechanism from which the narrative builds the global algorithm.
+**Dependencies and story role:** M03, M05–M07, M12. The narrative starts with the local mechanism and its executable interface.
 
-**Conceptual connection:** The transport is determined by projectors, so removing overlap attenuation does not require choosing or learning the phases of source-vector representatives.
+**Conceptual connection:** The transport depends only on projectors, keeps the overlap phase, and removes its magnitude. Fixed control phases and a coherent clean lift replace repeated postselection.
 
-**Sources:** [Transport §§1–2, equations (1)–(4)](../science/transport.md#1-a-projector-defined-transport); its reference [1] credits Bravyi, DiVincenzo, and Loss. Childs §§27.1 and 29.3 provide spectral-operation background; the rank-one derivation is local.
+**Sources:** Watrous §§1.1.3, 2.2, 3.3. [Transport §§1–5](../science/transport.md), with primary direct-rotation/QSVT/polar citations; [bridge §§3 and 5](WATROUS_BRIDGE.md#3-conventions-that-matter).
 
-### M13 — A fixed-phase block encoding from two labeled reflections
+### M14 — Closing the coherent loop
 
-**Central question:** How is the local matrix made available to a polynomial circuit without a coherent source-index oracle?
+**Central question:** Why does sequential local transport produce the desired global phase?
 
-**Understanding target:** Follow the selector qubit through the two controlled reflections and Hadamard gates, obtaining the block $`Z=P+Q-I`$ with normalization one. Explain why the leading minus sign must become a known phase on an external control and why both source labels remain classical circuit data.
+**Understanding target:** Follow the ordered product $`W=T_L\cdots T_1`$ and show $`W|\psi_1\rangle=e^{-i\Phi}|\psi_1\rangle`$. Explain the minus sign, cancellation of vector gauges, and the clean-prefix hybrid permitting work-qubit reuse.
 
-**Dependencies and story role:** M02, M05, M08, and M12. It converts the geometric mechanism into a concrete circuit interface.
+**Dependencies and story role:** M05, M07–M08, M13. It joins local transfers into the global object measured by the algorithm.
 
-**Conceptual connection:** An explicit circuit supplies a controlled operation with a fixed phase. Merely knowing its uncontrolled channel or endpoint-state action would not supply that information.
+**Conceptual connection:** A supplied initial specimen already has the ideal eigenphase. No eigenstate-preparation routine, isolated eigenvalue, or Hamiltonian path is assumed. The full qubit loop makes orientation and output concrete.
 
-**Sources:** [Transport §4, equations (7)–(8)](../science/transport.md#4-a-block-encoding-with-a-fixed-phase). Childs §§16.1 and 29.1 provide the control and selected-block concepts.
+**Sources:** Watrous §§2.1–2.2 and 3.3 for state evolution and error. [Transport §3 and workspace reuse](../science/transport.md#3-the-loop-and-its-orientation); [worked bridge §4](WATROUS_BRIDGE.md#4-a-complete-four-state-loop).
 
-### M14 — The polar compiler and a coherent clean-ancilla guarantee
+### M15 — Fourier readout and reflections from specimens
 
-**Central question:** What additional guarantee makes a polynomial approximation usable as a controlled transport?
+**Central question:** How does an ideal loop become a charged copy algorithm?
 
-**Understanding target:** Connect the bounded sign approximation to its inverse-$`c`$ query cost and logarithmic precision cost. Explain why block error at most $`\eta^2/2`$ yields clean-input isometry error at most $`\eta`$, and why invertibility makes the inherited row-space condition apply to every input.
+**Understanding target:** Connect the finite grid, $`q=F-1`$ expanded loops, $`M=Lq`$ transports, and $`Q=2KM`$ reflections. Explain how fresh controlled partial swaps approximate each fixed-phase reflection with unhalved diamond error at most $`4\pi^2/m`$, including inactive control branches.
 
-**Dependencies and story role:** M08–M09 and M12–M13. It closes the gap between an approximate matrix block and a coherent transformation suitable for a larger algorithm.
+**Dependencies and story role:** M04, M07–M08, M13–M14. It joins the readout circuit to the actual source interface.
 
-**Conceptual connection:** Here $`c`$ bounds the smallest singular value relative to normalization one. It is neither an assumed eigenphase gap of the loop nor necessarily the reciprocal intrinsic condition number of the two-dimensional operator.
+**Conceptual connection:** Discarding program specimens does not supply inverse preparation or end the target's coherent run. The first-order channel calculation must include off-diagonal control coherence.
 
-**Sources:** [Transport §5, equations (9)–(10)](../science/transport.md#5-the-inherited-polar-compiler-and-its-clean-ancilla-guarantee), including Gilyén et al. and Quek–Rebentrost Corollary 1. Childs §§29.1–29.3 supply foundations; the clean polar theorem is a separately cited research dependency.
+**Sources:** Watrous §§2.2–2.3, 3.3. [Algorithm §§1–3](../science/algorithm.md#1-an-ideal-phase-estimation-circuit); [resources controlled simulation](../science/resources.md#controlled-density-matrix-exponentiation); [bridge §5](WATROUS_BRIDGE.md#5-from-the-loop-to-a-copy-budget).
 
-### M15 — Closing the loop while preserving control coherence
+### M16 — A complete upper endpoint with separated resources
 
-**Central question:** Why does a sequence of local transports return a specimen with the required global phase?
+**Central question:** What is the actual cost and success probability of the construction?
 
-**Understanding target:** Explain the ordered product $`W=T_L\cdots T_1`$ and its eigenvalue $`e^{-i\Phi}`$ on the initial source state. Connect this phase calculation to the hybrid argument that permits reuse of approximate compiler workspace without postselection or an assumed perfect reset.
+**Understanding target:** Combine $`m=\lceil400\pi^2Q\rceil`$, $`N=1+Qm`$, and the separate polar, sample, and gate-error budgets. Explain the general copy bound and why fixed $`L=4`$, fixed accuracy gives $`O_\epsilon(c^{-2})`$ copies without an overlap logarithm.
 
-**Dependencies and story role:** M05, M09, and M12–M14. It assembles local transfers into the coherent global object that the readout will probe.
+**Dependencies and story role:** M07, M11, M13–M15. This integrates the constructive branch into a complete operational endpoint.
 
-**Conceptual connection:** The starting specimen is already an eigenvector of the ideal loop. The proof needs neither a separate eigenstate-preparation routine nor an eigenvalue-isolation promise.
+**Conceptual connection:** Streaming uses $`2\lceil\log_2d\rceil+O(\log(1/\epsilon))`$ live qubits, while one run may consume all $`N`$ copies. Quantum gates and classical phase compilation remain separately charged.
 
-**Sources:** [Transport §3, equations (5)–(6)](../science/transport.md#3-the-loop-and-its-orientation) and [reusing work qubits, equation (11)](../science/transport.md#reusing-work-qubits). Childs §§4.3 and 2.1 provide the eigenphase and composition foundations. The [four-state bridge example](CHILDS_BRIDGE.md#4-a-complete-four-state-loop) illustrates the orientation.
+**Sources:** Watrous §§3.2–3.3 provide error language. [Algorithm §§2–4](../science/algorithm.md#2-compile-every-transport-coherently); [resources](../science/resources.md); [bridge §§5 and 8](WATROUS_BRIDGE.md#5-from-the-loop-to-a-copy-budget).
 
-### M16 — A finite Fourier readout with charged loop powers
+### M17 — The sparse physical family and unrestricted copy converse
 
-**Central question:** How does the ideal loop give the required circular estimate at a known finite query cost?
+**Central question:** Why can no collective receiver improve the general copy powers beyond the stated law?
 
-**Understanding target:** Relate $`F=2^{\lceil\log_2(16\pi/\epsilon)\rceil}`$, $`q=F-1`$ expanded loop calls, and $`M=Lq`$ transport occurrences to the measurement distribution. Explain the wrapped Fourier-tail guarantee and the output sign $`\widehat\Phi=-2\pi y/F`$; the pair $`(y,F)`$ is an exact finite description.
+**Understanding target:** Build the positive circulant Gram family, distribute phase over its edges, and use cyclic covariance to simulate adaptive source labels from source-one copies. Connect a finite source-vector difference to tensor-power trace distance and an accurate phase estimate to binary testing.
 
-**Dependencies and story role:** M07, M11, and M15. It turns the coherent global phase into the specified statistical output and fixes the number of operations the later budgets must cover.
+**Dependencies and story role:** M03, M07, M09, M12. It supplies an independent necessity argument alongside the completed algorithm.
 
-**Conceptual connection:** Precision is built into the ideal circuit's grid and total coherent evolution. It is not obtained by ignoring the cost of controlled powers.
+**Conceptual connection:** The hard Gram matrix is uniformly well conditioned. Weak phase sensitivity of each specimen forces $`\Omega(L^2c^{-2}\epsilon^{-2})`$ copies without restricting the receiver to a reflection compiler.
 
-**Sources:** Childs §§4.2–4.3. [Algorithm §1, equations (4)–(7)](../science/algorithm.md#1-an-ideal-phase-estimation-circuit) gives the finite grid and tail bound; [the bridge's conventions](CHILDS_BRIDGE.md#3-conventions-that-matter) explains radians and normalized phase.
+**Sources:** Watrous §§1.1.3, 3.1.1–3.2. [Lower bound §§1–5 and scope](../science/lower-bound.md); [bridge §6](WATROUS_BRIDGE.md#6-why-the-lower-bound-is-a-different-argument).
 
-### M17 — Controlled reflections from consumed copies
+### M18 — What raw-cycle visibility does establish
 
-**Central question:** How can fresh specimens simulate the fixed-phase reflection that the query circuit assumes?
+**Central question:** Why is a direct cyclic readout costly, and which receivers does that comparison cover?
 
-**Understanding target:** Explain how controlled partial swaps with a fresh program register reproduce evolution generated by the source projector to first order. Connect the off-diagonal control blocks, the diamond bound $`4\tau^2`$, and $`m`$ independent steps to reflection error at most $`4\pi^2/m`$.
+**Understanding target:** Connect $`B=c^Le^{i\phi}`$, quadrature accuracy of order $`c^L\epsilon`$, and $`L`$ specimens per fresh shot. Explain the restricted readout's $`\Theta(Lc^{-2L}\epsilon^{-2})`$ copy count and why it is not a converse for arbitrary block measurements or classical histories.
 
-**Dependencies and story role:** M02, M04–M06, M09, and M13. It replaces the temporary reflection-query interface by the actual supplied-copy interface.
+**Dependencies and story role:** M05, M09, M16–M17. It makes the motivating benchmark precise before a stronger measurement-independent block analysis.
 
-**Conceptual connection:** Density-matrix exponentiation must preserve phase relative to the inactive control branch. Fresh programs are consumed; an inverse block-encoding call does not reverse a previously discarded program.
+**Conceptual connection:** The sparse graph has no nonzero triangles that recover its phase. Cycle/Bargmann tests are established useful protocols; their visibility alone cannot prove long-run necessity.
 
-**Sources:** [Resources: controlled density-matrix exponentiation and diamond bound, equations (1)–(5)](../science/resources.md#controlled-density-matrix-exponentiation), with the cited Lloyd–Mohseni–Rebentrost and Kimmel et al. results. Childs §§27.1–27.2 provide evolution and simulation context, not this sample-access lemma.
+**Sources:** Watrous §§2.3, 3.1, 5.1. [Examples §§1–4](../science/examples.md); [related work](../references/related-work.md); [bridge §7](WATROUS_BRIDGE.md#7-reading-the-unrestricted-result).
 
-### M18 — Why the whole query count is squared in copies
+### M19 — The invariant stock and its orbit Gram matrix
 
-**Central question:** How does a local sample simulation guarantee turn into a bound for the complete controlled circuit?
+**Central question:** How can every measurement of a common-orientation block be studied in a finite symmetry model?
 
-**Understanding target:** Explain the channel hybrid over all $`Q`$ reflection occurrences and the uniform allocation of program copies. Recognize why a constant total simulation error requires order $`Q`$ copies per reflection and order $`Q^2`$ program copies overall, with every inactive control branch still charged.
+**Understanding target:** Construct the tensor-word orbit Gram matrix for a fixed stock. Connect its Schur blocks to the physical common-Haar twirl, with parameter-independent representation factors and a simultaneous transpose. Explain equality of relative entropy and QFI without asserting unrestricted CPTP equivalence.
 
-**Dependencies and story role:** M09, M16, and M17. It connects local sample consumption to the algorithm's global copy resource.
+**Dependencies and story role:** M03, M09–M10, M17–M18. It begins the phase-specific information branch with a sufficient mathematical experiment.
 
-**Conceptual connection:** The Fourier grid has already set angle accuracy. The simulation only needs to preserve a constant success margin, so its total diamond tolerance is not additionally set to $`\epsilon`$.
+**Conceptual connection:** The one-each stock has a $`24\times24`$ regular model. General multiplicities use distinct words of one exact type; the dimension restriction of the later transcript theorem is a separate requirement.
 
-**Sources:** [Resources: query circuit to copy circuit, equation (6)](../science/resources.md#from-the-query-circuit-to-the-copy-circuit) and [Algorithm §3, equations (11)–(13)](../science/algorithm.md#3-replace-queries-by-supplied-copies). Wang–Zhang Definition 12 and Theorem 13 are the inherited multisource conversion. Childs §2.1 supplies the elementary composition principle.
+**Sources:** Watrous §§7.1–7.2, 3.1–3.2. [Block-information representation](../science/block-information.md); [coherent-run stock proof](../science/coherent-runs.md); [bridge §§9–10](WATROUS_BRIDGE.md#9-a-sparse-four-state-experiment-with-an-optimal-block-measurement).
 
-### M19 — The complete upper bound and its finite error budget
+### M20 — Optimal information in four consumed copies
 
-**Central question:** How do the phase resolution, polar approximation, sample simulation, and gate errors fit into one successful algorithm?
+**Central question:** How much phase information can the best four-copy block measurement extract?
 
-**Understanding target:** Combine $`\eta=1/(100M)`$, the actual polar query count $`K`$, $`Q=2KM`$, and $`m=\lceil400\pi^2Q\rceil`$ into $`N=1+Qm`$. Explain the separate error margins and the resulting success at least $`87/100`$, including the initial target copy and the per-source allocation.
+**Understanding target:** Identify the identity, adjacent swaps, disjoint swap pairs, and oriented four-cycle terms of the orbit Gram matrix. Explain their common spectral measurement, its exact probabilities, and optimal QFI $`2c^8[1+O(c^4)]`$, including $`\mathcal F_4(0)=2c^8/(1-4c^4)`$.
 
-**Dependencies and story role:** M14–M18. This integrates the algorithmic branch into the claimed upper theorem rather than leaving a collection of ideal primitives.
+**Dependencies and story role:** M05, M09–M10, M19. It replaces raw visibility intuition by an optimized measurement calculation.
 
-**Conceptual connection:** Substituting the charged query count gives $`O(L^2c^{-2}\epsilon^{-2}\log^2(L/\epsilon))`$ total copies. No tomography, individual overlap estimate, or inverse preparation access is hidden in that count.
+**Conceptual connection:** Phase dependence first appears at fourth order, and distinguishability at eighth order. A known cycle spectral test already attains the leading coefficient; the exponent is not merely a weakness of one ancilla readout.
 
-**Sources:** [Algorithm §§2–4, equations (8)–(14)](../science/algorithm.md#2-compile-every-transport-coherently) and [Resources: parameter table](../science/resources.md#resource-conventions). Childs §§2.1 and 4.3 supply the composition and readout ideas combined by the local budget.
+**Sources:** Watrous §§2.3, 7.1–7.2 for measurements/symmetry; the QFI calculation is local. [Exact spectrum and QFI](../science/block-information.md); [bridge §9](WATROUS_BRIDGE.md#9-a-sparse-four-state-experiment-with-an-optimal-block-measurement).
 
-### M20 — Streaming memory, quantum gates, and classical compilation
+### M21 — Finite four-copy testing without asymptotic assumptions
 
-**Central question:** What computational resources accompany the copy bound, and which costs remain distinct?
+**Central question:** How does local information become a finite bound on phase discrimination?
 
-**Understanding target:** Explain the persistent target, one live program register, phase register, and constant workspace. Distinguish the known-angle quantum gate bound, finite-gate synthesis overhead, and one-time classical phase-sequence computation; understand why dimension-independent copies do not imply dimension-independent processing or optimal total runtime.
+**Understanding target:** Use the commuting spectrum to compute relative entropy between separated phases and bound it by order $`c^8\sin^2((\phi-\theta)/2)`$. Distinguish finite binary testing from an unbiased-estimator Cramér–Rao statement and explain the scope of optimizing one adaptive four-copy run.
 
-**Dependencies and story role:** M02, M08–M09, and M17–M19. It completes the operational description of the upper construction.
+**Dependencies and story role:** M09–M11, M19–M20. It turns a differential diagnostic into a rigorous one-block comparison.
 
-**Conceptual connection:** With $`n=\lceil\log_2d\rceil`$, streaming uses $`2n+O(\log(1/\epsilon))`$ qubits and known-angle processing uses $`O(nN)`$ gates for $`d\ge2`$. Classical compilation can dominate in some parameter regimes.
+**Conceptual connection:** Independent invariant four-copy blocks need order $`c^{-8}`$ copies at fixed phase accuracy. A single fixed orientation across adaptive runs has additional correlations, which this calculation alone has not removed.
 
-**Sources:** [Resources: gate implementation and live memory, equations (7)–(9)](../science/resources.md#gate-implementation-and-live-memory) and [classical preprocessing and synthesis, equations (10)–(13)](../science/resources.md#classical-preprocessing-and-gate-synthesis), including Haah's attributed factorization cost. Childs §§1.3, 1.5, 2.1, and 3.4 supply universality, uniformity, and synthesis context.
+**Sources:** Watrous §§3.1.1, 5.1–5.2. [Finite block information and four-copy scope](../science/block-information.md); [bridge §9](WATROUS_BRIDGE.md#9-a-sparse-four-state-experiment-with-an-optimal-block-measurement).
 
-### M21 — A physical source family with a distributed loop phase
+### M22 — Growing stocks and the first phase-carrying winding
 
-**Central question:** How can a full loop phase vary while each source changes only weakly?
+**Central question:** What survives the four-cycle mechanism when a run may consume many copies of each label?
 
-**Understanding target:** Explain the positive circulant Gram matrix built from the cyclic shift, its unit diagonal, its eigenvalue bounds, and the state vectors obtained from its positive square root in a fixed basis. Relate the distributed edge phase to $`B=c^Le^{i\phi}`$.
+**Understanding target:** Define exact multiplicities, distinct-word dimension $`t!/(\prod_jr_j!)`$, and the fixed-type compression of $`G_\phi^{\otimes t}`$. Explain balanced label flow, integer winding, and why a nonzero winding requires at least four changed sites.
 
-**Dependencies and story role:** M03, M06, M10, and M11. It begins the converse with actual normalized sources rather than a formal list of unconstrained overlaps.
+**Dependencies and story role:** M03, M10–M11, M19–M21. It generalizes the local block mechanism to run lengths that may grow as overlap weakens.
 
-**Conceptual connection:** For $`c\le1/4`$, the Gram spectrum stays in $`[1-2c,1+2c]`$. The hard family is well conditioned even when the raw full-cycle invariant is tiny.
+**Conceptual connection:** The leading fixed-multiplicity expansion is informative but nonuniform. A threshold at $`b\asymp c^{-2}`$ needs bounds valid when the multiplicities themselves diverge.
 
-**Sources:** [Lower bound §1, equations (1)–(6)](../science/lower-bound.md#1-a-normalized-family-of-sources) and [Examples §1](../science/examples.md#1-a-phase-bearing-ring-with-constant-local-overlaps). Childs §4.1 supplies Fourier-basis background; the Gram construction and its fixed embedding are derived locally.
+**Sources:** Watrous §§1.1.3, 7.1–7.2. [Coherent runs: stock compression and phase difference](../science/coherent-runs.md); [bridge §10](WATROUS_BRIDGE.md#10-why-the-block-estimate-must-be-uniform-in-run-length).
 
-### M22 — Sparse relations, missing triangles, and gauge choice
+### M23 — A fixed-type Jensen bound at the correct scale
 
-**Central question:** Why does this family retain a global phase that cannot be recovered from its pairwise magnitudes or shorter nonzero cycles?
+**Central question:** Why does the stock remain controllable up to order $`c^{-2}`$ copies?
 
-**Understanding target:** Connect the ring overlap graph to vanishing non-neighbor overlaps and vanishing simple-cycle invariants of lengths three through $`L-1`$. Distinguish rephasing source-vector representatives from changing their physical embedding by a parameter-dependent common unitary; understand why the latter cannot be substituted into a distinguishability proof.
+**Understanding target:** Explain why off-diagonal one-site terms leave a fixed-type subspace, leaving a quadratic diagonal contribution in $`\log G_\phi`$. Apply scalar spectral Jensen to obtain $`C_\phi\succeq e^{-2tc^2}I`$ and distinguish it from a claim of operator convexity of the exponential.
 
-**Dependencies and story role:** M01, M03, M05, and M21. It explains the global information encoded by the hard family and the gauge discipline needed for its statistical analysis.
+**Dependencies and story role:** M06, M19, M22. It gives the uniform eigenvalue control needed for large runs.
 
-**Conceptual connection:** A triangle reconstruction route needs overlap structure absent from this input family. Moving the displayed edge phases by a gauge choice does not move the information between physical specimens.
+**Conceptual connection:** The naive $`(1-2c)^t`$ bound decays at scale $`tc`$ and would miss the endpoint. Exact label counts reveal the useful scale $`tc^2`$.
 
-**Sources:** [Examples §1](../science/examples.md#1-a-phase-bearing-ring-with-constant-local-overlaps) and [Lower bound: moving the edge phases](../science/lower-bound.md#moving-the-edge-phases-does-not-change-the-source-states). Childs §15.3 explains the pairwise statistic; the cycle obstruction and gauge distinction are supplied locally.
+**Sources:** Watrous §§1.1.3, 1.2.1 for spectral calculus/convexity; the compression estimate is local. [Coherent-run uniform eigenvalue proof](../science/coherent-runs.md); [bridge §10](WATROUS_BRIDGE.md#10-why-the-block-estimate-must-be-uniform-in-run-length).
 
-### M23 — Cyclic covariance and adaptive source selection
+### M24 — Uniform phase-specific stock divergence
 
-**Central question:** Why can an adaptive choice of source label not evade the lower bound on this family?
+**Central question:** How does phase winding bound every measurement of a growing stock?
 
-**Understanding target:** Use the common known cyclic shift relating every source to the first to explain a simulation from a capped supply of iid first-source specimens. Recognize that adaptive operations, classical records, unused copies, and final measurements can all be included in one parameter-independent channel.
+**Understanding target:** Combine the changed-site count, squared entry weights, and the minimum-eigenvalue estimate with the quantum relative-entropy/chi-square comparison. Explain the bound $`D(\omega_\phi\|\omega_\theta)\le(8/3)t^4c^8e^{4tc^2}`$ and its uniformity in multiplicities.
 
-**Dependencies and story role:** M02, M04, M10, and M21–M22. It reduces the full allowed input interface to a single tensor-power discrimination problem.
+**Dependencies and story role:** M09, M19, M22–M23. It completes the crucial information input for the adaptive lower bound.
 
-**Conceptual connection:** The algorithm may choose labels adaptively; the lower-bound family is covariant enough that those choices create no additional parameter access.
+**Conceptual connection:** This is a phase theorem. Neither the raw-cycle bias nor the sister's root-fidelity divergence can be substituted for the winding and fixed-type calculation.
 
-**Sources:** [Lower bound §2, equations (7)–(8)](../science/lower-bound.md#2-cyclic-covariance-removes-the-advantage-of-adaptive-label-choices). Childs §§21.1–21.2 provide access-model context; this source-simulation reduction is local.
+**Sources:** Watrous §§5.1–5.2, 7.1–7.2. [Coherent-run divergence proof](../science/coherent-runs.md); [bridge §10](WATROUS_BRIDGE.md#10-why-the-block-estimate-must-be-uniform-in-run-length).
 
-### M24 — Weak single-copy sensitivity as a finite fidelity bound
+### M25 — Fixed stocks simulate adaptive source requests
 
-**Central question:** How does distributing phase over the ring limit the distinguishability of individual specimens?
+**Central question:** How can a block information bound handle unknown run lengths and measurement-dependent labels?
 
-**Understanding target:** Connect the common Fourier eigenbasis to differentiation of the Gram square root, then connect the derivative bound to a finite difference between normalized source vectors and a squared-fidelity bound. Identify the scale $`c/L`$ without assuming an unbiased estimator or replacing the proof by an asymptotic Fisher-information argument.
+**Understanding target:** Group complete original runs into superblocks and simulate each with $`2\beta`$ specimens of every label, $`\beta=\min(b,N)`$. Explain $`8\beta`$ copies per stock, at most $`\lceil N/\beta\rceil`$ stocks, and at most $`16N`$ padded copies, including early termination.
 
-**Dependencies and story role:** M03, M06, M09–M10, and M21–M23. It quantifies the local statistical weakness that the collective lower bound will amplify.
+**Dependencies and story role:** M02, M11, M24. It converts the operational protocol into fixed-size experiments without restricting its choices.
 
-**Conceptual connection:** The finite bound concerns two actual source tuples separated in target phase. Its validity does not depend on how an estimator parametrizes or processes its outputs.
+**Conceptual connection:** Inner resets are part of each stock's instrument; no unknown quantum resource crosses its boundary. The padded specimens are charged to the comparison, not hidden inside the original resource count.
 
-**Sources:** [Lower bound §3, equations (9)–(14)](../science/lower-bound.md#3-each-supplied-copy-changes-slowly-with-the-target-phase). Childs §4.1 supplies only Fourier-basis background; the matrix derivative and finite-fidelity reasoning are given in the local proof.
+**Sources:** Watrous §§2.2–2.3 for instruments and composition. [Coherent-run padding proof](../science/coherent-runs.md); [bridge §11](WATROUS_BRIDGE.md#11-from-stocks-to-the-actual-adaptive-transcript).
 
-### M25 — From an accurate phase estimate to the copy lower bound
+### M26 — Comparing fixed and refreshed orientations honestly
 
-**Central question:** How do the weak specimens force a quadratic copy cost for every permitted estimator?
+**Central question:** Why does an auxiliary refreshed calculation say anything about fixed physical sources?
 
-**Understanding target:** Connect target phases separated by $`4\epsilon`$, disjoint circular accuracy regions, a binary decision with success at least $`2/3`$, and trace distance of tensor-power pure states. Explain how this yields the finite bound with constant $`(1-2c)/144`$.
+**Understanding target:** Explain whole-leaf likelihoods under rank-one measurement refinement as homogeneous polynomials in one Haar unitary. Connect the inherited Haar/Gaussian norm and product comparison to $`\operatorname{TV}(P_\phi,Q_\phi)\le384N^2/d`$ for $`d\ge32N`$.
 
-**Dependencies and story role:** M10–M11 and M23–M24. It completes the converse branch, including collective measurements and adaptive classical label selection.
+**Dependencies and story role:** M09–M11, M19, M25. It transfers the stock analysis while accounting for correlations learned in classical history.
 
-**Conceptual connection:** The result is a task lower bound under a worst-case copy cap, independent of whether a protocol uses reflections, phase estimation, or any other proposed algorithmic primitive.
+**Conceptual connection:** Coefficients may depend on the specified history, but normalized quantum posteriors need not be polynomial. The common orientation is sampled once in the actual experiment; refreshing belongs only to the compared auxiliary model.
 
-**Sources:** [Lower bound §§4–5, equations (15)–(20)](../science/lower-bound.md#4-phase-estimation-implies-binary-discrimination) and [its theorem](../science/lower-bound.md#theorem). Childs §§21.1–21.2 supply lower-bound modeling context; the finite two-state argument is supplied locally.
+**Sources:** Watrous §§5.1–5.2, 7.2. [Coherent-run transcript transfer](../science/coherent-runs.md), with its pinned sister-method reference; [bridge §11](WATROUS_BRIDGE.md#11-from-stocks-to-the-actual-adaptive-transcript).
 
-### M26 — The direct-cycle benchmark and its actual resource count
+### M27 — The complete fixed-source adaptive testing bound
 
-**Central question:** What exactly is exponentially costly about measuring the raw cyclic interference signal?
+**Central question:** What limits the information in all the classical records together?
 
-**Understanding target:** Connect the full-cycle Hadamard-test mean to quadrature estimation, angle conditioning, and the direct-readout shot count. Explain why the restricted adaptive-quadrature lower bound matches that scaling and why each shot consumes $`L`$ copies, giving total cost $`\Theta(Lc^{-2L}\epsilon^{-2})`$ on the ring at fixed confidence.
+**Understanding target:** Apply data processing to each refreshed stock and the classical relative-entropy chain rule across history-dependent measurements. Combine Pinsker and two fixed/fresh comparisons into the phase-specific transcript bound, identifying the block-information term and dimension correction separately.
 
-**Dependencies and story role:** M03, M05, M10–M11, M21–M22, and M25. It turns the motivating visibility problem into a precise comparison with the proved copy theorem.
+**Dependencies and story role:** M09, M11, M24–M26. It joins the local stock theorem and correlation comparison into a bound for every permitted protocol.
 
-**Conceptual connection:** This comparator retains only each fresh full-cycle ancilla outcome. Its lower bound does not cover all separate-copy measurements, all photonic protocols, or arbitrary collective processing.
+**Conceptual connection:** Arbitrary classical computation, within-run measurements, source allocation, and stopping remain allowed. Complete reset is load bearing because it makes the quantum experiments factor conditional on the classical transcript.
 
-**Sources:** Childs §§15.3 and 16.1. [Examples §§2–3, equations (3)–(13)](../science/examples.md#2-what-one-direct-cycle-test-shot-measures), especially [the restricted lower bound](../science/examples.md#the-visibility-dependence-is-unavoidable-for-this-direct-readout-family), gives the estimator, finite converse, and shot-to-copy conversion.
+**Sources:** Watrous §§3.1, 5.1–5.2, 7.2. [Coherent-run transcript theorem](../science/coherent-runs.md); [bridge §11](WATROUS_BRIDGE.md#11-from-stocks-to-the-actual-adaptive-transcript).
 
-### M27 — Joining sufficiency and necessity in the minimax theorem
+### M28 — Necessary coherent runs at the copy-optimal endpoint
 
-**Central question:** Which parameter dependences are established as nearly optimal, and over which inputs?
+**Central question:** Which run size is required to retain $`O(c^{-2})`$ total copies?
 
-**Understanding target:** Combine the algorithmic upper bound and task lower bound under the same total-copy and success conventions. Identify the matching powers of $`L`$, $`c^{-1}`$, and $`\epsilon^{-1}`$, the remaining logarithms, and the lower-bound restrictions $`0\lt c\le1/4`$ and $`d\ge L`$.
+**Understanding target:** Compare phases $`0`$ and $`4\epsilon`$, require transcript total variation at least $`1/3`$, and derive $`b\ge c^{-2}/(128C_0^{1/3})`$ from $`N\le C_0c^{-2}`$ and $`d\ge9216C_0^2c^{-4}`$. Join this necessity with the one-run upper algorithm.
 
-**Dependencies and story role:** M11, M19–M20, and M25–M26. It joins the two proof branches into the principal theorem and its sparse-cycle consequence.
+**Dependencies and story role:** M12, M16–M17, M27. It integrates both proof branches into the sharp high-dimensional endpoint $`b=\Theta(c^{-2})`$ at fixed small accuracy.
 
-**Conceptual connection:** Dimension independence is an upper copy guarantee. The converse is a worst-case statement in sufficiently large dimension, not the same uniform small-overlap law for every fixed dimension.
+**Conceptual connection:** Fixed $`b\ge4`$ instead gives a $`c^{-8}`$ regime when the dimension correction is small. Neither statement is a matched full tradeoff in all parameters or a theorem for vanishing phase accuracy.
 
-**Sources:** [Model §4](../science/model.md#4-main-theorem), [Algorithm: upper bound](../science/algorithm.md#upper-bound), and [Lower bound: theorem and scope](../science/lower-bound.md#scope-of-optimality). Childs §§21.1–21.2 provide the language of resource bounds; the minimax copy law is the project result.
+**Sources:** Watrous §§3.1 and 5.1 for testing. [Coherent-run endpoint and scope](../science/coherent-runs.md); [algorithm upper bound](../science/algorithm.md#upper-bound); [bridge §12](WATROUS_BRIDGE.md#12-the-endpoint-and-its-dimension-boundary).
 
-### M28 — Established ingredients and the task-specific contribution
+### M29 — Dimension, attribution, and the physical boundary
 
-**Central question:** What has been imported from prior work, and what does their combination establish for this problem?
+**Central question:** Which apparently similar claims does the theorem leave separate?
 
-**Understanding target:** Attribute direct rotation, polar compilation, Fourier phase estimation, density-matrix exponentiation, multisource simulation, and phase synthesis to their established sources. Distinguish a raw-trace or Gram-reconstruction guarantee from precision of its argument, and an uncontrolled emulator guarantee from the fixed-phase controlled operation required here.
+**Understanding target:** Explain fixed-dimensional single-copy tomography with $`O_d(c^{-2}\epsilon^{-2})`$ copies by stabilizing each adjacent overlap, showing why dimension-unqualified run necessity is false. Attribute cycle tests, replica hierarchies, polar compilation, sample simulation, and the sister's transcript method separately from the new phase-specific bound.
 
-**Dependencies and story role:** M12–M20 and M25–M27. It places the complete theorem in its scientific context without identifying newness with a familiar primitive.
+**Dependencies and story role:** M02–M03, M11–M12, M18–M28. It connects the established endpoint to its operational uses and limits.
 
-**Conceptual connection:** The contribution is the explicit phase-estimation construction and corresponding finite copy law for the adjacent-overlap source model. Similar algebra or an earlier polynomial simulation primitive does not alone settle that statistical task.
+**Conceptual connection:** Purity, stationary independent specimens, accessible controlled registers, a discrete loop, and complete conditional reset matter. Simultaneous width, passive optics, noisy sources, mixed states, a continuum Berry phase, and root fidelity require their own statements.
 
-**Sources:** [Related work §§1–6](../references/related-work.md#1-established-ingredients-used-by-the-algorithm) and the primary references identified there. Childs §§4.3 and 29.1–29.3 are the educational foundation for established algorithmic ideas, not a substitute for research attribution or the task-specific converse.
+**Sources:** Watrous §§2.3, 3.1–3.2, 7.2. [Coherent-run fixed-d scope](../science/coherent-runs.md); [interpretation](../science/interpretation.md); [related work](../references/related-work.md); [bridge §12](WATROUS_BRIDGE.md#12-the-endpoint-and-its-dimension-boundary).
 
-### M29 — Assumptions, endpoints, and additional structure
+### M30 — One explanation of geometric phase and coherent access
 
-**Central question:** Which changes to the input or physical interface would require a new scientific statement?
+**Central question:** Why does efficient phase access demand long coherent consumption in the stated regime?
 
-**Understanding target:** Explain the roles of purity, independent stationary sources, accessible controlled swaps, nonzero adjacent overlaps, and a specified discrete loop. Interpret $`c=1`$, the excluded zero-overlap endpoint, dimensions below the lower-bound regime, and possible extra overlap structure without extending the theorem to mixed states, passive optical control, noisy sources, or a continuum Berry phase.
+**Understanding target:** Connect projector transport, charged compilation, loop readout, and unrestricted copy necessity to the optimal four-copy experiment, uniform winding/Jensen estimate, fixed-source transcript comparison, and dimension-qualified run endpoint. Explain the substantive sister relationship and each project's distinct target without duplicating the root-fidelity theorem as a phase claim.
 
-**Dependencies and story role:** M02, M11, M20–M22, and M27–M28. It connects the theorem's quantifiers to physical and computational uses.
+**Dependencies and story role:** M12–M29. This completes the narrative by joining mechanism, resources, necessity, attribution, and scope into one account.
 
-**Conceptual connection:** Additional information can change the problem, while less coherent access can remove operations used by the upper construction. A discrete geometric-phase theorem supplies no automatic adiabatic or source-noise guarantee.
+**Conceptual connection:** Coherence removes attenuation constructively, while short complete-reset runs discard quantum relations before they accumulate enough information. The classical notebook remains fully available; the theorem quantifies when it still cannot replace those relations.
 
-**Sources:** [Interpretation: operational meaning and geometric scope](../science/interpretation.md#operational-meaning-of-the-input), [Lower bound: endpoints](../science/lower-bound.md#gauge-choice-and-endpoints), and [Resources: what the bound establishes](../science/resources.md#what-the-bound-establishes). Childs §§27.1–27.2 give simulation context; §30.1 is relevant only for distinguishing an adiabatic-path setting from the present discrete input.
-
-### M30 — The complete explanation of phase access beyond raw visibility
-
-**Central question:** Why can an exponentially weak cyclic signal coexist with a nearly optimal polynomial copy algorithm?
-
-**Understanding target:** Connect the whole chain: projector-defined phase transport, its controlled compiler, the loop eigenphase, the Fourier query count, the quadratic sample conversion, and the matching finite discrimination argument. Explain why the direct visibility is a property of one experiment while the minimax copy law concerns all allowed processing, and identify the proved scope and remaining logarithmic or compilation improvements without turning them into established results.
-
-**Dependencies and story role:** M11–M29. This concludes the narrative phase by integrating mechanism, implementation, necessity, comparison, attribution, and operational meaning.
-
-**Conceptual connection:** The local overlap controls both the cost of coherent normalization and how weakly the hard specimens encode phase. The two independent arguments meet at the same powers of loop length, reciprocal overlap, and accuracy in the stated regime.
-
-**Sources:** [Model §4](../science/model.md#4-main-theorem), [Interpretation](../science/interpretation.md), [Examples §4](../science/examples.md#4-coherent-transport-removes-the-full-cycle-visibility-factor), and [Related work §6](../references/related-work.md#6-scope-of-the-comparison). Childs §§4.3, 21.1–21.2, and 29.1–29.3 provide the algorithmic language synthesized by the project; the [Childs bridge](CHILDS_BRIDGE.md#7-reading-the-result-with-its-limits) connects that language to the full result.
+**Sources:** Watrous Chapters 2–3, §§5.1–5.2, 7.1–7.2 as connected by the bridge. [Model](../science/model.md), [block information](../science/block-information.md), [coherent runs](../science/coherent-runs.md), [interpretation](../science/interpretation.md), and [Watrous bridge](WATROUS_BRIDGE.md).

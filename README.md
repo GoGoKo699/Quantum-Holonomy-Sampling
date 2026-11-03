@@ -12,6 +12,22 @@ B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle.
 
 The receiver gets quantum copies and can process their registers coherently. State-preparation unitaries, inverse preparation circuits and a coherent source-index oracle are not supplied.
 
+## Sister result: how long must coherence persist?
+
+This project and [Quantum Fidelity Coherence](https://github.com/GoGoKo699/Quantum-Fidelity-Coherence) establish a shared operational result. Here the target is a loop phase; the sister project studies root fidelity and supplies the fixed-source transcript comparison. The phase theorem requires its own optimal block-information bound. The two numerical resource laws cannot be identified by substituting parameters.
+
+For a sparse four-state cycle, fixed small phase accuracy and neighboring overlap amplitude $`c\to0`$, copy-optimal estimation requires coherent runs consuming $`\Theta(c^{-2})`$ copies in a sufficient large-dimension regime. More precisely, for $`C_0\ge1`$,
+
+```math
+N\le C_0c^{-2},\qquad d\ge9216C_0^2c^{-4}
+\quad\Longrightarrow\quad
+b\ge\frac{c^{-2}}{128C_0^{1/3}}.
+```
+
+Here $`b`$ counts every copy consumed before a **complete quantum reset**, and only the full classical history survives the boundary. Program copies can be streamed while a small target register stays coherent; discarding a program is not a complete reset. At fixed finite $`d`$, single-copy tomography can attain the same power $`c^{-2}`$, so the dimension qualification is essential.
+
+The [block-information account](science/block-information.md) owns the phase-specific proof, including the exact four-copy optimum. The [coherent-run theorem](science/coherent-runs.md) gives the fixed-source adaptive converse and its limits. Fidelity owns the general transcript method; both accounts retain the definitions needed for independent reading.
+
 ## Principal result
 
 For circular accuracy $`0\lt \epsilon\le\pi/16`$ and success probability at least $`2/3`$:
@@ -46,6 +62,8 @@ with nonzero overlaps only between neighbors on a ring. Direct full-cycle measur
 | How do the controlled loop and error budgets fit together? | [Complete algorithm](science/algorithm.md) |
 | What are the copy, gate, memory and compilation costs? | [Resource accounting](science/resources.md) |
 | Why can no collective or adaptive protocol beat the stated scale? | [Finite lower bound](science/lower-bound.md) |
+| What can the optimal four-copy block reveal about phase? | [Block information](science/block-information.md) |
+| Which complete-reset run length is necessary at optimal copy cost? | [Coherent runs](science/coherent-runs.md) |
 | What happens on a sparse loop, and what does the direct test cost? | [Worked examples and comparison](science/examples.md) |
 | What does the result change operationally? | [Physical interpretation](science/interpretation.md) |
 | Which results are inherited, and which models differ? | [Related work](references/related-work.md) and [bibliography](references/references.bib) |
@@ -54,9 +72,9 @@ The [scientific overview](science/README.md) gives proof and interpretation rout
 
 ## Learn the project
 
-The single educational anchor is **Andrew M. Childs, *Lecture Notes on Quantum Algorithms***, using the author-hosted version dated 17 April 2025. The [Childs bridge](learning/CHILDS_BRIDGE.md) identifies the relevant sections, translates the phase and resource conventions, and supplies the connections from familiar circuits to this quantum-data task.
+The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**, using the author-hosted 2018 manuscript. The [Watrous bridge](learning/WATROUS_BRIDGE.md) connects measurements, discrimination, entropy and symmetry to the transport algorithm and the complete-reset converse. Primary research sources supply the polar-compilation and sample-simulation ingredients.
 
-The [30-milestone map](learning/MILESTONES.md) contains **11 background/preliminaries milestones** and **19 narrative/innovation milestones**. The first phase joins states, coherent control, approximation and distinguishability into the complete estimation model. The second builds the transport algorithm and copy budget, develops the finite lower family, and combines them into the operational result. Each milestone states an understanding target, earlier dependencies, a conceptual connection and source pointers.
+The [30-milestone map](learning/MILESTONES.md) contains **12 background/preliminaries milestones** and **18 narrative/innovation milestones**. It joins the coherent transport construction, the finite copy lower bound and the phase-specific coherent-run obstruction. Each milestone states an understanding target, earlier dependencies, a conceptual connection and source pointers.
 
 Start with the [learning overview](learning/README.md) for the study routes. The canonical scientific pages above own the precise claims and complete proofs; the bridge explains how the selected source connects to them.
 
@@ -70,6 +88,8 @@ With the dependencies in [verification/requirements.txt](verification/requiremen
 
 ```bash
 python verification/checks.py
+python verification/block_phase_checks.py
+python verification/stock_information_checks.py
 ```
 
 The [verification guide](verification/README.md) and [recorded results](verification/results.json) cover transport and gauge identities, sparse Gram families, coherent Fourier readout, and controlled sample simulation with entangled references. The numerical checks inspect finite circuits and algebraic identities. General complexity guarantees follow from the analytical proofs and their cited dependencies; the suite does not compile a complete QSVT instance or numerically optimize a diamond norm.
