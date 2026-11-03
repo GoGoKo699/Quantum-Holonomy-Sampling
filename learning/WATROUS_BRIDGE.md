@@ -419,14 +419,14 @@ Second, the actual orientation $`U`$ stays fixed. Conditioned on one complete cl
 The Haar/Gaussian homogeneous-norm comparison and polynomial product inequality, already established as a method in [Quantum-Fidelity-Coherence](https://github.com/GoGoKo699/Quantum-Fidelity-Coherence), apply to these four-source stock vectors. They bound the difference between the fixed-orientation transcript $`P_\phi`$ and an auxiliary independently refreshed transcript $`Q_\phi`$:
 
 ```math
-\operatorname{TV}(P_\phi,Q_\phi)\le\frac{384N^2}{d},
+\mathrm{TV}(P_\phi,Q_\phi)\le\frac{384N^2}{d},
 \qquad d\ge32N.
 ```
 
 The uniform phase-block divergence bounds every conditional refreshed measurement, so data processing and the classical relative-entropy chain rule control the entire refreshed transcript. Pinsker's inequality and two fixed/fresh comparisons then give
 
 ```math
-\operatorname{TV}(P_\phi,P_\theta)
+\mathrm{TV}(P_\phi,P_\theta)
 \le\sqrt{\frac{32768}{3}}\,c^4\sqrt{Nb^3}\,e^{16bc^2}
 +\frac{768N^2}{d}.
 ```

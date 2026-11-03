@@ -316,7 +316,7 @@ Dependencies refer to earlier targets. They are conceptual requirements, not a r
 
 **Central question:** Why does an auxiliary refreshed calculation say anything about fixed physical sources?
 
-**Understanding target:** Explain whole-leaf likelihoods under rank-one measurement refinement as homogeneous polynomials in one Haar unitary. Connect the inherited Haar/Gaussian norm and product comparison to $`\operatorname{TV}(P_\phi,Q_\phi)\le384N^2/d`$ for $`d\ge32N`$.
+**Understanding target:** Explain whole-leaf likelihoods under rank-one measurement refinement as homogeneous polynomials in one Haar unitary. Connect the inherited Haar/Gaussian norm and product comparison to $`\mathrm{TV}(P_\phi,Q_\phi)\le384N^2/d`$ for $`d\ge32N`$.
 
 **Dependencies and story role:** M09–M11, M19, M25. It transfers the stock analysis while accounting for correlations learned in classical history.
 

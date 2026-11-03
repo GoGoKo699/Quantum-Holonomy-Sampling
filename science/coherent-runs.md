@@ -35,7 +35,7 @@ For the lower bound, average $`U`$ once under Haar measure. This is a prior over
 
 ```math
 \begin{aligned}
-\operatorname{TV}(P_\phi,P_\theta)
+\mathrm{TV}(P_\phi,P_\theta)
 &\le
 \sqrt{\frac{32768}{3}}\,
 c^4\sqrt{N\beta^3}\,e^{16\beta c^2}
@@ -48,7 +48,7 @@ c^4\sqrt{Nb^3}\,e^{16bc^2}
 \tag{2}
 ```
 
-Total variation uses $`\operatorname{TV}(P,Q)=\tfrac12\|P-Q\|_1`$. The theorem includes adaptive source allocation within and between runs, random stopping under the worst-case cap, and arbitrary classical computation. Its phase dependence comes from the uniform stock divergence in [Block information](block-information.md#4-information-bound-uniform-in-stock-size).
+Total variation uses $`\mathrm{TV}(P,Q)=\tfrac12\|P-Q\|_1`$. The theorem includes adaptive source allocation within and between runs, random stopping under the worst-case cap, and arbitrary classical computation. Its phase dependence comes from the uniform stock divergence in [Block information](block-information.md#4-information-bound-uniform-in-stock-size).
 
 ### Padding adaptive requests by a fixed stock
 
@@ -76,7 +76,7 @@ The reset boundaries internal to a superblock are part of its instrument. At the
 Let $`Q_\phi`$ be the transcript law of the auxiliary experiment in which each padded stock has its own independently sampled common Haar orientation. All copies and labels within that stock retain the same Gram matrix (1). The following comparison does not assume that these two experiments are identical:
 
 ```math
-\operatorname{TV}(P_\phi,Q_\phi)
+\mathrm{TV}(P_\phi,Q_\phi)
 \le\frac{3M^2}{2d}
 \le\frac{384N^2}{d},
 \qquad M\le d/2.
@@ -117,7 +117,7 @@ D(Q_\phi\|Q_\theta)
 \tag{7}
 ```
 
-Pinsker's inequality, $`\operatorname{TV}(Q_\phi,Q_\theta)\le\sqrt{D(Q_\phi\|Q_\theta)/2}`$, bounds the refreshed-phase comparison. The triangle inequality pays (4) once for each hypothesis. This proves (2).
+Pinsker's inequality, $`\mathrm{TV}(Q_\phi,Q_\theta)\le\sqrt{D(Q_\phi\|Q_\theta)/2}`$, bounds the refreshed-phase comparison. The triangle inequality pays (4) once for each hypothesis. This proves (2).
 
 The fixed-source comparison is essential: applying the chain rule directly to independently twirled runs would remove the orientation information in their common classical history without a bound on the error. The stock information theorem and (4) justify exactly that step.
 
@@ -143,7 +143,7 @@ b\ge\frac{c^{-2}}{128C_0^{1/3}}.}
 To prove this, choose phases $`\phi_0=0`$ and $`\phi_1=4\epsilon`$. Their circular $`\epsilon`$-balls are disjoint. Mapping an estimate inside the first ball to hypothesis zero and every other estimate to hypothesis one produces a binary test with success at least $`2/3`$ under either Haar prior. Thus
 
 ```math
-\operatorname{TV}(P_{\phi_0},P_{\phi_1})\ge\frac13.
+\mathrm{TV}(P_{\phi_0},P_{\phi_1})\ge\frac13.
 \tag{10}
 ```
 
