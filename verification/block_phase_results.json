@@ -9,7 +9,7 @@
     "sha256": {
       "verification/block_phase_checks.py": "f0171efa72d841bc39ee0c2031146b1bef91eee39c4f72b853c40e584db43e4b",
       "verification/requirements-phase.txt": "ad291935bab4da194a85b299d0d08572424270287fc4eeb6c5638c717b952ffa",
-      "science/block-information.md": "49b9f35fe1ca83b59df80f6d16f37bc20f57d6827f6bb66df0878345330846fb"
+      "science/block-information.md": "bdd974afd6f3650eb3cf4471457a8edba43d992be52d7846219ec8152ae3dc43"
     }
   },
   "records": [

@@ -193,7 +193,7 @@
     {
       "path": "science/coherent-runs.md",
       "index": 49,
-      "source_sha256": "40ca0022cea4b4666404d1a788625c5ce215f9fa9aa31f52e83dc88c4953962e",
+      "source_sha256": "51168e45b7d0029face9dab2c50db2598a8629ced19190beb5cb70ac3ea629df",
       "required_text": [
         "128",
         "b",
@@ -203,7 +203,7 @@
     {
       "path": "science/block-information.md",
       "index": 149,
-      "source_sha256": "e2ffa24da7d21f5c5ea888e928bf5fb25047d0725e3db8b80854def2887ccf13",
+      "source_sha256": "98640a7781fe8723ad31f50387b00b371121fa14c50cc5be08a5a2aae60571de",
       "required_text": [
         "2",
         "c",
@@ -214,7 +214,7 @@
     {
       "path": "science/block-information.md",
       "index": 165,
-      "source_sha256": "29ad222b0e0a3f8a9b4bb2bb2c1a13c826f4c2fb048ba8c96bcfbc63075bb73b",
+      "source_sha256": "5f364186fadd20424a5f8e09bb70678e942b1dde38a8998fc9d5b0c85ac713b3",
       "required_text": [
         "8",
         "3",
@@ -226,7 +226,7 @@
     {
       "path": "science/block-information.md",
       "index": 192,
-      "source_sha256": "9f4ff970a6f83ee9fdeed17f1f720cf2be6a09dedb24d4b3d3b24be44df40c78",
+      "source_sha256": "d5c8a1a5a1072dc2e42a16c34c43931115a2f640a5a8dd5163132e7d3d8fd892",
       "required_text": [
         "8",
         "3",

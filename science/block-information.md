@@ -9,7 +9,7 @@ Let $`S|j\rangle=|j+1\rangle`$ on four labels, with cyclic indices, and set
 ```math
 G_\phi=I+c\left(e^{-i\phi/4}S+e^{i\phi/4}S^\dagger\right),
 \qquad 0\lt c\le\frac14.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Its diagonal entries are one, its opposite-label entries vanish, and
@@ -26,7 +26,7 @@ Embed $`\mathbb C^4`$ isometrically into $`\mathbb C^d`$, where $`d\ge4`$, and t
 \qquad
 B(\phi)=c^4e^{i\phi},
 \qquad \Phi=\phi\pmod{2\pi}.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 A fixed stock contains $`r_j`$ copies of source $`j`$, in a known order, with $`t=\sum_jr_j`$. Write its tensor vector as $`|v_\phi\rangle`$. The invariant stock experiment is the common-unitary Haar average
@@ -36,7 +36,7 @@ A fixed stock contains $`r_j`$ copies of source $`j`$, in a known order, with $`
 =\int_{\mathrm U(d)}
 U^{\otimes t}|v_\phi\rangle\langle v_\phi|
 (U^\dagger)^{\otimes t}\,dU.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 One unknown orientation is shared by all copies in this stock. Equation (3) is a statistical experiment for an invariant measurement or a Haar prior over unknown orientations. It does not authorize independently averaging successive runs from stationary sources. That additional comparison is proved separately in [Coherent runs](coherent-runs.md).
@@ -57,7 +57,7 @@ Use an orthonormal abstract basis indexed by these words. The tensor-word Gram o
 C_\phi(w,z)
 =\prod_{k=1}^{t}G_\phi[w_k,z_k],
 \qquad w,z\in\mathcal W_r.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 It is positive definite and $`\mathrm{Tr}C_\phi=K`$. If $`P_r`$ projects onto the fixed-type word subspace of $`(\mathbb C^4)^{\otimes t}`$, then
@@ -65,7 +65,7 @@ It is positive definite and $`\mathrm{Tr}C_\phi=K`$. If $`P_r`$ projects onto th
 ```math
 C_\phi
 =\left.P_rG_\phi^{\otimes t}P_r\right|_{\mathcal W_r}.
-\tag{5}
+\qquad\text{(5)}
 ```
 
 The following identification makes this finite matrix useful for optimal block measurements:
@@ -76,7 +76,7 @@ D(\omega_\phi\|\omega_\theta)
 &=D(C_\phi/K\|C_\theta/K),\\
 F_Q(\omega_\phi)&=F_Q(C_\phi/K).
 \end{aligned}
-\tag{6}
+\qquad\text{(6)}
 ```
 
 These identities hold for every multiplicity vector and every $`d\ge4`$, including $`t\gt d`$.
@@ -92,7 +92,7 @@ Let $`H=S_{r_1}\times\cdots\times S_{r_4}`$ be the stabilizer of the chosen stoc
 d_\lambda=\dim W_\lambda,
 \qquad
 m_\lambda=\dim M_\lambda=\dim W_\lambda^H.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 The tensor-word orbit map $`A_\phi`$ sends the abstract word $`w`$ to $`\bigotimes_k|\psi_{w_k}(\phi)\rangle`$. It intertwines the $`S_t`$ actions, and $`A_\phi^\dagger A_\phi=C_\phi`$. With the physical Schur decomposition ordered as $`\bigoplus_\lambda W_\lambda\otimes V_\lambda^{(d)}`$, it therefore has blocks
@@ -103,7 +103,7 @@ A_\phi=\bigoplus_\lambda I_{W_\lambda}\otimes A_{\phi,\lambda},
 C_\phi=\bigoplus_\lambda I_{W_\lambda}\otimes C_{\phi,\lambda},
 \qquad
 C_{\phi,\lambda}=A_{\phi,\lambda}^\dagger A_{\phi,\lambda}.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 Only partitions with at most four rows occur in this four-label permutation module. All corresponding physical sectors exist when $`d\ge4`$.
@@ -114,7 +114,7 @@ Choose orthonormal $`H`$-invariant vectors $`\eta_{\lambda,a}\in W_\lambda`$ and
 \sqrt{\frac{d_\lambda}{K}}
 \sum_{a=1}^{m_\lambda}
 \eta_{\lambda,a}\otimes e_{\lambda,a}.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 Applying the orbit map and Haar twirling the $`V_\lambda^{(d)}`$ factor gives, up to fixed factor ordering, the block
@@ -124,7 +124,7 @@ Applying the orbit map and Haar twirling the $`V_\lambda^{(d)}`$ factor gives, u
 \otimes
 \frac{d_\lambda}{K}C_{\phi,\lambda}^{\mathsf T},
 \qquad D_\lambda=\dim V_\lambda^{(d)}.
-\tag{10}
+\qquad\text{(10)}
 ```
 
 The second factor is embedded in the span of the $`\eta_{\lambda,a}`$; its orthogonal zero subspace is fixed and may be removed. In contrast, $`C_\phi/K`$ has block $`I_{W_\lambda}\otimes C_{\phi,\lambda}/K`$. Both descriptions assign the same sector weight $`d_\lambda\mathrm{Tr}C_{\phi,\lambda}/K`$. Adding or discarding a known maximally mixed representation factor preserves relative entropy and Fisher information. Simultaneous transposition preserves them as well. This proves (6), including varying sector probabilities.
@@ -150,7 +150,7 @@ C_\phi
 =I+c^2A+c^4\left(
 B_0+e^{i\phi}R_g+e^{-i\phi}R_g^{-1}
 \right).
-\tag{11}
+\qquad\text{(11)}
 ```
 
 Reversing the regular-action convention exchanges $`g`$ and $`g^{-1}`$ and reverses the phase sign, without changing any information quantity below.
@@ -177,7 +177,7 @@ For a row $`(z,a,u;m)`$, define
 ```math
 k_\phi(z,a,u)
 =1+ac^2+uc^4+2c^4\cos(\phi+\arg z).
-\tag{12}
+\qquad\text{(12)}
 ```
 
 The corresponding eigenvalue probability is $`k_\phi/24`$, repeated $`m`$ times. The exact optimal four-copy Fisher information and finite relative entropy are therefore
@@ -192,7 +192,7 @@ D(\omega_\phi\|\omega_\theta)
 mk_\phi(z,a,u)
 \log\frac{k_\phi(z,a,u)}{k_\theta(z,a,u)}.
 \end{aligned}
-\tag{13}
+\qquad\text{(13)}
 ```
 
 These are optima over all measurements on the invariant four-copy experiment, rather than the information of one prescribed interferometer.
@@ -207,7 +207,7 @@ B_0^2&=2I+2R_g^2,\\
 B_0A&=(I+R_g^2)A,\\
 A^2&=(R_g+R_g^{-1})A+4I+2B_0.
 \end{aligned}
-\tag{14}
+\qquad\text{(14)}
 ```
 
 Each $`g`$-eigenspace has dimension six: the trace of every nonidentity regular permutation is zero. When $`z=\pm1`$, the first identity gives $`u=\pm2`$; the trace of $`B_0`$ on that eigenspace is zero, so each sign has multiplicity three. On $`u=-2`$, the second identity forces $`A=0`$. On $`u=2`$, the last identity gives roots $`\{-2,4\}`$ for $`z=1`$ and $`\{-4,2\}`$ for $`z=-1`$. The trace of $`A`$ on each relevant subspace is zero, fixing the multiplicities in the table. When $`z=\pm i`$, $`B_0=0`$ and $`A^2=4I`$; its zero trace gives multiplicity three for each sign of $`A`$. This proves the full table.
@@ -220,7 +220,7 @@ Put $`\delta=4c^2+4c^4\lt1`$. Equation (11) implies
 (1-\delta)I\preceq C_\phi\preceq(1+\delta)I,
 \qquad
 \frac1{24}\mathrm{Tr}\bigl[(C_\phi')^2\bigr]=2c^8.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 There is no vanishing background eigenvalue that could convert the small phase coefficient into a larger rare-event Fisher information. In fact,
@@ -230,7 +230,7 @@ There is no vanishing background eigenvalue that could convert the small phase c
 \le2c^8\left(1+\frac{\delta^2}{1-\delta}\right),
 \qquad
 F_4(\phi)=2c^8\bigl[1+O(c^4)\bigr]
-\tag{16}
+\qquad\text{(16)}
 ```
 
 uniformly in $`\phi`$. To obtain the sharper remainder, write $`C_\phi=I+E`$ and $`C_\phi'=c^4H`$. All these matrices commute. Here $`H=i(e^{i\phi}R_g-e^{-i\phi}R_g^{-1})`$ and $`H^2=2I-2\cos(2\phi)R_g^2`$. Neither the identity nor $`g^2`$ occurs in the permutation support of $`E`$. The regular trace therefore gives $`\mathrm{Tr}(H^2E)=0`$ and $`\mathrm{Tr}(H^2)/24=2`$. Using
@@ -243,7 +243,7 @@ in $`F_4=c^8\mathrm{Tr}[H^2(I+E)^{-1}]/24`$ yields (16): the remaining term is n
 
 ```math
 F_4(0)=\frac{2c^8}{1-4c^4}.
-\tag{17}
+\qquad\text{(17)}
 ```
 
 For a finite phase separation $`h=\phi-\theta`$,
@@ -259,7 +259,7 @@ The classical relative-entropy/chi-square inequality in the common eigenbasis gi
 D(\omega_\phi\|\omega_\theta)
 \le\frac{8c^8\sin^2(h/2)}{1-\delta}
 \le\frac{2c^8h^2}{1-\delta}.
-\tag{18}
+\qquad\text{(18)}
 ```
 
 The exact leading finite-separation value is $`4c^8\sin^2(h/2)[1+O(c^2)]`$. Its small-$`h`$ limit is $`c^8h^2`$, consistent with the factor $`F_4/2`$ in a local relative-entropy expansion. The finite bound (18) supports binary testing without imposing an unbiasedness assumption on a phase estimator.
@@ -272,7 +272,7 @@ Measuring the eigenvalue of the four-cycle already gives the four probabilities
 p_k(\phi)=\frac{1+2c^4\cos(\phi-\vartheta_k)}4,
 \qquad
 \vartheta_k\in\{0,\pi/2,\pi,3\pi/2\}.
-\tag{19}
+\qquad\text{(19)}
 ```
 
 Its Fisher information is $`2c^8+O(c^{16})`$. Thus the standard cycle measurement attains the leading optimal information; the full measurement in (13) improves higher-order terms. Independent four-copy blocks need and suffice $`\Theta(c^{-8})`$ copies at fixed small phase accuracy. The lower statement follows from (18), the classical chain rule and binary testing; the upper statement follows by estimating the real and imaginary cycle expectations to absolute error $`O(c^4\epsilon)`$. The usual cycle tests and Bargmann-invariant measurements are inherited ingredients, as detailed in [Related work](../references/related-work.md).
@@ -286,7 +286,7 @@ This one-block conclusion is not yet a lower bound for arbitrary fixed-source co
 ```math
 D(\omega_\phi\|\omega_\theta)
 \le\frac83t^4c^8e^{4tc^2}.
-\tag{20}
+\qquad\text{(20)}
 ```
 
 The estimate is uniform when $`t`$ grows with $`1/c`$. In particular, it remains useful for $`t=O(c^{-2})`$; extrapolating a fixed-$`t`$ Fisher expansion would not establish this.
@@ -308,7 +308,7 @@ follows by bounding the tail of the logarithm series. Functional calculus applie
 \qquad
 (\log G_\phi)_{jj}
 \ge-\frac{c^2}{1-2c}\ge-2c^2.
-\tag{21}
+\qquad\text{(21)}
 ```
 
 Define $`T_\phi=\sum_{k=1}^t(\log G_\phi)^{(k)}`$, so $`e^{T_\phi}=G_\phi^{\otimes t}`$. For any unit vector $`x`$ in the fixed-type subspace, a one-site off-diagonal matrix element changes the label counts and maps that subspace into its orthogonal complement. Therefore
@@ -331,7 +331,7 @@ Together with the compression (5), this proves
 
 ```math
 C_\phi\succeq e^{-2tc^2}I_K.
-\tag{22}
+\qquad\text{(22)}
 ```
 
 Only scalar Jensen is used here; the exponential is not being asserted to be operator convex. The cruder bound $`C_\phi\succeq(1-2c)^tI`$ would lose the needed control when $`t`$ grows as $`c^{-2}`$.
@@ -354,7 +354,7 @@ For each fixed row there are at most $`\binom tk2^k`$ nonzero columns with $`k`$
 &\le4\sum_{k=4}^{\infty}\frac{(2tc^2)^k}{k!}\\
 &\le\frac83t^4c^8e^{2tc^2}.
 \end{aligned}
-\tag{23}
+\qquad\text{(23)}
 ```
 
 The last line uses $`k!\ge4!(k-4)!`$. This bound is uniform in the phase separation, as appropriate to fixed small accuracy; it does not claim the sharp accuracy dependence as $`\epsilon\to0`$.
@@ -369,7 +369,7 @@ D(\rho\|\sigma)
 &\le\log\mathrm{Tr}(\rho^2\sigma^{-1})\\
 &\le\mathrm{Tr}\bigl[(\rho-\sigma)\sigma^{-1}(\rho-\sigma)\bigr].
 \end{aligned}
-\tag{24}
+\qquad\text{(24)}
 ```
 
 Apply this to $`C_\phi/K`$ and $`C_\theta/K`$. Equation (22) bounds $`C_\theta^{-1}`$ by $`e^{2tc^2}I`$, while (23) bounds the squared Hilbert–Schmidt difference. The identity (6) then proves (20).
