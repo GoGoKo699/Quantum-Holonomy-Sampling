@@ -37,3 +37,11 @@ All input sources are pure and stationary across requests. For mixed states, the
 The result concerns the specified discrete loop. A continuous adiabatic path or a topological invariant introduces additional structure. No automatic continuum limit, quantization, or noise tolerance follows from the discrete copy theorem alone.
 
 The outcome is a statistical resource characterization: coherent processing can access a geometric phase despite exponentially weak raw-cycle visibility, and the local overlap and loop length set the nearly optimal worst-case copy scale.
+
+## What must remain coherent
+
+The [complete-reset converse](coherent-runs.md) identifies an additional resource at fixed four-state loop length and fixed phase accuracy. In a sufficient large-dimension regime, a receiver using the optimal total-copy order $`c^{-2}`$ must allow runs consuming that same order of copies. This follows from optimal phase-block information and a comparison of adaptive transcripts for fixed sources, rather than the weakness of one cycle observable.
+
+The persistent resource may be a small unknown target register and its controls while program copies arrive and are discarded. A consumed-copy run length is therefore different from the number of simultaneously stored specimens or circuit depth. The [sister project](https://github.com/GoGoKo699/Quantum-Fidelity-Coherence) makes the same reset distinction for root fidelity and supplies the general transcript method used here.
+
+Dimension changes the operational conclusion. At any fixed finite dimension, tomography can learn each ray to accuracy proportional to $`c\epsilon`$ with one-copy runs and classical records, giving $`O_d(c^{-2}\epsilon^{-2})`$ total copies. The high-dimensional theorem protects a dimension-uniform advantage; it does not prohibit such tomography at fixed dimension or establish a matching full tradeoff for every run cap.

@@ -6,11 +6,11 @@
       "index": 5,
       "source_sha256": "195e2ed35d9344673adb63e3b330cd8ecac3f9131713b1ed66be824f4ca7f75c",
       "required_text": [
-        "Φ",
+        "\u03a6",
         "arg",
         "B",
-        "π",
-        "ψ"
+        "\u03c0",
+        "\u03c8"
       ]
     },
     {
@@ -21,9 +21,9 @@
         "Tr",
         "P",
         "B",
-        "Φ",
-        "ψ",
-        "π"
+        "\u03a6",
+        "\u03c8",
+        "\u03c0"
       ]
     },
     {
@@ -34,8 +34,8 @@
         "N",
         "L",
         "c",
-        "ε",
-        "≤",
+        "\u03b5",
+        "\u2264",
         "log"
       ]
     },
@@ -47,8 +47,8 @@
         "N",
         "L",
         "c",
-        "ε",
-        "≥",
+        "\u03b5",
+        "\u2265",
         "144"
       ]
     },
@@ -59,10 +59,10 @@
       "required_text": [
         "Pr",
         "dist",
-        "Φ",
-        "ε",
-        "≤",
-        "≥",
+        "\u03a6",
+        "\u03b5",
+        "\u2264",
+        "\u2265",
         "(1)"
       ]
     },
@@ -72,8 +72,8 @@
       "source_sha256": "81dfa2c2b0e34280523b7ddc83fc1ed15b1da5bc5a710fe46dd133b007279e1e",
       "required_text": [
         "16",
-        "π",
-        "ε",
+        "\u03c0",
+        "\u03b5",
         "log",
         "F=2",
         "q=F",
@@ -87,7 +87,7 @@
       "required_text": [
         "N=1+Qm",
         "400",
-        "π",
+        "\u03c0",
         "Q",
         "(13)"
       ]
@@ -100,8 +100,8 @@
         "T",
         "Q",
         "P",
-        "ψ",
-        "φ",
+        "\u03c8",
+        "\u03c6",
         "(1)"
       ]
     },
@@ -111,9 +111,9 @@
       "source_sha256": "d7d7e9025dcb464cdc0b6b63e8e70ac347063e9e8378c48b8cd1f476b69e70fb",
       "required_text": [
         "W",
-        "ψ",
+        "\u03c8",
         "B",
-        "Φ",
+        "\u03a6",
         "r",
         "(6)"
       ]
@@ -124,8 +124,8 @@
       "source_sha256": "476f65fc4c4c1e46e8c4c335a95c351755b63caa256d7ef256ea0347fba85bca",
       "required_text": [
         "0<c",
-        "0<ε",
-        "π",
+        "0<\u03b5",
+        "\u03c0",
         "16"
       ]
     },
@@ -137,7 +137,7 @@
         "N",
         "L",
         "c",
-        "ε",
+        "\u03b5",
         "144",
         "288"
       ]
@@ -149,7 +149,7 @@
       "required_text": [
         "S",
         "j+1",
-        "1≤j<L"
+        "1\u2264j<L"
       ]
     },
     {
@@ -158,10 +158,10 @@
       "source_sha256": "3ecc6cb36583f9365b61d791365e0e642a8070c878bcb88ec8660c424bd38121",
       "required_text": [
         "G",
-        "φ",
+        "\u03c6",
         "I+c",
         "S",
-        "ψ",
+        "\u03c8",
         "(1)"
       ]
     },
@@ -171,11 +171,91 @@
       "source_sha256": "2e4dae0ed174d403d1057c90c93a745c8bbb70bae1e06443899dee2f322cc534",
       "required_text": [
         "G",
-        "φ",
-        "ψ",
+        "\u03c6",
+        "\u03c8",
         "c",
         "L",
         "(11)"
+      ]
+    },
+    {
+      "path": "README.md",
+      "index": 9,
+      "source_sha256": "f288102cf10a30864feb29f1dc2ea54062b9e12b07fbc01714437a69d0fff754",
+      "required_text": [
+        "9216",
+        "128",
+        "N",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "path": "science/coherent-runs.md",
+      "index": 49,
+      "source_sha256": "51168e45b7d0029face9dab2c50db2598a8629ced19190beb5cb70ac3ea629df",
+      "required_text": [
+        "128",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "path": "science/block-information.md",
+      "index": 149,
+      "source_sha256": "98640a7781fe8723ad31f50387b00b371121fa14c50cc5be08a5a2aae60571de",
+      "required_text": [
+        "2",
+        "c",
+        "8",
+        "4"
+      ]
+    },
+    {
+      "path": "science/block-information.md",
+      "index": 165,
+      "source_sha256": "5f364186fadd20424a5f8e09bb70678e942b1dde38a8998fc9d5b0c85ac713b3",
+      "required_text": [
+        "8",
+        "3",
+        "t",
+        "c",
+        "e"
+      ]
+    },
+    {
+      "path": "science/block-information.md",
+      "index": 192,
+      "source_sha256": "d5c8a1a5a1072dc2e42a16c34c43931115a2f640a5a8dd5163132e7d3d8fd892",
+      "required_text": [
+        "8",
+        "3",
+        "t",
+        "c",
+        "e"
+      ]
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 181,
+      "source_sha256": "b648dd407cd2271f3a67778c1a31e97d5d01375910d876dfac7a9cccc53ecb67",
+      "required_text": [
+        "2",
+        "c",
+        "8",
+        "4"
+      ]
+    },
+    {
+      "path": "learning/WATROUS_BRIDGE.md",
+      "index": 208,
+      "source_sha256": "f0f87c474ca5e63943ef971c81b3cdf95227675171d7d4fc927676b7bdbc6293",
+      "required_text": [
+        "8",
+        "3",
+        "t",
+        "c",
+        "e"
       ]
     }
   ]

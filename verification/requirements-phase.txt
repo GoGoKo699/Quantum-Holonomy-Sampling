@@ -1,0 +1,4 @@
+# Pinned environment for the phase/block checks; both pins satisfy requirements.txt.
+# Recorded with Python 3.12.14. The original suite's supported ranges are unchanged.
+numpy==2.3.5
+scipy==1.17.0

@@ -1,32 +1,52 @@
 # Quantum Holonomy Sampling
 
-This repository studies the total independent-copy complexity of estimating the circular argument of a cyclic Bargmann invariant for labeled unknown pure states. The receiver has general coherent processing of accessible registers, including controlled swaps, but no supplied state-preparation unitary, inverse, or coherent source-index oracle.
+This repository studies independent-copy complexity of the circular argument of a cyclic Bargmann invariant for labeled unknown pure states. It also owns the shared sparse-four-cycle phase theorem connecting copy-optimal weak-overlap estimation to consumed copies before a complete quantum reset. The receiver has coherent processing of accessible registers, including controlled swaps, but no preparation unitary, inverse preparation, conjugated-copy source, or coherent source-index oracle.
 
-## Main statement and scope
+## Statements and their authoritative homes
 
-Read science/model.md for the authoritative theorem and conventions. The upper bound is O(L²/(c² epsilon²) log²(L/epsilon)) total copies. The matching lower exponents hold for L>=4, d>=L, 0<c<=1/4, and small bounded epsilon. Here c bounds amplitude overlap, not squared fidelity. All copies are counted, including the target and inactive-branch program consumption. The resource is a worst-case cap on requests, not an expected stopping time.
+Read science/model.md for the source model, error convention, principal results, and source/relationship pointers. The general upper bound is O(L²/(c² epsilon²) log²(L/epsilon)) copies. The matching unrestricted lower powers hold for L>=4, d>=L, 0<c<=1/4, and 0<epsilon<=pi/16. Here c bounds overlap amplitude, not squared fidelity. Every target and inactive-branch program specimen counts. N is a deterministic cap on all histories, including failed outcomes.
+
+science/block-information.md owns the exact common-orientation four-copy experiment, permutation spectrum, optimal QFI, finite relative-entropy comparison, and information scope. For the sparse four-cycle, the optimum is 2c^8[1+O(c^4)], with QFI at phi=0 equal to 2c^8/(1-4c^4). This is an optimization over block measurements, not an inference from one cycle-test visibility.
+
+science/coherent-runs.md owns the complete-reset model, uniform growing-stock information, padding, fixed-source adaptive transcript comparison, endpoint theorem, and dimension boundary. At fixed L=4 and fixed small accuracy, N<=C0 c^-2 with C0>=1 and d>=9216 C0² c^-4 forces b>=c^-2/(128 C0^(1/3)). The existing algorithm supplies N,b=O_epsilon(c^-2). This is the copy-optimal endpoint, not a fully matched formula for all N,b,c,d or for phase accuracy also tending to zero.
 
 ## Reading routes
 
 - General reader: README.md, science/model.md, science/examples.md, science/interpretation.md.
-- Guided study: learning/README.md, learning/MILESTONES.md, learning/CHILDS_BRIDGE.md.
+- Guided study: learning/README.md, learning/MILESTONES.md, learning/WATROUS_BRIDGE.md.
 - Complete constructive proof: science/transport.md, science/algorithm.md, science/resources.md.
-- Information-theoretic converse: science/lower-bound.md.
-- Previous results and model comparisons: references/related-work.md and references/references.bib.
-- Reproduction and actual test extent: verification/README.md, verification/checks.py, verification/results.json.
+- Unrestricted task converse: science/lower-bound.md.
+- Optimal short-block phase information: science/block-information.md.
+- Growing stocks, actual fixed sources, and coherent-run necessity: science/coherent-runs.md.
+- Previous results, shared ownership, and model comparisons: references/related-work.md, references/references.bib.
+- Reproduction and actual finite test extent: verification/README.md and its documented commands/results.
 
-## Single educational anchor and understanding map
+## One educational anchor and common understanding map
 
-Use Andrew M. Childs, Lecture Notes on Quantum Algorithms, in the author-hosted version dated 17 April 2025. learning/CHILDS_BRIDGE.md owns the relevant section mapping, notation translation, a complete worked loop, and the locally supplied connections to the research. Childs writes an eigenphase in radians and phase estimation resolves its fraction of a full turn; keep that convention aligned with the project's negative loop phase and exact pair (y,F) output.
+Use John Watrous, The Theory of Quantum Information (2018), in the author-hosted 2018 manuscript. learning/WATROUS_BRIDGE.md selects sections, translates notation and assumptions, retains the complete qubit transport/readout example, and adds the sparse four-state optimal block, uniform Jensen/winding bound, fixed-source transcript transfer, and dimension-qualified threshold.
 
-learning/MILESTONES.md is the common project-defined map M01–M30: 11 background/preliminaries milestones followed by 19 narrative/innovation milestones. It records understanding targets, earlier dependencies, conceptual connections and canonical sources. Follow those stable targets when explaining the project. The complete analytical statements remain in science/, and cited research dependencies remain separate from the single educational anchor.
+Watrous provides state, channel, measurement, distinguishability, information, permutation, and Haar foundations. The specialized transport and Fourier circuits and phase-specific stock theorem are supplied locally. Primary research dependencies remain separately credited; they are not additional educational anchors.
 
-## Important distinctions
+learning/MILESTONES.md is the project-defined M01–M30 map: 12 background/preliminaries targets and 18 narrative/innovation targets. Each has a central question, understanding target, earlier dependencies/story role, conceptual connection, anchor sections, and canonical scientific sources. This common map is independent of a reader's assessment history; the full analytical statements remain in science/.
 
-The target convention is Phi=arg product_j <psi_j|psi_(j+1)>. The ordered transport loop has eigenphase minus Phi, so the algorithm negates the Fourier readout. A channel emulating an unknown unitary only up to global phase is insufficient for this controlled construction.
+## Essential distinctions
 
-The QSVT lift has a clean-ancilla vector guarantee; polynomial block error is squared to control leakage. Work qubits are reused by a hybrid comparison to ideal clean prefixes. The entire reflection circuit is simulated to constant total diamond error, with the precision dependence already charged through phase-estimation calls.
+The target is Phi=arg product_j <psi_j|psi_(j+1)>. The ordered transport loop has eigenphase minus Phi, so the algorithm negates the Fourier readout. Preserve the exact pair (y,F) output convention. Emulating an unknown unitary only up to global phase does not suffice for controlled use.
 
-Dimension independence concerns copies. Quantum gates cost O(log(d) N) in the known-angle convention, streaming memory is explicit, and classical phase factorization is separately charged. The local transport, QSVT, phase estimation, density-matrix exponentiation and multi-samplizer are inherited tools.
+The polar lift has a clean-ancilla vector guarantee, with selected-block error squared to control leakage. Ideal clean-prefix hybrids justify workspace reuse. All reflection calls are simulated to constant total diamond error; precision is already charged through expanded phase-estimation calls. At fixed L and epsilon there is no hidden log(1/c) in source copies, although classical precision and finite-gate synthesis have their separately charged overheads.
 
-The sparse-ring raw-cycle benchmark is restricted to its specified ancilla-only full-cycle measurement protocol. Do not infer a blanket quantum/classical separation, a passive-photonic implementation, a mixed-state result, or a continuum Berry-phase guarantee. Finite numerical checks do not prove asymptotic bounds or novelty.
+A coherent run counts all specimens consumed before every retained input-dependent quantum resource is replaced by a known history-conditioned state. It does not count only simultaneous storage. A target retained while programs stream through is in one long run. Classical memory, computation, adaptive labels, within-run measurements, and stopping under the deterministic cap are unrestricted.
+
+Do not independently Haar-twirl successive physical runs. The sources are fixed. The proof compares their whole transcript with an auxiliary refreshed experiment and pays the dimension-dependent correction. Its polynomial object is an unnormalized full-leaf likelihood; a normalized posterior need not be polynomial. The Schur representation involves transposition: relative entropy/QFI equality is valid, but general CPTP statistical equivalence on arbitrary extensions is not asserted.
+
+The fixed-type Jensen estimate gives C_phi>=exp(-2t c²)I. The first possible nonzero phase winding requires four changed sites, yielding D(omega_phi||omega_theta)<=(8/3)t^4 c^8 exp(4t c²). This bound is uniform when stock multiplicities grow. A fixed-multiplicity small-c expansion cannot replace it at b of order c^-2.
+
+At fixed finite d, separate-copy tomography has O_d(c^-2 epsilon^-2) copies and permits b=1. The high-dimensional hypothesis is essential. Copy counts, simultaneous width, gates, depth, elapsed time, and source-production cost remain distinct resources.
+
+## Sister relationship and attribution
+
+Quantum-Fidelity-Coherence owns its complete-reset root-fidelity law and generic homogeneous Haar/Gaussian transcript comparison. Its model and method transfer after the four-source stock and polynomial assumptions are checked. Its numerical root-fidelity tradeoff is not a phase theorem. This repository owns the authoritative phase-specific block and coherent-run proofs; the sister gives its own consequence and a pinned pointer here. references/related-work.md records the precise source revision and shared-result ownership.
+
+Credit existing replica hierarchies and fixed-versus-averaged likelihood methods, Bargmann/cycle tests, optimal collective overlap measurements, normalized polynomial trace estimators, direct rotation, QSVT/polar compilation, phase estimation, density-matrix exponentiation, multisource samplizers, and classical phase synthesis. Their roles and statistical precision conventions differ.
+
+The original exponential benchmark is the specified ancilla-only fresh full-cycle readout. The new phase-specific theorem adds an optimized block calculation and complete-reset converse in its stated dimension regime. Neither establishes a blanket quantum/classical separation, a passive-photonic implementation, a noisy or mixed-state theorem, a simultaneous-width threshold, or a continuum Berry-phase guarantee. Finite numerical checks complement the universal proofs; they do not prove asymptotics or priority.

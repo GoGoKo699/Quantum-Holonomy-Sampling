@@ -1,5 +1,6 @@
 % Primary sources used in the scientific account.
-% Checked 2026-10-31. Version notes distinguish inspected preprints from publications.
+% Algorithm sources checked 2026-10-31; phase/reset sources checked 2026-11-03.
+% Version notes distinguish inspected preprints from publication metadata.
 
 @article{BravyiDiVincenzoLoss2011,
   author = {Bravyi, Sergey and DiVincenzo, David P. and Loss, Daniel},
@@ -216,15 +217,6 @@
   note = {Version 3, revised 16 September 2026}
 }
 
-@misc{Childs2025LectureNotes,
-  author = {Childs, Andrew M.},
-  title = {Lecture Notes on Quantum Algorithms},
-  year = {2025},
-  howpublished = {Author-hosted lecture notes},
-  url = {https://www.cs.umd.edu/~amchilds/qa/qa.pdf},
-  note = {Version dated 17 April 2025; single educational anchor for the learning route}
-}
-
 @article{MarvianLloyd2025,
   author = {Marvian, Iman and Lloyd, Seth},
   title = {Efficient Quantum Emulation of Unknown Unitaries},
@@ -235,4 +227,63 @@
   doi = {10.1103/PRXQuantum.6.030346},
   url = {https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.6.030346},
   note = {Final published full text inspected. Section IV, subsection 2, discusses the extra phase-reference resources needed for controlled emulation}
+}
+
+
+@book{Watrous2018,
+  author = {Watrous, John},
+  title = {The Theory of Quantum Information},
+  publisher = {Cambridge University Press},
+  year = {2018},
+  doi = {10.1017/9781316848142},
+  url = {https://cs.uwaterloo.ca/~watrous/TQI/TQI.pdf},
+  note = {Single educational anchor; section numbers refer to the author-hosted 2018 manuscript}
+}
+
+@article{FanizzaEtAl2020,
+  author = {Fanizza, Marco and Rosati, Matteo and Skotiniotis, Michalis and Calsamiglia, John and Giovannetti, Vittorio},
+  title = {Beyond the Swap Test: Optimal Estimation of Quantum State Overlap},
+  journal = {Physical Review Letters},
+  volume = {124},
+  pages = {060503},
+  year = {2020},
+  doi = {10.1103/PhysRevLett.124.060503},
+  eprint = {1906.10639},
+  archivePrefix = {arXiv},
+  primaryClass = {quant-ph},
+  url = {https://arxiv.org/abs/1906.10639v3},
+  note = {Version 3, 7 September 2020; optimal collective overlap measurement and Fisher information}
+}
+
+@misc{YeLiuDeng2025,
+  author = {Ye, Qi and Liu, Zhenhuan and Deng, Dong-Ling},
+  title = {Exponential Advantage from One More Replica in Estimating Nonlinear Properties of Quantum States},
+  year = {2025},
+  eprint = {2509.24000},
+  archivePrefix = {arXiv},
+  primaryClass = {quant-ph},
+  url = {https://arxiv.org/abs/2509.24000v1},
+  note = {Version 1, 28 September 2025; Theorem 29, equations (25)--(30), and Lemma 30: replica hierarchy and fixed-versus-averaged transcript method}
+}
+
+@article{YaoEtAl2026,
+  author = {Yao, Hongshun and Liu, Yingjian and Lin, Tengxiang and Wang, Xin},
+  title = {Sample-efficient estimation of nonlinear quantum state functions},
+  journal = {Communications Physics},
+  year = {2026},
+  doi = {10.1038/s42005-026-02710-8},
+  eprint = {2412.01696},
+  archivePrefix = {arXiv},
+  primaryClass = {quant-ph},
+  url = {https://arxiv.org/abs/2412.01696v3},
+  note = {Equation-level comparison uses the inspected version-3 preprint dated 20 June 2025; Theorem 1 and Section IV.3. Final journal metadata verified, final full text unavailable in this review}
+}
+
+@misc{LinQuantumFidelityCoherence2026,
+  author = {Lin, Ruge},
+  title = {Quantum Fidelity Coherence: Complete-reset root fidelity and fixed-source transcript comparison},
+  year = {2026},
+  howpublished = {Scientific repository},
+  url = {https://github.com/GoGoKo699/Quantum-Fidelity-Coherence/tree/2fcb88fd734f0235ab83fe2ce628bf8b99c85118},
+  note = {Pinned source for science/model.md and science/haar_comparison.md; the generic method is inherited, while the sparse-loop phase theorem is developed in Quantum-Holonomy-Sampling}
 }

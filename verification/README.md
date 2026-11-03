@@ -207,3 +207,48 @@ is Wang and Zhang, [*Sample-Optimal Quantum Estimators for Pure-State Trace
 Distance and Fidelity via Samplizer*, Theorem 13 (ICALP 2026)](https://doi.org/10.4230/LIPIcs.ICALP.2026.154).
 The explicit argument here audits the phase and conservative constants needed
 for this application; it is not a claim of a new samplizer.
+
+## Phase-block and complete-reset checks
+
+Two additional deterministic scripts accompany the [block information
+proof](../science/block-information.md) and [coherent-run
+theorem](../science/coherent-runs.md). They supplement the original suite;
+`checks.py` and its output `results.json` remain separate.
+
+~~~bash
+python verification/block_phase_checks.py
+python verification/stock_information_checks.py
+~~~
+
+The scripts use the same NumPy/SciPy dependencies as the original suite. The
+tested Python 3.12 environment is pinned in
+[requirements-phase.txt](requirements-phase.txt), with NumPy 2.3.5 and SciPy
+1.17.0; both pins satisfy the ranges in `requirements.txt`. To reproduce that
+environment, install `verification/requirements-phase.txt` before running the
+commands above. The scripts write
+[block_phase_results.json](block_phase_results.json) and
+[stock_information_results.json](stock_information_results.json) beside
+themselves, or accept an explicit `--output` path. Each output records package
+versions and SHA-256 hashes of its script, pinned requirements, and relevant
+scientific proof files. Source changes require a fresh run before treating an
+older output as evidence for that revision.
+
+| Script | Finite checks and their scope |
+|---|---|
+| `block_phase_checks.py` | Sixteen overlap/phase cases compare the entrywise 24-by-24 orbit Gram matrix and winding derivative with the exact ten-row joint spectrum and optimal four-copy QFI. Three group-algebra identities are checked with exact integer matrices. The script also checks commutation, the derivative Hilbert–Schmidt constant, the uniform QFI bounds, and the zero-phase closed form. |
+| `stock_information_checks.py` | Twenty-seven cases use stocks of types $`(1,1,1,1)`$, $`(2,1,1,1)`$, and $`(2,2,1,1)`$, with orbit dimensions 24, 60, and 180. They check the fixed-type minimum eigenvalue, the Hilbert–Schmidt phase-difference bound, and the relative-entropy bound through a separately computed Petz chi-square quantity. |
+
+The second script evaluates relative entropy by eight-point Gauss–Legendre
+quadrature of its exact Hessian integral. This avoids cancellation when the
+divergence is of order $`c^8`$. The reported divergence is a numerical
+quadrature value, not a certified interval enclosure. The phase separation is
+$`\pi/8`$, with three phases and overlap amplitudes 0.01, 0.1, and 0.25;
+the first script also tests amplitude 0.03 and the opposite phase.
+
+These checks test finite Gram algebra and numerical constants. They do not
+prove the Schur transpose identification, uniformity in arbitrarily growing
+stock size, Haar/Gaussian likelihood comparison, adaptive transcript theorem,
+or high-dimensional $`\Theta(c^{-2})`$ run threshold. Those conclusions use
+the analytical proofs and their stated assumptions. In particular, no
+fixed-dimension long-run necessity follows from these examples: the
+single-copy tomography counterexample remains part of the theorem's scope.
