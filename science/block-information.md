@@ -41,7 +41,7 @@ U^{\otimes t}|v_\phi\rangle\langle v_\phi|
 
 One unknown orientation is shared by all copies in this stock. Equation (3) is a statistical experiment for an invariant measurement or a Haar prior over unknown orientations. It does not authorize independently averaging successive runs from stationary sources. That additional comparison is proved separately in [Coherent runs](coherent-runs.md).
 
-Throughout this page $`D(\rho\|\sigma)`$ is quantum relative entropy with natural logarithms. Quantum Fisher information uses the symmetric logarithmic derivative convention: if $`\dot\rho=(L\rho+\rho L)/2`$, then $`F_Q=\mathrm{Tr}(\rho L^2)`$.
+Throughout this page $`D(\rho\Vert\sigma)`$ is quantum relative entropy with natural logarithms. Quantum Fisher information uses the symmetric logarithmic derivative convention: if $`\dot\rho=(L\rho+\rho L)/2`$, then $`F_Q=\mathrm{Tr}(\rho L^2)`$.
 
 ## 2. A finite Gram representation
 
@@ -72,8 +72,8 @@ The following identification makes this finite matrix useful for optimal block m
 
 ```math
 \begin{aligned}
-D(\omega_\phi\|\omega_\theta)
-&=D(C_\phi/K\|C_\theta/K),\\
+D(\omega_\phi\Vert\omega_\theta)
+&=D(C_\phi/K\Vert C_\theta/K),\\
 F_Q(\omega_\phi)&=F_Q(C_\phi/K).
 \end{aligned}
 \qquad\text{(6)}
@@ -187,7 +187,7 @@ The corresponding eigenvalue probability is $`k_\phi/24`$, repeated $`m`$ times.
 F_4(\phi)
 &=\frac1{24}\sum_{\mathrm{rows}}
 \frac{4mc^8\sin^2(\phi+\arg z)}{k_\phi(z,a,u)},\\
-D(\omega_\phi\|\omega_\theta)
+D(\omega_\phi\Vert\omega_\theta)
 &=\frac1{24}\sum_{\mathrm{rows}}
 mk_\phi(z,a,u)
 \log\frac{k_\phi(z,a,u)}{k_\theta(z,a,u)}.
@@ -249,14 +249,14 @@ F_4(0)=\frac{2c^8}{1-4c^4}.
 For a finite phase separation $`h=\phi-\theta`$,
 
 ```math
-\frac{\|C_\phi-C_\theta\|_{\mathrm{HS}}^2}{24}
+\frac{\Vert C_\phi-C_\theta\Vert_{\mathrm{HS}}^2}{24}
 =8c^8\sin^2(h/2).
 ```
 
 The classical relative-entropy/chi-square inequality in the common eigenbasis gives
 
 ```math
-D(\omega_\phi\|\omega_\theta)
+D(\omega_\phi\Vert\omega_\theta)
 \le\frac{8c^8\sin^2(h/2)}{1-\delta}
 \le\frac{2c^8h^2}{1-\delta}.
 \qquad\text{(18)}
@@ -284,7 +284,7 @@ This one-block conclusion is not yet a lower bound for arbitrary fixed-source co
 **Proposition.** For every nonnegative integer multiplicity vector $`r`$, $`t=\sum_jr_j`$, $`d\ge4`$, and arbitrary phases $`\phi,\theta`$,
 
 ```math
-D(\omega_\phi\|\omega_\theta)
+D(\omega_\phi\Vert\omega_\theta)
 \le\frac83t^4c^8e^{4tc^2}.
 \qquad\text{(20)}
 ```
@@ -293,7 +293,7 @@ The estimate is uniform when $`t`$ grows with $`1/c`$. In particular, it remains
 
 ### A fixed-type minimum eigenvalue bound
 
-Write $`E_\phi=G_\phi-I`$, so $`\|E_\phi\|\le2c`$. The scalar inequality
+Write $`E_\phi=G_\phi-I`$, so $`\Vert E_\phi\Vert\le2c`$. The scalar inequality
 
 ```math
 \log(1+y)\ge y-\frac{y^2}{2(1-2c)},
@@ -349,7 +349,7 @@ For each fixed row there are at most $`\binom tk2^k`$ nonzero columns with $`k`$
 
 ```math
 \begin{aligned}
-\frac{\|C_\phi-C_\theta\|_{\mathrm{HS}}^2}{K}
+\frac{\Vert C_\phi-C_\theta\Vert_{\mathrm{HS}}^2}{K}
 &\le4\sum_{k=4}^t\binom tk(2c^2)^k\\
 &\le4\sum_{k=4}^{\infty}\frac{(2tc^2)^k}{k!}\\
 &\le\frac83t^4c^8e^{2tc^2}.
@@ -365,7 +365,7 @@ For a density operator $`\rho`$ and positive $`\sigma`$, the Petz order-two boun
 
 ```math
 \begin{aligned}
-D(\rho\|\sigma)
+D(\rho\Vert\sigma)
 &\le\log\mathrm{Tr}(\rho^2\sigma^{-1})\\
 &\le\mathrm{Tr}\bigl[(\rho-\sigma)\sigma^{-1}(\rho-\sigma)\bigr].
 \end{aligned}

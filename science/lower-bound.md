@@ -165,7 +165,7 @@ Direct differentiation of (1) yields
 G_\phi'
 &=\frac{c}{L}
 \left(-i e^{-i\phi/L}S+i e^{i\phi/L}S^\dagger\right),\\
-\|G_\phi'\|&\leq\frac{2c}{L}.
+\Vert G_\phi'\Vert&\leq\frac{2c}{L}.
 \end{aligned}
 \qquad\text{(10)}
 ```
@@ -174,9 +174,9 @@ Here and below, the norm of an operator without a subscript is its operator norm
 
 ```math
 \begin{aligned}
-\left\|\frac{d}{d\phi}G_\phi^{1/2}\right\|
+\left\Vert\frac{d}{d\phi}G_\phi^{1/2}\right\Vert
 &\leq\frac{c}{L\sqrt{1-2c}},\\
-\left\|\frac{d}{d\phi}|\psi_1(\phi)\rangle\right\|
+\left\Vert\frac{d}{d\phi}|\psi_1(\phi)\rangle\right\Vert
 &\leq\frac{c}{L\sqrt{1-2c}}.
 \end{aligned}
 \qquad\text{(11)}
@@ -185,7 +185,7 @@ Here and below, the norm of an operator without a subscript is its operator norm
 Integrating along an interval of length $`h`$ gives
 
 ```math
-\bigl\||\psi_1(\phi+h)\rangle-|\psi_1(\phi)\rangle\bigr\|
+\bigl\Vert|\psi_1(\phi+h)\rangle-|\psi_1(\phi)\rangle\bigr\Vert
 \leq\frac{|h|c}{L\sqrt{1-2c}}.
 \qquad\text{(12)}
 ```
@@ -194,7 +194,7 @@ For normalized vectors $`|u\rangle,|v\rangle`$,
 
 ```math
 1-|\langle u|v\rangle|^2
-\leq\bigl\||u\rangle-|v\rangle\bigr\|^2.
+\leq\bigl\Vert|u\rangle-|v\rangle\bigr\Vert^2.
 \qquad\text{(13)}
 ```
 
@@ -230,12 +230,12 @@ For equal prior probabilities, binary discrimination of density operators $`\rho
 \begin{aligned}
 p_{\mathrm{succ}}^*
 &=\frac{1+D(\rho,\sigma)}{2},\\
-D(\rho,\sigma)&=\frac12\|\rho-\sigma\|_1.
+D(\rho,\sigma)&=\frac12\Vert\rho-\sigma\Vert_1.
 \end{aligned}
 \qquad\text{(16)}
 ```
 
-For completeness, if the first outcome of a binary measurement is represented by $`0\preceq M\preceq I`$, its success probability is $`1/2+\mathrm{Tr}(M(\rho-\sigma))/2`$. The largest value of the trace term is the sum of positive eigenvalues of the trace-zero Hermitian matrix $`\rho-\sigma`$, namely $`\|\rho-\sigma\|_1/2`$. This proves (16).
+For completeness, if the first outcome of a binary measurement is represented by $`0\preceq M\preceq I`$, its success probability is $`1/2+\mathrm{Tr}(M(\rho-\sigma))/2`$. The largest value of the trace term is the sum of positive eigenvalues of the trace-zero Hermitian matrix $`\rho-\sigma`$, namely $`\Vert\rho-\sigma\Vert_1/2`$. This proves (16).
 
 Equation (8) means that the estimator and the subsequent binary decision together form a measurement on the $`N`$ iid input copies. Hence success at least $`2/3`$ requires
 

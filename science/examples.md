@@ -152,7 +152,7 @@ p_h(t)(1-p_h(t))\geq\frac{1-r^2}{4}.
 The elementary Bernoulli relative-entropy bound
 
 ```math
-D_{\mathrm{KL}}(\mathrm{Ber}(p)\|\mathrm{Ber}(q))
+D_{\mathrm{KL}}(\mathrm{Ber}(p)\Vert\mathrm{Ber}(q))
 \leq\frac{(p-q)^2}{q(1-q)}
 ```
 

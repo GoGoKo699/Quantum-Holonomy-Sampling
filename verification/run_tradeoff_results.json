@@ -7,7 +7,7 @@
     "sha256": {
       "verification/run_tradeoff_checks.py": "fe81d50fd58b55123db68faef81c0bbc3599ce51c79e608a8aad7248a0c3fa0b",
       "verification/requirements.txt": "2872240ad39db3fa61ea202cac35a5579c482437efa38edec506dbdc0f870942",
-      "science/run-tradeoff.md": "0238b7e39e6c889ad707a13c5b24b0559827b3b940b25cb1f3ecb7fcd6c46dc4"
+      "science/run-tradeoff.md": "6eb73eb84e596ab2936dd7513194f2e7394904dfdbd0489208d535a5ffed18f6"
     }
   },
   "moment_checks": [

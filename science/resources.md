@@ -76,21 +76,21 @@ whose first derivative is $`iX_{01}P`$, exactly as in (2). It is not sufficient 
 
 ### Diamond-norm bound
 
-We use the unhalved diamond norm. For a Hermitian operator $`A`$ of norm at most one, the commutator superoperator $`\mathcal L_A=-i[A,\,\cdot\,]`$ has diamond norm at most two. Therefore the second derivatives of both channels above have diamond norm at most four: conjugation, appending $`P`$, and partial trace are channels of diamond norm one, and $`\|H\|,\|h\|\le1`$.
+We use the unhalved diamond norm. For a Hermitian operator $`A`$ of norm at most one, the commutator superoperator $`\mathcal L_A=-i[A,\,\cdot\,]`$ has diamond norm at most two. Therefore the second derivatives of both channels above have diamond norm at most four: conjugation, appending $`P`$, and partial trace are channels of diamond norm one, and $`\Vert H\Vert,\Vert h\Vert\le1`$.
 
 Taylor's formula with an integral remainder gives
 
 ```math
 \begin{gathered}
-\|\mathcal E_\tau-I-\tau\mathcal L_h\|_\diamond\le2\tau^2,\\
-\|\mathcal U_\tau-I-\tau\mathcal L_h\|_\diamond\le2\tau^2.
+\Vert\mathcal E_\tau-I-\tau\mathcal L_h\Vert_\diamond\le2\tau^2,\\
+\Vert\mathcal U_\tau-I-\tau\mathcal L_h\Vert_\diamond\le2\tau^2.
 \end{gathered}
 ```
 
 Consequently,
 
 ```math
-\|\mathcal E_\tau-\mathcal U_\tau\|_\diamond\le4\tau^2.
+\Vert\mathcal E_\tau-\mathcal U_\tau\Vert_\diamond\le4\tau^2.
 \qquad\text{(3)}
 ```
 
@@ -99,7 +99,7 @@ These bounds are completely bounded and therefore hold with an arbitrary entangl
 Use $`m`$ fresh independent program states and set $`\tau=u/m`$. Composition of channels and the telescoping inequality give
 
 ```math
-\|\mathcal E_{u/m}^{\,m}-\mathcal U_u\|_\diamond
+\Vert\mathcal E_{u/m}^{\,m}-\mathcal U_u\Vert_\diamond
 \le m\,4(u/m)^2
 =\frac{4u^2}{m}.
 \qquad\text{(4)}
@@ -120,7 +120,7 @@ Thus $`m`$ copies implement the required **fixed-phase controlled reflection**, 
 Write the compiled reflection-query circuit as a sequence of known gates interspersed with $`Q`$ controlled reflections. The source label of each reflection is a fixed classical part of the circuit description. Replacing one occurrence by its simulated channel changes the whole channel by at most the simulation error of that occurrence, because preceding and succeeding channels have diamond norm one. Hence
 
 ```math
-\|\mathcal A_{\mathrm{copies}}-\mathcal A_{\mathrm{queries}}\|_\diamond
+\Vert\mathcal A_{\mathrm{copies}}-\mathcal A_{\mathrm{queries}}\Vert_\diamond
 \le\sum_{s=1}^{Q}\frac{4\pi^2}{m_s}.
 \qquad\text{(6)}
 ```
@@ -210,7 +210,7 @@ The bounded sign approximant and its QSVT phase sequence depend on $`c,\eta`$, n
 A sufficient numerical convention is to require the **final** selected block of the finite-precision polar circuit to obey
 
 ```math
-\|J^\dagger V_jJ-T_j\|\le\eta^2/2.
+\Vert J^\dagger V_jJ-T_j\Vert\le\eta^2/2.
 \qquad\text{(10)}
 ```
 

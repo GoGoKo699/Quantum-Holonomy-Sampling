@@ -168,7 +168,7 @@
     {
       "path": "science/lower-bound.md",
       "index": 46,
-      "source_sha256": "2e4dae0ed174d403d1057c90c93a745c8bbb70bae1e06443899dee2f322cc534",
+      "source_sha256": "256daedf5269af516f3e12eb040845fa962a2f2b007b404e60ceeafc387f1b9f",
       "required_text": [
         "G",
         "\u03c6",
@@ -202,7 +202,7 @@
     {
       "path": "science/block-information.md",
       "index": 165,
-      "source_sha256": "5f364186fadd20424a5f8e09bb70678e942b1dde38a8998fc9d5b0c85ac713b3",
+      "source_sha256": "63eb06957c4b63f7ce4b93c6d947055a78b9bfbf386139a73e5fc468c231579c",
       "required_text": [
         "8",
         "3",
@@ -214,7 +214,7 @@
     {
       "path": "science/block-information.md",
       "index": 192,
-      "source_sha256": "d5c8a1a5a1072dc2e42a16c34c43931115a2f640a5a8dd5163132e7d3d8fd892",
+      "source_sha256": "cfcf5f10d88d83c820a894f95e08e518d9cb31fcd0407ad548891689cf8c95a0",
       "required_text": [
         "8",
         "3",
