@@ -357,7 +357,7 @@ For each fixed row there are at most $`\binom tk2^k`$ nonzero columns with $`k`$
 \qquad\text{(23)}
 ```
 
-The last line uses $`k!\ge4!(k-4)!`$. This bound is uniform in the phase separation, as appropriate to fixed small accuracy; it does not claim the sharp accuracy dependence as $`\epsilon\to0`$.
+The last line uses $`k!\ge4!(k-4)!`$. This estimate serves the fixed-accuracy theorem. The [phase-separation refinement](run-tradeoff.md#matching-adaptive-converse) retains the squared phase difference and gives the accuracy dependence for the matched tradeoff.
 
 ### Relative entropy
 

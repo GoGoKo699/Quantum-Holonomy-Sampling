@@ -2,7 +2,7 @@
 
 The project asks how many copies of unknown pure states are needed to estimate the phase around a specified loop, then asks whether the best copy order can survive frequent complete quantum resets. The constructive transport algorithm, unrestricted copy converse, optimal four-copy information, and fixed-source adaptive transcript argument form one connected story.
 
-The map contains exactly **30 project-defined understanding targets**. **Background/preliminaries has 12 milestones, M01–M12**: individual rays and operations become a complete statistical experiment with symmetry, a total-copy cap, and a precise reset boundary. **Narrative/innovation has 18 milestones, M13–M30**: local transport builds the upper endpoint, while phase-specific block information and the adaptive comparison establish its necessary coherent-run size. Each phase proceeds from local objects to a global account. The allocation gives both the algorithm and the information argument room without turning specialist lemmas into separate milestones.
+The map contains exactly **30 project-defined understanding targets**. **Background/preliminaries has 12 milestones, M01–M12**: individual rays and operations become a complete statistical experiment with symmetry, a total-copy cap, and a precise reset boundary. **Narrative/innovation has 18 milestones, M13–M30**: local transport solves the unrestricted problem, and a four-bank measurement matches the adaptive converse across complete-reset run caps. Each phase proceeds from local objects to a global account. The allocation gives both the algorithm and the information argument room without turning specialist lemmas into separate milestones.
 
 The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**, using the [author-hosted 2018 manuscript](https://cs.uwaterloo.ca/~watrous/TQI/TQI.pdf). All section numbers below refer to this source. The [Watrous bridge](WATROUS_BRIDGE.md) supplies notation translations, missing algorithmic explanations, two complete four-state examples, and the route to the phase/coherence theorem. Primary research papers remain attribution and proof dependencies, not extra educational anchors. Watrous supplies information-theoretic foundations; the particular transport and transcript theorems are supplied by the linked scientific accounts.
 
@@ -146,7 +146,7 @@ Dependencies refer to earlier targets. They are conceptual requirements, not a r
 
 **Central question:** What does copy-optimal phase estimation mean, and which extra question does the run constraint ask?
 
-**Understanding target:** Assemble pure stationary sources, adjacent amplitude promise, forward loop phase, circular error, constant success, total consumed copies, and complete resets. Explain the general-$`L`$ copy theorem and the additional fixed-$`L=4`$, fixed-accuracy, weak-overlap endpoint question.
+**Understanding target:** Assemble pure stationary sources, adjacent amplitude promise, forward loop phase, circular error, constant success, total consumed copies, and complete resets. Explain the general-$`L`$ copy theorem and the additional four-state tradeoff among total copies, copies per reset, overlap, and phase accuracy.
 
 **Dependencies and story role:** M01–M11. This completes the background phase by joining objects, operations, symmetry, and statistical quantifiers.
 
@@ -268,7 +268,7 @@ Dependencies refer to earlier targets. They are conceptual requirements, not a r
 
 **Central question:** What survives the four-cycle mechanism when a run may consume many copies of each label?
 
-**Understanding target:** Define exact multiplicities, distinct-word dimension $`t!/(\prod_jr_j!)`$, and the fixed-type compression of $`G_\phi^{\otimes t}`$. Explain balanced label flow, integer winding, and why a nonzero winding requires at least four changed sites.
+**Understanding target:** Define exact multiplicities, distinct-word dimension $`t!/(\prod_jr_j!)`$, and the fixed-type compression of $`G_\phi^{\otimes t}`$. Explain balanced label flow and integer winding. Show why a nonzero winding requires at least four changed sites and why its magnitude is at most $`k/4`$ for $`k`$ changed sites.
 
 **Dependencies and story role:** M03, M10–M11, M19–M21. It generalizes the local block mechanism to run lengths that may grow as overlap weakens.
 
@@ -292,13 +292,13 @@ Dependencies refer to earlier targets. They are conceptual requirements, not a r
 
 **Central question:** How does phase winding bound every measurement of a growing stock?
 
-**Understanding target:** Combine the changed-site count, squared entry weights, and the minimum-eigenvalue estimate with the quantum relative-entropy/chi-square comparison. Explain the bound $`D(\omega_\phi\|\omega_\theta)\le(8/3)t^4c^8e^{4tc^2}`$ and its uniformity in multiplicities.
+**Understanding target:** Combine the changed-site count, squared entry weights, and the minimum-eigenvalue estimate with the quantum relative-entropy/chi-square comparison. Explain why keeping the squared phase separation yields $`D(\omega_\phi\|\omega_\theta)\le(2/3)|\phi-\theta|^2t^4c^8e^{4tc^2}`$ uniformly in multiplicities.
 
 **Dependencies and story role:** M09, M19, M22–M23. It completes the crucial information input for the adaptive lower bound.
 
-**Conceptual connection:** This is a phase theorem. Neither the raw-cycle bias nor the sister's root-fidelity divergence can be substituted for the winding and fixed-type calculation.
+**Conceptual connection:** The phase-dependent winding bound controls the information gained from a stock even when the two hypotheses approach each other.
 
-**Sources:** Watrous §§5.1–5.2, 7.1–7.2. [Coherent-run divergence proof](../science/coherent-runs.md); [bridge §10](WATROUS_BRIDGE.md#10-why-the-block-estimate-must-be-uniform-in-run-length).
+**Sources:** Watrous §§5.1–5.2, 7.1–7.2. [Phase-sensitive divergence proof](../science/run-tradeoff.md); [bridge §10](WATROUS_BRIDGE.md#10-why-the-block-estimate-must-be-uniform-in-run-length).
 
 ### M25 — Fixed stocks simulate adaptive source requests
 
@@ -328,33 +328,33 @@ Dependencies refer to earlier targets. They are conceptual requirements, not a r
 
 **Central question:** What limits the information in all the classical records together?
 
-**Understanding target:** Apply data processing to each refreshed stock and the classical relative-entropy chain rule across history-dependent measurements. Combine Pinsker and two fixed/fresh comparisons into the phase-specific transcript bound, identifying the block-information term and dimension correction separately.
+**Understanding target:** Apply data processing to each refreshed stock and the classical relative-entropy chain rule across history-dependent measurements. Combine Pinsker and two fixed/fresh comparisons into the phase-specific transcript bound, identifying the block-information term and dimension correction. Explain how their dependence on phase separation and total copies sets the sufficient dimension threshold.
 
 **Dependencies and story role:** M09, M11, M24–M26. It joins the local stock theorem and correlation comparison into a bound for every permitted protocol.
 
 **Conceptual connection:** Arbitrary classical computation, within-run measurements, source allocation, and stopping remain allowed. Complete reset is load bearing because it makes the quantum experiments factor conditional on the classical transcript.
 
-**Sources:** Watrous §§3.1, 5.1–5.2, 7.2. [Coherent-run transcript theorem](../science/coherent-runs.md); [bridge §11](WATROUS_BRIDGE.md#11-from-stocks-to-the-actual-adaptive-transcript).
+**Sources:** Watrous §§3.1, 5.1–5.2, 7.2. [Coherent-run transcript theorem](../science/coherent-runs.md); [phase-sensitive refinement](../science/run-tradeoff.md); [bridge §11](WATROUS_BRIDGE.md#11-from-stocks-to-the-actual-adaptive-transcript).
 
 ### M28 — Necessary coherent runs at the copy-optimal endpoint
 
-**Central question:** Which run size is required to retain $`O(c^{-2})`$ total copies?
+**Central question:** How many copies are needed if the receiver can process at most $`b`$ before every complete reset?
 
-**Understanding target:** Compare phases $`0`$ and $`4\epsilon`$, require transcript total variation at least $`1/3`$, and derive $`b\ge c^{-2}/(128C_0^{1/3})`$ from $`N\le C_0c^{-2}`$ and $`d\ge9216C_0^2c^{-4}`$. Join this necessity with the one-run upper algorithm.
+**Understanding target:** Compare phases $`0`$ and $`4\epsilon`$, which demand transcript total variation at least $`1/3`$. Use M27 to derive the copy bound when $`b\lt c^{-2}`$ and the dimension correction is small. Show how measuring quadratures of an average of addressed cycles attains $`O(\epsilon^{-2}c^{-8}b^{-3})`$ in that regime by counting how often two cycles share registers in four banks.
 
-**Dependencies and story role:** M12, M16–M17, M27. It integrates both proof branches into the sharp high-dimensional endpoint $`b=\Theta(c^{-2})`$ at fixed small accuracy.
+**Dependencies and story role:** M05, M09, M12, M16–M18, M27. The four-bank measurement and the two converses give the joint copy law. Around $`b\asymp c^{-2}`$ the law reaches the unrestricted copy scale $`\epsilon^{-2}c^{-2}`$.
 
-**Conceptual connection:** Fixed $`b\ge4`$ instead gives a $`c^{-8}`$ regime when the dimension correction is small. Neither statement is a matched full tradeoff in all parameters or a theorem for vanishing phase accuracy.
+**Conceptual connection:** The short-run law has an inverse cube of $`b`$ because the variance drops with the fourth power of the bank size and each run pays for four banks. The matching lower bound includes adaptation and requires sufficiently large $`d`$.
 
-**Sources:** Watrous §§3.1 and 5.1 for testing. [Coherent-run endpoint and scope](../science/coherent-runs.md); [algorithm upper bound](../science/algorithm.md#upper-bound); [bridge §12](WATROUS_BRIDGE.md#12-the-endpoint-and-its-dimension-boundary).
+**Sources:** Watrous §1.1.3 for spectral decomposition, §2.3 for measurement, and §§3.1 and 5.1 for testing. [Four-bank estimator and tradeoff](../science/run-tradeoff.md); [bridge §12](WATROUS_BRIDGE.md#12-the-endpoint-and-its-dimension-boundary).
 
 ### M29 — Dimension, attribution, and the physical boundary
 
 **Central question:** Which apparently similar claims does the theorem leave separate?
 
-**Understanding target:** Explain fixed-dimensional single-copy tomography with $`O_d(c^{-2}\epsilon^{-2})`$ copies by stabilizing each adjacent overlap, showing why dimension-unqualified run necessity is false. Attribute cycle tests, replica hierarchies, polar compilation, sample simulation, and the sister's transcript method separately from the new phase-specific bound.
+**Understanding target:** Explain fixed-dimensional single-copy tomography with $`O_d(c^{-2}\epsilon^{-2})`$ copies by stabilizing each adjacent overlap, showing why dimension-unqualified run necessity is false. Attribute cycle tests, replica hierarchies, polar compilation, sample simulation, and the sister's transcript comparison alongside quantum U-statistics and the four-bank phase calculation.
 
-**Dependencies and story role:** M02–M03, M11–M12, M18–M28. It connects the established endpoint to its operational uses and limits.
+**Dependencies and story role:** M02–M03, M11–M12, M18–M28. It connects the matched tradeoff to its operational uses and limits.
 
 **Conceptual connection:** Purity, stationary independent specimens, accessible controlled registers, a discrete loop, and complete conditional reset matter. Simultaneous width, passive optics, noisy sources, mixed states, a continuum Berry phase, and root fidelity require their own statements.
 
@@ -362,12 +362,12 @@ Dependencies refer to earlier targets. They are conceptual requirements, not a r
 
 ### M30 — One explanation of geometric phase and coherent access
 
-**Central question:** Why does efficient phase access demand long coherent consumption in the stated regime?
+**Central question:** How do transport, collective measurements, and complete resets determine the cost of geometric phase estimation?
 
-**Understanding target:** Connect projector transport, charged compilation, loop readout, and unrestricted copy necessity to the optimal four-copy experiment, uniform winding/Jensen estimate, fixed-source transcript comparison, and dimension-qualified run endpoint. Explain the substantive sister relationship and each project's distinct target without duplicating the root-fidelity theorem as a phase claim.
+**Understanding target:** Connect projector transport, charged compilation, loop readout, and unrestricted copy necessity to the optimal four-copy experiment, uniform winding/Jensen estimate, fixed-source transcript comparison, and four-bank spectral measurement. Explain the dimension-qualified run tradeoff and how the sister's comparison method supports both the phase and root-fidelity results.
 
 **Dependencies and story role:** M12–M29. This completes the narrative by joining mechanism, resources, necessity, attribution, and scope into one account.
 
-**Conceptual connection:** Coherence removes attenuation constructively, while short complete-reset runs discard quantum relations before they accumulate enough information. The classical notebook remains fully available; the theorem quantifies when it still cannot replace those relations.
+**Conceptual connection:** The four-bank estimator gains information by acting on more copies in one run. The adaptive converse quantifies the cost of ending each run sooner even when classical memory is unrestricted.
 
-**Sources:** Watrous Chapters 2–3, §§5.1–5.2, 7.1–7.2 as connected by the bridge. [Model](../science/model.md), [block information](../science/block-information.md), [coherent runs](../science/coherent-runs.md), [interpretation](../science/interpretation.md), and [Watrous bridge](WATROUS_BRIDGE.md).
+**Sources:** Watrous Chapters 2–3, §§5.1–5.2, 7.1–7.2 as connected by the bridge. [Model](../science/model.md), [block information](../science/block-information.md), [coherent runs](../science/coherent-runs.md), [run tradeoff](../science/run-tradeoff.md), [interpretation](../science/interpretation.md), and [Watrous bridge](WATROUS_BRIDGE.md).

@@ -262,6 +262,8 @@ N=O\!\left(
 
 is a dimension-independent copy bound for a general coherent processor receiving pure-state copies. Gate and memory dependence on the number of qubits is explicit. The compiler, density-matrix exponentiation, and multisource conversion are inherited primitives; their full costs are included. Nothing in this resource analysis gives the processor direct access to a photon degree of freedom that an experiment does not control, or guarantees robustness to impure source copies.
 
+The [four-bank spectral circuit](run-tradeoff.md#finite-precision-implementation) gives a separate resource option for four-state loops under an imposed reset cap. Its bank of specimens, repeated phase readout on that bank, and finite-precision synthesis have separate gate and width costs from the streaming circuit above.
+
 ## References
 
 1. S. Lloyd, M. Mohseni and P. Rebentrost, *Quantum principal component analysis*, Nature Physics 10, 631–633 (2014), [arXiv:1307.0401](https://arxiv.org/abs/1307.0401).
