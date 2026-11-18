@@ -252,3 +252,34 @@ or high-dimensional $`\Theta(c^{-2})`$ run threshold. Those conclusions use
 the analytical proofs and their stated assumptions. In particular, no
 fixed-dimension long-run necessity follows from these examples: the
 single-copy tomography counterexample remains part of the theorem's scope.
+
+## Copy versus run tradeoff
+
+From the repository root, run the checks accompanying the
+[four-state tradeoff](../science/run-tradeoff.md):
+
+~~~bash
+python verification/run_tradeoff_checks.py
+~~~
+
+The script writes [run_tradeoff_results.json](run_tradeoff_results.json) by
+default. Use `--output` for a separate result path. It records the seed,
+versions and SHA-256 digests of the script and its repository sources.
+
+- Seven finite product stocks check the complex cycle expectation and the
+  exact second moment in both orientations, with one to three copies per
+  label and dimensions two to four. The cases include unequal neighboring
+  overlaps and sparse cycles with nonzero phase.
+- Two qubit-stock calculations check both quadratures on two copies per
+  label. They implement address routing by register swaps, construct the
+  compressed SELECT operator on every data basis vector, and compute the
+  distribution of the 64-point phase-estimation readout of the qubiterate.
+  The reference distribution uses a separate eigendecomposition of the
+  corresponding Hermitian observable. A second phase-estimation readout
+  on the same postmeasurement stock checks a row of the joint distribution.
+- Three fixed-type Gram rows test the phase-sensitive Hilbert–Schmidt bound.
+  The largest test includes a nonzero double winding.
+
+These calculations check finite operator and probability identities. They
+leave finite gate synthesis, arbitrary reset-adaptive protocols and the
+large-dimension minimax law to the analytic account.

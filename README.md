@@ -12,21 +12,18 @@ B=\prod_{j=1}^{L}\langle\psi_j|\psi_{j+1}\rangle.
 
 The receiver gets quantum copies and can process their registers coherently. State-preparation unitaries, inverse preparation circuits and a coherent source-index oracle are not supplied.
 
-## Sister result: how long must coherence persist?
+## How the coherent-run limit changes the copy cost
 
-This project and [Quantum Fidelity Coherence](https://github.com/GoGoKo699/Quantum-Fidelity-Coherence) establish a shared operational result. Here the target is a loop phase; the sister project studies root fidelity and supplies the fixed-source transcript comparison. The phase theorem requires its own optimal block-information bound. The two numerical resource laws cannot be identified by substituting parameters.
-
-For a sparse four-state cycle, fixed small phase accuracy and neighboring overlap amplitude $`c\to0`$, copy-optimal estimation requires coherent runs consuming $`\Theta(c^{-2})`$ copies in a sufficient large-dimension regime. More precisely, for $`C_0\ge1`$,
+For a four-state loop, the [matched tradeoff](science/run-tradeoff.md) describes the cost of a receiver that consumes at most $`b`$ copies within each coherent run and retains only a classical record after each complete reset. At circular accuracy $`\epsilon`$, with overlap amplitudes at least $`c`$ and a cap of at least four copies, the total cost is
 
 ```math
-N\le C_0c^{-2},\qquad d\ge9216C_0^2c^{-4}
-\quad\Longrightarrow\quad
-b\ge\frac{c^{-2}}{128C_0^{1/3}}.
+N^*=\Theta(T),\qquad
+T=\epsilon^{-2}\max\left\{c^{-2},\,c^{-8}b^{-3}\right\}.
 ```
 
-Here $`b`$ counts every copy consumed before a **complete quantum reset**, and only the full classical history survives the boundary. Program copies can be streamed while a small target register stays coherent; discarding a program is not a complete reset. At fixed finite $`d`$, single-copy tomography can attain the same power $`c^{-2}`$, so the dimension qualification is essential.
+The construction applies in any dimension. The matching lower bound requires $`d\ge9216T^2`$ when $`4\le b\lt c^{-2}`$. At $`b\ge c^{-2}`$ it holds for $`d\ge4`$. The weak-overlap regime is $`0\lt c\le1/4`$, with $`0\lt\epsilon\le\pi/16`$ and success probability at least $`2/3`$. This gives an inverse-cube saving in the total copy count as the run cap grows below the crossover. The receiver measures the spectrum of a coherent average of cycles over four banks. The exact variance of this observable supplies the saving.
 
-The [block-information account](science/block-information.md) owns the phase-specific proof, including the exact four-copy optimum. The [coherent-run theorem](science/coherent-runs.md) gives the fixed-source adaptive converse and its limits. Fidelity owns the general transcript method; both accounts retain the definitions needed for independent reading.
+The [block-information account](science/block-information.md) gives the exact four-copy optimum. [Coherent runs](science/coherent-runs.md) proves the original endpoint and the fixed-source comparison, with the general transcript method supplied by [Quantum Fidelity Coherence](https://github.com/GoGoKo699/Quantum-Fidelity-Coherence). At fixed finite dimension, single-copy tomography permits the same weak-overlap exponent as long coherent runs, with dimension-dependent constants. A consumed-copy bound per run is distinct from a live-width bound.
 
 ## Principal result
 
@@ -63,7 +60,7 @@ with nonzero overlaps only between neighbors on a ring. Direct full-cycle measur
 | What are the copy, gate, memory and compilation costs? | [Resource accounting](science/resources.md) |
 | Why can no collective or adaptive protocol beat the stated scale? | [Finite lower bound](science/lower-bound.md) |
 | What can the optimal four-copy block reveal about phase? | [Block information](science/block-information.md) |
-| Which complete-reset run length is necessary at optimal copy cost? | [Coherent runs](science/coherent-runs.md) |
+| How does the copy cost depend on the coherent-run cap? | [Run tradeoff](science/run-tradeoff.md) and [adaptive transcript theorem](science/coherent-runs.md) |
 | What happens on a sparse loop, and what does the direct test cost? | [Worked examples and comparison](science/examples.md) |
 | What does the result change operationally? | [Physical interpretation](science/interpretation.md) |
 | Which results are inherited, and which models differ? | [Related work](references/related-work.md) and [bibliography](references/references.bib) |
@@ -80,7 +77,7 @@ Start with the [learning overview](learning/README.md) for the study routes. The
 
 ## Processing resources
 
-Writing $`n=\lceil\log_2 d\rceil`$, the known-angle quantum gate count is $`O(nN)`$, where $`N`$ is the explicit copy budget. Program copies can be streamed using $`2n+O(\log(1/\epsilon))`$ live qubits. A finite universal gate set adds synthesis logarithms. Classical phase-sequence compilation is charged separately and can dominate quantum processing in some parameter regimes; copy optimality is not a claim of universally optimal end-to-end runtime.
+For the streaming transport algorithm, write $`n=\lceil\log_2 d\rceil`$. Its known-angle quantum gate count is $`O(nN)`$, where $`N`$ is the explicit copy budget. Program copies can be streamed using $`2n+O(\log(1/\epsilon))`$ live qubits. A finite universal gate set adds synthesis logarithms. Classical phase-sequence compilation is charged separately and can dominate quantum processing in some parameter regimes; copy optimality is not a claim of universally optimal end-to-end runtime. The [four-bank implementation](science/run-tradeoff.md#finite-precision-implementation) uses a different width and gate budget, with all four banks held through spectral readout.
 
 ## Reproduce the finite checks
 
@@ -90,9 +87,10 @@ With the dependencies in [verification/requirements.txt](verification/requiremen
 python verification/checks.py
 python verification/block_phase_checks.py
 python verification/stock_information_checks.py
+python verification/run_tradeoff_checks.py
 ```
 
-The [verification guide](verification/README.md) and [recorded results](verification/results.json) cover transport and gauge identities, sparse Gram families, coherent Fourier readout, and controlled sample simulation with entangled references. The numerical checks inspect finite circuits and algebraic identities. General complexity guarantees follow from the analytical proofs and their cited dependencies; the suite does not compile a complete QSVT instance or numerically optimize a diamond norm.
+The [verification guide](verification/README.md) and [recorded results](verification/results.json) cover transport and gauge identities, sparse Gram families, coherent Fourier readout, controlled sample simulation with entangled references, and the four-bank variance and spectral readout. The numerical checks inspect finite circuits and algebraic identities. General complexity guarantees follow from the analytical proofs and their cited dependencies; the suite does not compile a complete QSVT instance or numerically optimize a diamond norm.
 
 ## Operational scope
 

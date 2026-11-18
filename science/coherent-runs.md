@@ -2,7 +2,7 @@
 
 For a sparse four-state cycle at fixed small phase accuracy, the unrestricted copy complexity is $`\Theta(c^{-2})`$. In a sufficient large-dimension regime, attaining that copy order requires a coherent run consuming $`\Omega(c^{-2})`$ copies. A run may stream program specimens and discard them after use; its size counts all copies consumed before the entire input-dependent quantum state is reset.
 
-The proof has two distinct components. The [phase-block information bound](block-information.md) is specific to the loop phase. A fixed-source Haar comparison, inherited from the method developed in [Quantum Fidelity Coherence](https://github.com/GoGoKo699/Quantum-Fidelity-Coherence/blob/2fcb88fd734f0235ab83fe2ce628bf8b99c85118/science/haar_comparison.md), controls the information that classical history can retain about a single stationary source orientation. The root-fidelity resource law itself is not used as a phase theorem.
+The [matched run tradeoff](run-tradeoff.md) extends the endpoint below to intermediate run caps and variable accuracy. The original endpoint proof has two distinct components. The [phase-block information bound](block-information.md) is specific to the loop phase. A fixed-source Haar comparison, inherited from the method developed in [Quantum Fidelity Coherence](https://github.com/GoGoKo699/Quantum-Fidelity-Coherence/blob/2fcb88fd734f0235ab83fe2ce628bf8b99c85118/science/haar_comparison.md), controls the information that classical history can retain about a single stationary source orientation. The root-fidelity resource law itself is not used as a phase theorem.
 
 ## 1. Complete-reset consumed-copy model
 
@@ -169,7 +169,7 @@ b=\Theta_\epsilon(c^{-2}),
 \qquad\text{(11)}
 ```
 
-This is a sharp endpoint in the run resource, not a matched formula for the full joint tradeoff in $`N,b,c,d,\epsilon`$. It imposes no matching lower bound on simultaneous quantum width. The streaming algorithm uses $`2\lceil\log_2d\rceil+O(\log(1/\epsilon))`$ live qubits.
+This records the sharp endpoint in the run resource. The [matched tradeoff](run-tradeoff.md) gives the intermediate scaling in its sufficient dimension regime. A simultaneous quantum-width lower bound remains open. The streaming algorithm uses $`2\lceil\log_2d\rceil+O(\log(1/\epsilon))`$ live qubits.
 
 ## 4. Fixed run caps and the four-copy exponent
 

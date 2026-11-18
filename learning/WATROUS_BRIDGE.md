@@ -1,4 +1,4 @@
-# From Watrous to phase estimation and coherent-run necessity
+# From Watrous to phase estimation and coherent-run tradeoffs
 
 A loop of unknown pure states contains a gauge-invariant phase. Coherent transport estimates it with nearly optimal total copies. A second question asks whether a processor can achieve the same copy order while repeatedly discarding every unknown quantum record. This bridge develops both questions from the single selected educational anchor, **Watrous (2018)**, and connects them to the project's authoritative proofs.
 
@@ -35,12 +35,13 @@ The single educational anchor is **John Watrous, *The Theory of Quantum Informat
 | States, phases, registers, tensor copies | §§2.1.1–2.1.3 | [Model §§1–3](../science/model.md#1-independent-labeled-sources) |
 | Spectral functions, norms, singular values | §1.1.3 | [Transport §§1–2](../science/transport.md#1-a-projector-defined-transport) |
 | Channels, discarding, and measurements | §§2.2.1–2.2.3, 2.3.1–2.3.2 | [Controlled sample simulation](../science/resources.md#controlled-density-matrix-exponentiation) |
+| Spectral measurements of collective observables | §1.1.3, §§2.3.1–2.3.2 | [Four-bank quadrature readout](../science/run-tradeoff.md) |
 | Finite testing and fidelity | §§3.1.1, 3.2.1–3.2.3 | [Unrestricted copy lower bound](../science/lower-bound.md) |
 | Error with an entangled reference | §§3.3.1–3.3.3 | [Diamond-norm error](../science/resources.md#diamond-norm-bound) |
 | Classical and quantum relative entropy | §§5.1.1–5.1.2, 5.2.1–5.2.3 | [Block information](../science/block-information.md), [adaptive runs](../science/coherent-runs.md) |
 | Permutation representations and Haar averaging | §§7.1.1–7.1.2, 7.2.1–7.2.2 | [Four-copy invariant experiment](../science/block-information.md) |
 
-Watrous provides states, measurements, information, symmetry, and the language of the converse. The particular controlled-interference and Fourier circuits, projector transport, polar compilation, sample simulation, four-cycle information, and adaptive transcript transfer are supplied in the project. Research-level sign and polar compiler theorems retain their primary citations in [Transport](../science/transport.md); they are proof dependencies rather than additional educational anchors. In particular, the book is not being credited with the new phase/coherence theorem.
+Watrous provides states, measurements, information, symmetry, and the language of the converse. The project develops the controlled circuits, projector transport, sample simulation, four-bank variance, winding estimate, and adaptive transcript bound. The [related-work account](../references/related-work.md) credits the underlying research methods.
 
 ## 3. Conventions that matter
 
@@ -324,7 +325,7 @@ This is a channel restriction in the sense of Watrous §§2.2–2.3, not a bound
 
 Repeated measurements may leave an unlimited classical notebook, and later measurements may use it. The sources themselves remain fixed. A lower bound must include that learning of their orientation. Independently averaging the orientation anew at every reset would remove correlations that the physical notebook can exploit and would analyze a different experiment.
 
-The new question fixes $`L=4`$ and a small accuracy $`0\lt\epsilon\le\pi/16`$, then takes $`c\to0`$. For this limit the upper budget is $`N=O_\epsilon(c^{-2})`$: $`F,M,\eta`$ depend on the fixed accuracy, so the compiler has $`K=O_\epsilon(c^{-1})`$ and no additional overlap logarithm appears in copies. Classical compilation and finite-gate synthesis remain separately charged.
+The additional research question fixes $`L=4`$ and allows the run cap $`b`$, the overlap promise $`c`$, and the target accuracy $`0\lt\epsilon\le\pi/16`$ to vary together. At fixed accuracy the transport circuit already attains $`N=O_\epsilon(c^{-2})`$ in one streaming run. The four-bank measurement in §12 reaches the optimum copy scale across shorter runs and gives the dependence on $`\epsilon`$.
 
 ## 9. A sparse four-state experiment with an optimal block measurement
 
@@ -374,7 +375,7 @@ Here $`D`$ is quantum relative entropy with natural logarithms, not trace distan
 
 ## 10. Why the block estimate must be uniform in run length
 
-An endpoint theorem must cover runs whose size grows as $`c`$ decreases. A Taylor expansion with fixed multiplicities cannot be extrapolated into that regime. For a stock with $`r_j`$ copies of label $`j`$, total $`t=\sum_jr_j`$, use the distinct words with these exact label counts as an orthonormal indexing basis. Its dimension is
+A tradeoff theorem must cover runs whose size grows as $`c`$ decreases. A Taylor expansion with fixed multiplicities cannot be extrapolated into that regime. For a stock with $`r_j`$ copies of label $`j`$, total $`t=\sum_jr_j`$, use the distinct words with these exact label counts as an orthonormal indexing basis. Its dimension is
 
 ```math
 K_r=\frac{t!}{r_1!r_2!r_3!r_4!}.
@@ -401,14 +402,14 @@ This uses a scalar inequality for each vector, not an assertion that the exponen
 C_\phi\succeq e^{-2tc^2}I.
 ```
 
-A nonzero phase winding requires at least four changed sites. Counting possible changed labels bounds the squared matrix difference, while the eigenvalue bound controls the inverse matrix in the relative-entropy comparison. Together,
+A nonzero winding $`w`$ requires at least four changed sites. If there are $`k`$ changed sites then $`|w|\le k/4`$. Writing $`h=|\phi-\theta|`$, the squared change in the winding phase is at most $`(kh/4)^2`$. The row count and eigenvalue bound now give
 
 ```math
 D(\omega_\phi\|\omega_\theta)
-\le\frac83t^4c^8e^{4tc^2}.
+\le\frac{2}{3}h^2t^4c^8e^{4tc^2}.
 ```
 
-The [uniform proof](../science/coherent-runs.md) supplies the exact combinatorial and Schur steps. Watrous §§1.1.3, 5.2, and 7.1–7.2 provide the language. The fixed-type Jensen argument and its phase-specific use are supplied here, rather than being consequences of the sister's root-fidelity resource formula.
+The factor $`h^2`$ carries the dependence on target accuracy through the transcript proof. The [uniform proof](../science/run-tradeoff.md) gives the counting and Schur steps. Watrous §§1.1.3, 5.2, and 7.1–7.2 provide the language. The fixed-type Jensen argument and its phase-specific use are supplied here, rather than being consequences of the sister's root-fidelity resource formula.
 
 ## 11. From stocks to the actual adaptive transcript
 
@@ -427,7 +428,7 @@ The uniform phase-block divergence bounds every conditional refreshed measuremen
 
 ```math
 \mathrm{TV}(P_\phi,P_\theta)
-\le\sqrt{\frac{32768}{3}}\,c^4\sqrt{Nb^3}\,e^{16bc^2}
+\le\sqrt{\frac{8192}{3}}\,h\,c^4\sqrt{Nb^3}\,e^{16bc^2}
 +\frac{768N^2}{d}.
 ```
 
@@ -435,23 +436,31 @@ All outcomes, classical histories, within-run adaptation, and random stopping un
 
 ## 12. The endpoint and its dimension boundary
 
-Take $`\phi_0=0`$ and $`\phi_1=4\epsilon`$. A uniformly successful circular estimator distinguishes them with transcript total variation at least $`1/3`$. If
+Take $`\phi_0=0`$ and $`\phi_1=4\epsilon`$. A uniformly successful circular estimator distinguishes them with transcript total variation at least $`1/3`$. For $`4\le b\lt c^{-2}`$, §11 bounds the transcript information with $`h=4\epsilon`$ and $`bc^2\le1`$. Define the copy scale
 
 ```math
-N\le C_0c^{-2},\qquad C_0\ge1,
-\qquad d\ge9216C_0^2c^{-4},
+T=\epsilon^{-2}\max\{c^{-2},c^{-8}b^{-3}\}.
 ```
 
-the dimension correction in §11 is at most $`1/12`$. Its remaining term cannot be large enough when
+If $`d\ge9216T^2`$ and the copy count is below $`T`$, the dimension correction is at most $`1/12`$. The first term forces $`N=\Omega(\epsilon^{-2} c^{-8}b^{-3})`$. For $`b\ge c^{-2}`$ the unrestricted lower bound gives $`N=\Omega(\epsilon^{-2}c^{-2})`$ for $`d\ge4`$.
+
+### A measurement that attains the scale
+
+Take $`m`$ copies of each of the four labels in a run and let $`A`$ average the cyclic permutations obtained by choosing one register in each bank. The two Hermitian quadrature operators $`(A+A^\dagger)/2`$ and $`(A-A^\dagger)/(2i)`$ have means $`\operatorname{Re}B`$ and $`\operatorname{Im}B`$. Measure their spectra on separate runs. When two permutations select different registers in a bank, their product states differ at two sites and have inner product in that bank equal to the corresponding squared overlap $`q_j`$. If they select the same register, the contribution is one. The exact sum of quadrature variances is therefore
 
 ```math
-b\lt\frac{c^{-2}}{128C_0^{1/3}}.
+\prod_{j=1}^4\left(q_j+\frac{1-q_j}{m}\right)-|B|^2,
+\qquad q_j=|\langle\psi_j|\psi_{j+1}\rangle|^2.
 ```
 
-Thus copy-optimal weak-overlap phase estimation requires $`b=\Omega(c^{-2})`$ in this sufficient high-dimensional regime. The existing algorithm, run as one coherent experiment, has both $`N=O_\epsilon(c^{-2})`$ and $`b=O_\epsilon(c^{-2})`$. Together these statements identify the threshold at the copy-optimal endpoint. They do not claim a matched formula for every $`N,b,c,d`$, nor joint optimality when phase accuracy also tends to zero.
+For $`mc^2\le1`$ its ratio to $`|B|^2`$ is at most a constant times $`(mc^2)^{-4}`$. Averaging $`O(\epsilon^{-2}(mc^2)^{-4})`$ runs per quadrature then reaches the desired accuracy. Counting the $`4m`$ copies in each run and taking $`m`$ of order the smaller of $`b/4`$ and $`c^{-2}`$ gives $`O(T)`$ copies. The [circuit and resource account](../science/run-tradeoff.md) implements the spectral readout using known register swaps and phase estimation. The algorithm measures the operator average coherently. A random choice of one fresh cycle followed by its usual quadrature test has the same mean and a different variance.
 
-The dimension condition matters. At fixed finite $`d`$, measure each source separately in a tomographically complete set of bases. Classical reconstruction can produce unit vectors whose ray-aligned errors are at most $`\delta=c\epsilon/32`$ with $`O_d(c^{-2}\epsilon^{-2})`$ copies. Adjacent complex overlaps then change by at most $`2\delta`$. Since each true overlap has magnitude at least $`c`$, each argument changes by at most $`4\delta/c`$ and the four arguments change by at most $`\epsilon/2`$. The aligning representative phases cancel in the cyclic product; the algorithm never needs to learn them. Every acquisition can be its own complete-reset run, so $`b=1`$ is possible. [The scope argument](../science/coherent-runs.md) gives an explicit reconstruction and finite-output budget.
+For example, take $`c=1/16`$ and fix $`\epsilon`$. Raising $`b`$ from $`16`$ to $`32`$ raises the usable bank size from four to eight and cuts the short-run term $`c^{-8}b^{-3}`$ from $`2^{20}`$ to $`2^{17}`$. This factor of eight compares leading scales. The short-run term reaches the long-run scale $`c^{-2}=256`$ at $`b=256`$.
 
-The two facts coexist: dimension-uniform processing has a high-dimensional coherent-run requirement, while fixed-dimensional tomography can use a classical notebook efficiently. The joint result supplies the phase-specific information argument behind that requirement. Existing replica hierarchies, invariant cycle tests, polar compilation, and the sister's transcript method remain separately credited foundations.
+### Why the dimension condition matters
 
-The specialist route is [model](../science/model.md) → [block information](../science/block-information.md) → [coherent runs](../science/coherent-runs.md). The constructive route remains [transport](../science/transport.md) → [algorithm](../science/algorithm.md) → [resources](../science/resources.md). The [milestone map](MILESTONES.md) joins both routes and the unrestricted [copy lower bound](../science/lower-bound.md) into one scientific account.
+At fixed finite $`d`$, measure each source separately in a tomographically complete set of bases. Classical reconstruction can produce unit vectors whose ray-aligned errors are at most $`\delta=c\epsilon/32`$ with $`O_d(c^{-2}\epsilon^{-2})`$ copies. Adjacent complex overlaps then change by at most $`2\delta`$. Since each true overlap has magnitude at least $`c`$, each argument changes by at most $`4\delta/c`$ and the four arguments change by at most $`\epsilon/2`$. The aligning representative phases cancel in the cyclic product. Every acquisition can be its own complete-reset run, so $`b=1`$ is possible. [The scope argument](../science/coherent-runs.md) gives an explicit reconstruction and finite-output budget.
+
+The cost of orientation learning through that classical notebook can depend on $`d`$. The high-dimensional comparison explicitly charges its contribution to the transcript bound.
+
+The specialist route is [model](../science/model.md) → [block information](../science/block-information.md) → [coherent runs](../science/coherent-runs.md) → [matched tradeoff](../science/run-tradeoff.md). The constructive route remains [transport](../science/transport.md) → [algorithm](../science/algorithm.md) → [resources](../science/resources.md). The [milestone map](MILESTONES.md) joins both routes and the unrestricted [copy lower bound](../science/lower-bound.md) into one scientific account.

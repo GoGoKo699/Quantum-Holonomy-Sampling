@@ -179,18 +179,6 @@
       ]
     },
     {
-      "path": "README.md",
-      "index": 9,
-      "source_sha256": "f288102cf10a30864feb29f1dc2ea54062b9e12b07fbc01714437a69d0fff754",
-      "required_text": [
-        "9216",
-        "128",
-        "N",
-        "b",
-        "c"
-      ]
-    },
-    {
       "path": "science/coherent-runs.md",
       "index": 49,
       "source_sha256": "51168e45b7d0029face9dab2c50db2598a8629ced19190beb5cb70ac3ea629df",
@@ -247,15 +235,54 @@
       ]
     },
     {
-      "path": "learning/WATROUS_BRIDGE.md",
-      "index": 208,
-      "source_sha256": "f0f87c474ca5e63943ef971c81b3cdf95227675171d7d4fc927676b7bdbc6293",
+      "path": "README.md",
+      "index": 9,
+      "source_sha256": "7b524c82f4ad36f245a4b0bb9416e0bfd6a6f62398386cba48b7e5ece3b4ee12",
       "required_text": [
+        "N",
+        "\u0398",
+        "T",
+        "max",
         "8",
-        "3",
-        "t",
+        "\u2212",
+        "3"
+      ]
+    },
+    {
+      "path": "science/run-tradeoff.md",
+      "index": 10,
+      "source_sha256": "6d367e982674932e61444318af89934c2d1bd1c597a86b3e22f0a2662e3e6423",
+      "required_text": [
+        "T",
+        "\u03b5",
+        "max",
         "c",
-        "e"
+        "(1)"
+      ]
+    },
+    {
+      "path": "science/run-tradeoff.md",
+      "index": 32,
+      "source_sha256": "97f86f48727728cec416c13a531c0bb45c3e14a9ac06c63aabc634b164417544",
+      "required_text": [
+        "Var",
+        "H",
+        "K",
+        "q",
+        "B",
+        "(3)"
+      ]
+    },
+    {
+      "path": "science/run-tradeoff.md",
+      "index": 127,
+      "source_sha256": "1c383cbe00e02f4c02b599ebd8a72b345d3b347d8f6d2721456e5231bc79e196",
+      "required_text": [
+        "TV",
+        "8192",
+        "768",
+        "\u03b2",
+        "(9)"
       ]
     }
   ]
