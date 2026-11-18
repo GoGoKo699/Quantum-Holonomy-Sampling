@@ -292,7 +292,7 @@ Dependencies refer to earlier targets. They are conceptual requirements, not a r
 
 **Central question:** How does phase winding bound every measurement of a growing stock?
 
-**Understanding target:** Combine the changed-site count, squared entry weights, and the minimum-eigenvalue estimate with the quantum relative-entropy/chi-square comparison. Explain why keeping the squared phase separation yields $`D(\omega_\phi\|\omega_\theta)\le(2/3)|\phi-\theta|^2t^4c^8e^{4tc^2}`$ uniformly in multiplicities.
+**Understanding target:** Combine the changed-site count, squared entry weights, and the minimum-eigenvalue estimate with the quantum relative-entropy/chi-square comparison. Explain why keeping the squared phase separation yields $`D(\omega_\phi\Vert\omega_\theta)\le(2/3)|\phi-\theta|^2t^4c^8e^{4tc^2}`$ uniformly in multiplicities.
 
 **Dependencies and story role:** M09, M19, M22–M23. It completes the crucial information input for the adaptive lower bound.
 

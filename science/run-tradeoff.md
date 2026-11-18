@@ -101,7 +101,7 @@ The [stock Gram calculation](block-information.md#4-information-bound-uniform-in
 The second inequality follows from $`(k-1)(k-2)(k-3)\ge3k/2`$ for $`k\ge4`$. With $`x=2tc^2`$, the normalized squared Hilbert–Schmidt difference of the fixed-type Gram matrices is at most $`h^2x^4 e^x/24`$. The existing minimum-eigenvalue estimate $`e^{-2tc^2}`$ and the Petz order-two comparison then give the uniform stock bound
 
 ```math
-D(\omega_\phi\|\omega_\theta)
+D(\omega_\phi\Vert\omega_\theta)
 \le\frac23 h^2 t^4 c^8 e^{4tc^2}.
 \qquad\text{(8)}
 ```

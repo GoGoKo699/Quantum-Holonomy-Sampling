@@ -40,10 +40,10 @@ Z|\psi\rangle=z|\phi\rangle,\qquad
 Z|\phi\rangle=\overline z|\psi\rangle.
 ```
 
-Consequently $`Z^2=r^2 I`$ on $`\mathcal S`$, and the two eigenvalues of $`Z|_{\mathcal S}`$ are $`r`$ and $`-r`$. On $`\mathcal S^\perp`$, $`Z=-I`$. Thus
+Consequently $`Z^2=r^2 I`$ on $`\mathcal S`$, and the two eigenvalues of $`Z|_{\mathcal S}`$ are $`r`$ and $`-r`$. On $`\mathcal S^{⟂}`$, $`Z=-I`$. Thus
 
 ```math
-\|Z\|\le 1,\qquad
+\Vert Z\Vert\le 1,\qquad
 \sigma_{\min}(Z)=r,\qquad
 T_{Q\leftarrow P}|_{\mathcal S}=Z/r.
 ```
@@ -161,7 +161,7 @@ The leading minus sign in (7) must be retained. When $`U_j^{\mathrm{be}}`$ is ex
 
 ## 5. The inherited polar compiler and its clean-ancilla guarantee
 
-Suppose $`r_j\ge c\gt 0`$. Then $`Z_j`$ is invertible, $`\|Z_j\|\le1`$, and $`\sigma_{\min}(Z_j)\ge c`$. Its unitary polar factor is $`T_j=\mathrm{sign}(Z_j)`$.
+Suppose $`r_j\ge c\gt 0`$. Then $`Z_j`$ is invertible, $`\Vert Z_j\Vert\le1`$, and $`\sigma_{\min}(Z_j)\ge c`$. Its unitary polar factor is $`T_j=\mathrm{sign}(Z_j)`$.
 
 Quantum singular value transformation supplies a bounded odd sign approximation on $`[-1,-c]\cup[c,1]`$ with degree
 
@@ -175,14 +175,14 @@ Applied to (8), the singular-vector transformation gives a unitary lift whose se
 For completeness, the implication from a block guarantee to a coherent lift follows directly from unitarity. Let $`J|v\rangle=|0^b\rangle\otimes|v\rangle`$ embed a system into the clean work space, and let $`V_j`$ be a unitary such that
 
 ```math
-A_j=J^\dagger V_j J,\qquad \|A_j-T_j\|\le\delta.
+A_j=J^\dagger V_j J,\qquad \Vert A_j-T_j\Vert\le\delta.
 ```
 
 For any unit vector $`|v\rangle`$,
 
 ```math
 \begin{aligned}
-\|V_jJ|v\rangle-JT_j|v\rangle\|^2
+\Vert V_jJ|v\rangle-JT_j|v\rangle\Vert^2
 &=2-2\mathrm{Re}\langle v|T_j^\dagger A_j|v\rangle\\
 &\le2\delta.
 \end{aligned}
@@ -191,7 +191,7 @@ For any unit vector $`|v\rangle`$,
 
 Thus, to obtain an isometry error at most $`\eta`$, it is sufficient to choose $`\delta\le\eta^2/2`$. The query count is still $`K=O(c^{-1}\log(1/\eta))`$. We use $`K`$ for the **total** number of calls to $`U_j^{\mathrm{be}}`$ or its adjoint in one lift. The same coefficient sequence works for every edge because $`c`$ and $`\eta`$ are common. The work size $`b`$ is constant for this one-ancilla block encoding.
 
-Equation (10) bounds $`\|V_jJ-JT_j\|`$, so it continues to hold when the target is entangled with arbitrary other registers. It is stronger than agreement of the output density matrices up to an unspecified phase.
+Equation (10) bounds $`\Vert V_jJ-JT_j\Vert`$, so it continues to hold when the target is entangled with arbitrary other registers. It is stronger than agreement of the output density matrices up to an unspecified phase.
 
 ### Controlled use
 

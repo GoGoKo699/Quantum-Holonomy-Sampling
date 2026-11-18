@@ -122,7 +122,7 @@ component converges to $I-P$. This is checked in addition to the full channel.
 
 Use the full diamond norm, without a factor of one half. Write
 $\mathcal L_H=-i[H,\cdot]$, so
-$`\|\mathcal L_H\|_\diamond\le2\|H\|`$.
+$`\Vert\mathcal L_H\Vert_\diamond\le2\Vert H\Vert`$.
 
 The program-appending and program-tracing maps are channels with diamond norm
 one. For $H=C\otimes S$ and $H_{\rm eff}=C\otimes\rho$, both Hamiltonian
@@ -132,16 +132,16 @@ because it is a composition of two commutator generators and channels. The
 integral Taylor remainder therefore gives
 
 ~~~math
-\|\mathcal E_\delta
--\mathrm{Ad}_{e^{-i\delta C\otimes\rho}}\|_\diamond
+\Vert\mathcal E_\delta
+-\mathrm{Ad}_{e^{-i\delta C\otimes\rho}}\Vert_\diamond
 \le 4\delta^2.
 ~~~
 
 Telescoping $n$ fresh steps, with $\delta=t/n$, yields
 
 ~~~math
-\|\mathcal E_{t/n}^{\,n}
--\mathrm{Ad}_{e^{-itC\otimes\rho}}\|_\diamond
+\Vert\mathcal E_{t/n}^{\,n}
+-\mathrm{Ad}_{e^{-itC\otimes\rho}}\Vert_\diamond
 \le \frac{4t^2}{n}.
 ~~~
 

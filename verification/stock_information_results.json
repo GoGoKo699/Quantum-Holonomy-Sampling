@@ -9,8 +9,8 @@
     "sha256": {
       "verification/stock_information_checks.py": "911c0e79477c92df6992c8e413b16ff6a63ab2bf80fc0ce80cbdf422255d22d1",
       "verification/requirements-phase.txt": "ad291935bab4da194a85b299d0d08572424270287fc4eeb6c5638c717b952ffa",
-      "science/block-information.md": "1e5a6fa314ada8f8fe1dfd7ba8f224b902b85e0491bfc3a7ee357ff8db1bde25",
-      "science/coherent-runs.md": "d721f3e8441383fc1fbc9d218d78ba42ce66d211a3dc48a13cda1c45b81747ad"
+      "science/block-information.md": "5907ca562a3bfcb37d02e49fef548fd61a68de5a33b67c0f81da45f74a6b90b4",
+      "science/coherent-runs.md": "bc68f022796b875f4a8ce7816fd4a68fbff44fde1fd671e58421f8a2407b0fee"
     }
   },
   "records": [

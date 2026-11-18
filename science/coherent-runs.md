@@ -48,7 +48,7 @@ c^4\sqrt{Nb^3}\,e^{16bc^2}
 \qquad\text{(2)}
 ```
 
-Total variation uses $`\mathrm{TV}(P,Q)=\tfrac12\|P-Q\|_1`$. The theorem includes adaptive source allocation within and between runs, random stopping under the worst-case cap, and arbitrary classical computation. Its phase dependence comes from the uniform stock divergence in [Block information](block-information.md#4-information-bound-uniform-in-stock-size).
+Total variation uses $`\mathrm{TV}(P,Q)=\tfrac12\Vert P-Q\Vert_1`$. The theorem includes adaptive source allocation within and between runs, random stopping under the worst-case cap, and arbitrary classical computation. Its phase dependence comes from the uniform stock divergence in [Block information](block-information.md#4-information-bound-uniform-in-stock-size).
 
 ### Padding adaptive requests by a fixed stock
 
@@ -104,7 +104,7 @@ The full generic proof, including the homogeneous inequalities and outcome refin
 In the auxiliary experiment the next stock is independent of all previous history. The [uniform phase-specific block bound](block-information.md#4-information-bound-uniform-in-stock-size), evaluated at $`t=8\beta`$, gives
 
 ```math
-D(\omega_\phi\|\omega_\theta)
+D(\omega_\phi\Vert\omega_\theta)
 \le\frac{32768}{3}\beta^4c^8e^{32\beta c^2}.
 \qquad\text{(6)}
 ```
@@ -112,12 +112,12 @@ D(\omega_\phi\|\omega_\theta)
 Condition on the same earlier history under the two hypotheses. The receiver's POVM at that history is the same known instrument. Quantum-to-classical data processing bounds its conditional output divergence by (6). The classical relative-entropy chain rule and $`R\le2N/\beta`$ therefore imply
 
 ```math
-D(Q_\phi\|Q_\theta)
+D(Q_\phi\Vert Q_\theta)
 \le\frac{65536}{3}N\beta^3c^8e^{32\beta c^2}.
 \qquad\text{(7)}
 ```
 
-Pinsker's inequality, $`\mathrm{TV}(Q_\phi,Q_\theta)\le\sqrt{D(Q_\phi\|Q_\theta)/2}`$, bounds the refreshed-phase comparison. The triangle inequality pays (4) once for each hypothesis. This proves (2).
+Pinsker's inequality, $`\mathrm{TV}(Q_\phi,Q_\theta)\le\sqrt{D(Q_\phi\Vert Q_\theta)/2}`$, bounds the refreshed-phase comparison. The triangle inequality pays (4) once for each hypothesis. This proves (2).
 
 The fixed-source comparison is essential: applying the chain rule directly to independently twirled runs would remove the orientation information in their common classical history without a bound on the error. The stock information theorem and (4) justify exactly that step.
 
@@ -205,7 +205,7 @@ Here is an explicit conservative construction. For each source, estimate the pro
 \qquad a\lt b.
 ```
 
-Each test uses one fresh copy and leaves only a classical outcome. If every probability estimate has error at most $`\zeta`$, the reconstructed Hermitian matrix $`A`$ obeys $`\|A-P\|_{\mathrm{op}}\le\|A-P\|_F\le3d\zeta`$. Put $`\eta_T=c\epsilon/96`$ and $`\zeta=\eta_T/(3d)`$. Hoeffding's inequality and a union bound over the $`4d^2`$ tests make these bounds simultaneous with probability at least $`2/3`$ using
+Each test uses one fresh copy and leaves only a classical outcome. If every probability estimate has error at most $`\zeta`$, the reconstructed Hermitian matrix $`A`$ obeys $`\Vert A-P\Vert_{\mathrm{op}}\le\Vert A-P\Vert_F\le3d\zeta`$. Put $`\eta_T=c\epsilon/96`$ and $`\zeta=\eta_T/(3d)`$. Hoeffding's inequality and a union bound over the $`4d^2`$ tests make these bounds simultaneous with probability at least $`2/3`$ using
 
 ```math
 O\!\left(d^4c^{-2}\epsilon^{-2}\log(2d)\right)
@@ -214,10 +214,10 @@ O\!\left(d^4c^{-2}\epsilon^{-2}\log(2d)\right)
 
 copies, with no quantum information retained between copies.
 
-Let $`v`$ be a normalized top eigenvector of $`A=P+E`$, with $`\|E\|\le\eta_T\lt1/4`$. Its eigenvalue is at least $`1-\eta_T`$. Projecting its eigenvector equation orthogonally to the true ray gives
+Let $`v`$ be a normalized top eigenvector of $`A=P+E`$, with $`\Vert E\Vert\le\eta_T\lt1/4`$. Its eigenvalue is at least $`1-\eta_T`$. Projecting its eigenvector equation orthogonally to the true ray gives
 
 ```math
-\|(I-P)v\|
+\Vert(I-P)v\Vert
 \le\frac{\eta_T}{1-2\eta_T}\le2\eta_T.
 ```
 

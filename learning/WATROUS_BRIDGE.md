@@ -96,7 +96,7 @@ The same amplitude controls the local matrix
 ```math
 Z_j=P_j+P_{j+1}-I,
 \qquad
-\|Z_j\|\le1,
+\Vert Z_j\Vert\le1,
 \qquad
 \sigma_{\min}(Z_j)=r_j\ge c.
 ```
@@ -367,7 +367,7 @@ The phase is encoded in changes of order $`c^4`$ on a probability distribution w
 For finite separation $`h=\phi-\theta`$, the same common eigenbasis gives
 
 ```math
-D(\omega_\phi\|\omega_\theta)
+D(\omega_\phi\Vert\omega_\theta)
 \le\frac{8c^8\sin^2(h/2)}{1-4c^2-4c^4}.
 ```
 
@@ -405,7 +405,7 @@ C_\phi\succeq e^{-2tc^2}I.
 A nonzero winding $`w`$ requires at least four changed sites. If there are $`k`$ changed sites then $`|w|\le k/4`$. Writing $`h=|\phi-\theta|`$, the squared change in the winding phase is at most $`(kh/4)^2`$. The row count and eigenvalue bound now give
 
 ```math
-D(\omega_\phi\|\omega_\theta)
+D(\omega_\phi\Vert\omega_\theta)
 \le\frac{2}{3}h^2t^4c^8e^{4tc^2}.
 ```
 
