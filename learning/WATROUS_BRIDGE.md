@@ -446,7 +446,7 @@ If $`d\ge9216T^2`$ and the copy count is below $`T`$, the dimension correction i
 
 ### A measurement that attains the scale
 
-Take $`m`$ copies of each of the four labels in a run and let $`A`$ average the cyclic permutations obtained by choosing one register in each bank. The two Hermitian quadrature operators $`(A+A^\dagger)/2`$ and $`(A-A^\dagger)/(2i)`$ have means $`\operatorname{Re}B`$ and $`\operatorname{Im}B`$. Measure their spectra on separate runs. When two permutations select different registers in a bank, their product states differ at two sites and have inner product in that bank equal to the corresponding squared overlap $`q_j`$. If they select the same register, the contribution is one. The exact sum of quadrature variances is therefore
+Take $`m`$ copies of each of the four labels in a run and let $`A`$ average the cyclic permutations obtained by choosing one register in each bank. The two Hermitian quadrature operators $`(A+A^\dagger)/2`$ and $`(A-A^\dagger)/(2i)`$ have means $`\mathrm{Re}B`$ and $`\mathrm{Im}B`$. Measure their spectra on separate runs. When two permutations select different registers in a bank, their product states differ at two sites and have inner product in that bank equal to the corresponding squared overlap $`q_j`$. If they select the same register, the contribution is one. The exact sum of quadrature variances is therefore
 
 ```math
 \prod_{j=1}^4\left(q_j+\frac{1-q_j}{m}\right)-|B|^2,

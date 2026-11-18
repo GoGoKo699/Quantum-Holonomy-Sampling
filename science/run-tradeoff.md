@@ -34,7 +34,7 @@ Let $`q_j=|\langle\psi_j|\psi_{j+1}\rangle|^2`$. For two independent uniform add
 \langle A^\dagger A\rangle
  &=\langle AA^\dagger\rangle
  =\prod_{j=1}^4\left(q_j+\frac{1-q_j}{m}\right),\\
-\operatorname{Var}(H)+\operatorname{Var}(K)
+\mathrm{Var}(H)+\mathrm{Var}(K)
  &=\prod_{j=1}^4\left(q_j+\frac{1-q_j}{m}\right)-|B|^2 .
 \end{aligned}
 \qquad\text{(3)}
@@ -115,7 +115,7 @@ Apply the [fixed-source transcript transfer](coherent-runs.md#2-finite-adaptive-
 \qquad\text{(9)}
 ```
 
-When $`b\lt c^{-2}`$, the exponential is bounded by an absolute constant, and $`T=\epsilon^{-2}c^{-8}b^{-3}`$. If $`N<T`$ and $`d\ge9216T^2`$, then $`d\ge32N`$ and the last term is at most $`1/12`$. With $`h=4\epsilon`$, reaching total variation $`1/3`$ therefore requires $`N=\Omega(T)`$. If $`N\ge T`$, the conclusion already holds. For $`b\ge c^{-2}`$, the [unrestricted sparse-cycle lower bound](lower-bound.md) gives $`\Omega(\epsilon^{-2}c^{-2})`$ at every $`d\ge4`$. This completes the stated minimax law.
+When $`b\lt c^{-2}`$, the exponential is bounded by an absolute constant, and $`T=\epsilon^{-2}c^{-8}b^{-3}`$. If $`N\lt T`$ and $`d\ge9216T^2`$, then $`d\ge32N`$ and the last term is at most $`1/12`$. With $`h=4\epsilon`$, reaching total variation $`1/3`$ therefore requires $`N=\Omega(T)`$. If $`N\ge T`$, the conclusion already holds. For $`b\ge c^{-2}`$, the [unrestricted sparse-cycle lower bound](lower-bound.md) gives $`\Omega(\epsilon^{-2}c^{-2})`$ at every $`d\ge4`$. This completes the stated minimax law.
 
 The small-dimension regime can behave differently. At each fixed finite $`d`$, [separate-copy tomography](coherent-runs.md#5-why-the-dimension-qualification-is-necessary) attains overlap and accuracy exponents $`O_d(c^{-2}\epsilon^{-2})`$ with $`b=1`$. The new converse makes no simultaneous-width claim. Unknown mixed states, changing source orientations, passive-only optical access and preparation costs are outside the theorem.
 
